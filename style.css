@@ -1,0 +1,195 @@
+*{ /*con asterisco si intende a tutto*/
+	padding: 0;
+	margin: 0;
+}
+
+html, body{
+	font-size: 100%;
+	font-family: "Helvetica", linear, sans-serif;
+	margin: auto;
+	max-width: 1024px;
+}
+
+body{
+	border: 1px solid #000; /*colore nero abbreviato*/
+}
+
+header{
+	/*padding: 0.5em 1em 0.5em 1em;*/
+	/*background-color: #00ffff;/*testo nero rapporto 16.67:1  #00FFFF; acqua-nero rapporto 16.75:1*/
+	/*background-image: url('images/0_logo.jpg');
+	background-position: left;
+	background-size: 15%;
+	background-repeat: no-repeat;*/
+	background-image: url('images/sfondo.jpg');
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+header h1{
+	padding: 0.5em;
+	font-size: 4em;
+	text-align: center;
+	color: rgb(255, 253, 253);
+}
+
+#breadcrumb{
+	background-color: #336ef0;
+	color: #fff;
+	font-size: 1em;
+	padding: 0.5em 0.5em 0.5em 1em;
+}
+
+#menu{	
+	background-color: #a2ffff;
+	color: #000;
+	text-align: center;
+	padding: 1em;
+}
+
+#menu li{
+	display: inline;
+	padding: 1em;
+	font-size: 1.2em;
+}
+
+#menu a{
+	color: #cc3300;
+}
+
+#menu a:visited{
+	color: #000;
+}
+
+/*
+#novita {
+	background-color: #fff;
+}
+#novita h2{
+	color: #e60000;
+}
+
+#novita li{
+	list-style-type: none;
+	padding: 0.5em;
+	font-size: 1.2em;
+}*/
+
+
+#offerte h2, #news h2{
+	color: #e60000; 
+}
+
+#offerte li, #news li{
+	list-style-type: none;
+	padding: 0.5em;
+	font-size: 1.2em;
+}
+
+#offerte{
+	float: left;
+	width: 45%;
+	border:  2px solid  #336ef0;
+	padding: 1em;
+	margin-top: 1em;
+	height: 12em;
+	margin-left:0.5em ;
+}
+
+
+
+#news{
+	float: right;
+	width: 45%;
+	border:  2px solid  #336ef0 ;
+	padding: 1em;
+	margin-top:1em;
+	margin-right:0.5em ;
+	height: 12em;
+}
+
+.imgHome{
+	/*padding: 0.5em;
+	width: 45%;
+	padding-left: 25%;
+	padding-top: 2em;*/
+	float:right;
+	padding: 1em;
+	width: 50%;
+	/*vertical-align: middle; */
+}
+
+/*#content1 p{
+	padding: 0.5em;
+	font-size: 1.2em;
+}*/
+
+#content1 {
+	float: left; 
+	padding: 1em;
+	margin: 1em 0.5em 1em 0.5em;
+}
+ 
+#content2 h2{
+	text-align: center;
+	font-size: 1.7em;
+	margin-bottom: 0em;
+	padding-bottom: 0em;
+	padding-top: 1em;
+}
+
+#content2 dt{
+	font-size: 1.3em;
+	padding: 1em 1em 0.2em 1em;
+	list-style-type: square;
+	color:  #336ef0;
+}
+
+#content2 dd{
+	font-size: 1.1em;
+	padding-left: 2.5em;
+}
+
+#content2 #imgCristallo{
+	/*float: left;*/
+	width: 45%;
+	margin: 2em;
+}
+
+/*
+#content2 #curiosity{
+	float: right;
+	margin-left: 50%;
+}*/
+
+
+
+footer{
+	clear: both;
+	border-top: 1px solid #000;
+	text-align: left;
+	font-size: 0.9em;
+	padding: 0.5em;
+	background-image: url('images/sfondo.jpg');
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+footer .address{
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-bottom: 0.5em;
+}
+
+footer .author{
+	display: inline;
+	font-style: italic;
+	color: #000;
+}
+
+footer .imgValidCode{
+	width: 8%;
+	vertical-align: middle;
+	margin: 0.0em 0.5em 0.5em 0.5em;
+}
