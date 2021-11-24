@@ -1,4 +1,4 @@
-*{ /*con asterisco si intende a tutto*/
+*{
 	padding: 0;
 	margin: 0;
 }
@@ -6,26 +6,22 @@
 html, body{
 	font-size: 100%;
 	font-family: "Helvetica", linear, sans-serif;
-	margin: auto;
+	margin: 0;
 	max-width: 1024px;
 }
 
 body{
-	border: 1px solid #000; /*colore nero abbreviato*/
+	border: 1px solid #000;
+	margin: 0.0em 0.5em 0.0em 0.5em ;
 }
 
 header{
-	/*padding: 0.5em 1em 0.5em 1em;*/
-	/*background-color: #00ffff;/*testo nero rapporto 16.67:1  #00FFFF; acqua-nero rapporto 16.75:1*/
-	/*background-image: url('images/0_logo.jpg');
-	background-position: left;
-	background-size: 15%;
-	background-repeat: no-repeat;*/
 	background-image: url('images/sfondo.jpg');
 	background-position: center;
 	background-size: 100%;
 	background-repeat: no-repeat;
 }
+
 header h1{
 	padding: 0.5em;
 	font-size: 4em;
@@ -34,15 +30,22 @@ header h1{
 }
 
 #breadcrumb{
-	background-color: #336ef0;
-	color: #fff;
-	font-size: 1em;
+	font-size: 1.1em;
 	padding: 0.5em 0.5em 0.5em 1em;
+	border: 4.5px solid #0000ff;
+}
+
+#breadcrumb a:link{
+	color: #0000ff; /* con fff rapporto 8.59:1*/
+}
+
+#breadcrumb a:visited{
+	color: #800080; /* con fff rapporto 9.42:1*/
 }
 
 #menu{	
 	background-color: #a2ffff;
-	color: #000;
+	color: #000; /*con a2ffff rapporto 18.28:1*/
 	text-align: center;
 	padding: 1em;
 }
@@ -50,34 +53,21 @@ header h1{
 #menu li{
 	display: inline;
 	padding: 1em;
-	font-size: 1.2em;
+	font-size: 1.5em;
 }
 
-#menu a{
-	color: #cc3300;
+#menu a:link{
+	color: #0000ff; /*con a2ffff rapporto 7.48: 1*/
 }
 
 #menu a:visited{
-	color: #000;
+	color: #800080 /*con a2ffff rapporto 8.20:1*/
 }
 
-/*
-#novita {
-	background-color: #fff;
-}
-#novita h2{
-	color: #e60000;
-}
 
-#novita li{
-	list-style-type: none;
-	padding: 0.5em;
-	font-size: 1.2em;
-}*/
-
-
+/* HOME */
 #offerte h2, #news h2{
-	color: #e60000; 
+	color: #e60000; /*con fff rapporto 4.81:1*/
 }
 
 #offerte li, #news li{
@@ -89,89 +79,93 @@ header h1{
 #offerte{
 	float: left;
 	width: 45%;
-	border:  2px solid  #336ef0;
+	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1*/
 	padding: 1em;
 	margin-top: 1em;
-	height: 12em;
-	margin-left:0.5em ;
+	min-height: 12em;
+	margin-left:0.5em;
 }
-
-
 
 #news{
 	float: right;
 	width: 45%;
-	border:  2px solid  #336ef0 ;
+	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1*/
 	padding: 1em;
 	margin-top:1em;
-	margin-right:0.5em ;
-	height: 12em;
+	margin-right:0.5em;
+	min-height: 12em;
+	text-align: center;
 }
 
-#content1 .imgHome{
-	/*padding: 0.5em;
-	width: 45%;
-	padding-left: 25%;
-	padding-top: 2em;*/
 
+/* GENERAL CONTENT */
+.content{
+	clear: both;
+	font-size: 1.1em;
+	margin: 0.5em;
+	padding: 0.5em;
+
+}
+
+.content h2{
+	clear: both;
+	text-align: center;
+	font-size: 1.7em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;	
+}
+
+.content a:link{
+	color: #0000ff; /* con fff rapporto 8.59:1*/
+}
+
+.content a: visited{
+	color: #800080; /* con fff rapporto 9.42:1*/
+}
+
+/* HOME content */
+#presentazione p, #curiosita p{
+	padding: 0.5em;
+}
+
+#presentazione .imgHome{
 	float: right;
 	padding: 1em;
 	width: 40%;
+	vertical-align: middle; 
 }
 
-
-
-#content1 {
-	clear:both;
-	padding: 1em;
-	margin: 1em 0.5em 1em 0.5em;
+#strada dt{
+	font-size: 1.3em;
+	padding: 0.2em 1em 0.0em 1em;
+	list-style-type: square;
+	color: #008800 /* con fff rapporto 4.64:1*/
 }
- 
-#content1 p, #content3 p, #skipass p{
-	padding: 0.5em;
+
+#strada dd{
+	font-size: 1em;
+	padding-left: 2.5em;
+	padding-bottom: 1em;
+}
+
+#curiosita #imgCristallo{
+	float: left;
+	width: 45%;
+	margin: 1em;
+}
+
+#curiosita > #primo{
+	margin-top: 1.5em;
+}
+
+/* TARIFFE */ 
+#assicurazione{
+	padding-bottom: 0.7em;
 	font-size: 1.2em;
 }
 
-#content2 h2, #content3 h2{
-	text-align: center;
-	font-size: 1.7em;
-	margin-bottom: 0em;
-	padding-bottom: 0em;
-	padding-top: 1em;
-}
-
-#content2 dt{
-	font-size: 1.3em;
-	padding: 1em 1em 0.2em 1em;
-	list-style-type: square;
-	color:  #336ef0;
-}
-
-#content2 dd{
-	font-size: 1.1em;
-	padding-left: 2.5em;
-}
-
-#content3 p{
-	margin-top: 1em;
-}
-
-#content3 #imgCristallo{
-	float: left;
-	width: 45%;
-	margin: 2em;
-}
-
-/* SKIPASS */ 
-#skipass h2, #abbonamenti h2{
-	text-align: center;
-	font-size: 1.7em;
-	margin: auto;
-	padding: 0.5em;
-} 
-
 #abbonamenti ul, #skipass ul{
-	margin-left:30px;
+	margin-left:40px;
 	list-style-position: left;
 	list-style-type: disc;
 }
@@ -180,40 +174,31 @@ header h1{
 	padding: 0.3em;
 }
 
-table {
+table{
 	border: 3px solid #336ef0;
-	table-layout: fixed;
+	table-layout: auto;
 	width: 700px;
-	margin: 1em 10em 1em 10em;
+	/*margin: 1em 10em 1em 10em;*/
+	margin: auto;
 	text-align: center;
-	padding: 0.5em;
+	padding: 0.5em 0.0em 1em 0.0em;
 	border-spacing: 20px;
-	border-collapse:collapse; 
+	border-collapse:collapse;
 }
 
-table caption {
+table caption{
 	font-weight: bold;
-	font-size: 1.2em;
+	font-size: 1.4em;
 	padding:0.5em;
 }
 
-
-
-th,td {
-	border: medium solid #336ef0;	
-	padding: 0.5em;
-	
-}
-/*
-tr:nth-child(odd){
-	background:#777
+th,td{
+	border: medium solid #336ef0; /* con fff rapporto 4.54:1*/	
+	padding: 0.5em;	
 }
 
-tr:nth-child(even){
-	background:#AAA
-}
-*/
- 
+
+/* FOOTER */
 footer{
 	clear: both;
 	border-top: 1px solid #000;
@@ -234,7 +219,6 @@ footer .address{
 
 footer .author{
 	font-style: italic;
-	color: #000;
 }
 
 footer .imgValidCode{

@@ -3,8 +3,8 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Home</title>
-	<meta name="keywords" content="Crystal Ski, Sci, monte Cristallo" />
+	<title>Crystal Ski - Tariffe</title>
+	<meta name="keywords" content="Crystal Ski, Tariffe, Prezzo" />
 	<meta name="description" content="homePage" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="style.css" />
@@ -16,11 +16,12 @@
 	</header>
 
 	<nav id="breadcrumb">
-		<p>Ti trovi in: <span lang="en">Tariffe</span>
+		<p>Ti trovi in: <a href="Home.html" lang="en">Home</a> &gt; &gt; Tariffe</p>
 	</nav>
+
 	<nav id="menu">
 		<ul>
-			<li lang="en"> <a href="Home.html">Home</a></li>
+			<li> <a href="Home.html" lang="en">Home</a></li>
 			<li> Tariffe </li>
 			<li><a href="mappa.html">Mappa</a></li>			
 			<li><a href="servizi.html">Servizi</a></li>
@@ -28,43 +29,38 @@
 		</ul>
 	</nav>
 
-    <body>
+    <nav class="content">
         <div id="skipass"> 
-            <h2> Listino prezzi skipass </h2>
-            <p> L'ASSICURAZIONE DAL 1 GENNAIO 2021 E' OBBLIGATORIA, LA TARIFFA E' DI 5€ AL GIORNO A PERSONA</p>
-           
-            <p> Indicazoni importanti: </p>
+            <h2>Listino prezzi</h2>
+            <p id="assicurazione">L'ASSICURAZIONE DAL 1 GENNAIO 2022 E' OBBLIGATORIA, LA TARIFFA E' DI 5€ AL GIORNO A PERSONA</p>           
+            <p>Indicazoni importanti:</p>
             <ul> 
-                <li> I bambini nati dopo il 31/12/2013 entrano gratis se è presente un adulto pagante, altrimenti fare riferimento alla categoria junior. </li>
-                <li> Junior comprende i ragazzi nati entro il 31/12/2007</li>
-                <li> Senior comprende le persone nate prima del 31/12/1956</li>
-                <li> Per l'età non comprese nelle categoire precedenti fare riferimmento ad adulto</li>
-                <li> La bassa stagione sono i periodi dal 1/12/2021 al 17/12/2021 e dal 01/3/2022 a chiusura </li>
-                <li> L'alta stagione comprende i periodi restanti </li>
-            </ul>   
-        
+                <li>I bambini nati dopo il 31/12/2013 entrano gratis se è presente un adulto pagante, altrimenti fare riferimento alla categoria <span lang="en">junior.</span></li>
+                <li><span lang="en">Junior</span> comprende i ragazzi nati entro il 31/12/2007</li>
+                <li><span lang="en">Senior</span> comprende le persone nate prima del 31/12/1956</li>
+                <li>Per l'età non comprese nelle categoire precedenti fare riferimmento ad adulto</li>
+                <li>La bassa stagione comprende i periodi dal 1/12/2021 al 17/12/2021 e dal 01/03/2022 a chiusura</li>
+                <li>L'alta stagione comprende i periodi restanti</li>
+            </ul>          
         </div>
 
-
-
-        <table ttitle="In dettaglio i prezzi degli skipass da 3 ore, giornalieri, 3-5-7 giorni e mensile in base alla categoria di appartenenza Junior, Adulto e Senior"> 
-            <caption> Prezzi degli skipass </caption>
+        <table title="In dettaglio i prezzi degli skipass da 3 ore, giornalieri, 3-5-7 giorni e mensile in base alla categoria di appartenenza Junior, Adulto e Senior"> 
+            <caption> Prezzi degli <span lang="en">skipass</span></caption>
             <thead> 
                 <tr>
-                    <th> </th>
-                    <th scope="col" colspan="3"> Bassa stagione </th>
-                    <th scope="col" colspan="3"> Alta stagione </th>
+                    <th></th>
+                    <th scope="col" colspan="3">Bassa stagione</th>
+                    <th scope="col" colspan="3">Alta stagione</th>
                 </tr>
                 <tr> 
                     <th> </th>
-                    <th scope="col"> Junior </th> 
+                    <th scope="col" lang="en">Junior</th> 
                     <th scope="col">Adulto</th> 
-                    <th scope="col">Senior</th>
-                    <th scope="col"> Junior </th> 
+                    <th scope="col" lang="en">Senior</th>
+                    <th scope="col" lang="en">Junior</th> 
                     <th scope="col">Adulto</th> 
-                    <th scope="col">Senior</th>
+                    <th scope="col" lang="en">Senior</th>
                 </tr>
-
             </thead>
             
             <tbody>
@@ -127,30 +123,34 @@
                     <td> 749€ </td>
                     <td> 529€ </td> 
                 </tr>
-            </tbody>
-        
+            </tbody>        
         </table>
 
         <div id="abbonamenti">
-            <h2> Abbonamento Stagionale </h2>
-            <p> Per chi è interessato ad acquistare l'abbonamento, entro il 30/11/2021 si ha uno socnto del 15% ai prezzi sotto riportati.</p>
+            <h2>Abbonamento Stagionale </h2>
+            <p>Per chi è interessato ad acquistare l'abbonamento, entro il 30/11/2021 si ha uno sconto del 15% ai prezzi sotto riportati.</p>
             <ul> 
-                <li> Junior: 850€ </li>
-                <li> Adulto: 1.500€ </li>
-                <li> Senior: 1.100€ </li>
+                <li><span lang="en">Junior:</span> 850€</li>
+                <li>Adulto: 1.500€</li>
+                <li><span lang="en">Senior:</span> 1.100€</li>
             </ul>
+            <p>All'acquisto di un abbonamento adulto, il genitore ha diritto ad un solo abbonamento gratuito da bambino per un solo figlio.</p>
+            <p>In assenza dell'adulto pagante, il bambino è da considerarsi come <span lang="en">Junior.</span></p>
         </div>
+    </nav>
 
 
-    	<footer>
-            <div class="address">
+    <footer>
+        <nav class="address">
             <p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
             <p>Contatto telefonico: 345 6789102</p>
             <p lang="en">email: crystalski@gmail.com</p>
-            </div>
-            
-            <p class="author" lang="en">Crystal Ski Production - All rights Reserved</p>
-            <img class="imgValidCode" src="images/0_css.png" alt="css valido"/>
-            <img class="imgValidCode" src="images/0_html5.png" alt="html valido"/>
-        </footer>
-    </body>
+        </nav>      
+        <p class="author" lang="en">Crystal Ski Production</p> 
+        <p class="author" lang="en">All rights Reserved</p> 
+        <img class="imgValidCode" src="images/0_html5.png" alt="html valido"/>
+        <img class="imgValidCode" src="images/0_css1.png" alt="css valido"/>            
+    </footer>
+</body>
+
+</html>
