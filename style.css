@@ -1,17 +1,17 @@
 *{
-	padding: auto;
-	margin: auto;
+	padding: 0;
+	margin: 0;
 }
 
 html, body{
 	font-size: 100%;
 	font-family: "Helvetica", linear, sans-serif;
+	margin: auto;
 	max-width: 1024px;
 }
 
 body{
 	border: 1px solid #000;
-	margin: 0.0em 0.5em 0.0em 0.5em ;
 }
 
 header{
@@ -76,29 +76,44 @@ header h1{
 }
 
 #offerte{
+	/*
 	float: left;
 	width: 45%;
-	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1*/
+	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1
 	padding: 1em;
 	margin-top: 1em;
 	min-height: 12em;
-	margin-left:0.5em;
+	margin-left:0.5em; */
+
+	float: left;
+	width: 45%;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	padding: 0.5em;
+	margin: 0.5em;
+	text-align: center;
 }
 
 #news{
 	float: right;
 	width: 45%;
-	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1*/
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	padding: 0.5em;
+	margin: 0.5em;
+	text-align: center;
+	/*
+	border:  2px solid  #336ef0; /*con fff rapporto 4.54:1
 	padding: 1em;
 	margin-top:1em;
 	margin-right:0.5em;
 	min-height: 12em;
-	text-align: center;
+	text-align: center;*/
 }
 
 
 /* GENERAL CONTENT */
-.content{
+.content, .baite{
 	clear: both;
 	font-size: 1.1em;
 	margin: 0.5em;
@@ -106,10 +121,11 @@ header h1{
 
 }
 
-.content h2{
+.content h2, #titolo{
 	clear: both;
 	text-align: center;
 	font-size: 1.7em;
+	margin-top: 0.5em;
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;	
 }
@@ -118,16 +134,17 @@ header h1{
 	color: #0000ff; /* con fff rapporto 8.59:1*/
 }
 
-.content a: visited{
-	color: #800080; /* con fff rapporto 9.42:1*/
+.content a:visited{
+	color: #800080; /*con fff rapporto 9.42:1*/
 }
 
 /* HOME content */
 #presentazione p, #curiosita p{
 	padding: 0.5em;
-}
+	font-size:1.2em;
+} 
 
-#presentazione .imgHome{
+#presentazione #imgHome{
 	float: right;
 	padding: 1em;
 	width: 40%;
@@ -144,7 +161,7 @@ header h1{
 #strada dd{
 	font-size: 1em;
 	padding-left: 2.5em;
-	padding-bottom: 1em;
+	padding-bottom: 1.1em;
 }
 
 #curiosita #imgCristallo{
@@ -153,9 +170,6 @@ header h1{
 	margin: 1em;
 }
 
-#curiosita > #primo{
-	margin-top: 1.5em;
-}
 
 /* TARIFFE */ 
 #assicurazione{
@@ -165,7 +179,6 @@ header h1{
 
 #abbonamenti ul, #skipass ul{
 	margin-left:40px;
-	list-style-position: left;
 	list-style-type: disc;
 }
 
@@ -193,6 +206,34 @@ table caption{
 th,td{
 	border: medium solid #336ef0; /* con fff rapporto 4.54:1*/	
 	padding: 0.5em;	
+}
+
+/* SERVIZI */ 
+.baite h3 {
+	font-size: 1.3em;
+	padding: 0.5em 0em 0.3em 0em;
+}
+
+.baite p{
+	padding: 0.1em;
+	font-size:1.1em;
+}
+
+#noleggio p, #scuola p{
+	padding: 0.2em;
+	font-size:1.1em;
+}
+
+#noleggio #imgNoleggio{
+	float: right;
+	width: 50%;
+	margin: 1em;
+}
+
+#scuola #imgMaestri{
+	float: left;
+	width: 50%;
+	margin: 1em;
 }
 
 
@@ -223,3 +264,50 @@ footer .imgValidCode{
 	width: 7%;
 	margin: 0.5em;
 }
+
+/*EVENTI PROVVISORIO */
+#eventi_e_gare{
+	font-size: 1.3em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+}
+
+#eventi h2, #gare h2{
+	font-size: 2em;
+	text-align: center;
+}
+
+#eventi, .baite {
+	float: left;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	padding: 1em;
+	margin: 0.7em;
+}
+
+#eventi dl{
+	margin: 1em;
+}
+
+#gare{
+	float: left;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	padding: 1em;
+	padding-bottom: 1.3em;
+	margin: 0.7em;
+}
+
+#eventi dt, #gare dt{
+	
+	padding-top: 0.8em;
+	text-align: left;
+}
+
+#eventi dd, #gare dd{
+	padding-left: 2em;
+} 
+
+/*------------------------------------------------------------------*/
