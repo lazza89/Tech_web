@@ -21,16 +21,18 @@
 
 	<nav id="menu">
 		<ul>
-			<li> <a href="Home.html" lang="en">Home</a></li>
-			<li> Tariffe </li>
-			<li><a href="mappa.html">Mappa</a></li>			
-			<li><a href="servizi.html">Servizi</a></li>
-			<li><a href="eventi.html">Eventi e Gare</a></li>
+			<li lang="en"><a href="Home.html">Home</a></li>
+            <li>Tariffe</li>
+            <li><a href="Mappa.html">Mappa</a></li>         
+            <li><a href="Servizi.html">Servizi</a></li>
+            <li><a href="Eventi.html">Eventi e Gare</a></li>
+            <li><a href="Recensioni.html">Recensioni</a></li>
+            <li><a href="Login.html">Login</a></li>
 		</ul>
 	</nav>
 
-    <div class="content" id="skipass"> 
-        <h2>Listino prezzi</h2>
+    <h2 class="titolo">Listino prezzi</h2>
+    <div class="content" id="skipass">        
         <p id="assicurazione">L'ASSICURAZIONE DAL 1 GENNAIO 2022 E' OBBLIGATORIA, LA TARIFFA E' DI 5€ AL GIORNO A PERSONA</p>           
         <p>Indicazoni importanti:</p>
         <ul> 
@@ -43,16 +45,15 @@
         </ul>          
     </div>
 
-    <table title="In dettaglio i prezzi degli skipass da 3 ore, giornalieri, 3-5-7 giorni e mensile in base alla categoria di appartenenza Junior, Adulto e Senior"> 
+    <table id="listino" title="In dettaglio i prezzi degli skipass da 3 ore, giornalieri, 3-5-7 giorni e mensile in base alla categoria di appartenenza Junior, Adulto e Senior"> 
         <caption> Prezzi degli <span lang="en">skipass</span></caption>
         <thead> 
             <tr>
-                <th></th>
+                <th rowspan="2"></th>
                 <th scope="col" colspan="3">Bassa stagione</th>
                 <th scope="col" colspan="3">Alta stagione</th>
             </tr>
             <tr> 
-                <th> </th>
                 <th scope="col" lang="en">Junior</th> 
                 <th scope="col">Adulto</th> 
                 <th scope="col" lang="en">Senior</th>
@@ -125,8 +126,8 @@
         </tbody>        
     </table>
 
+    <h2 class="titolo">Abbonamento Stagionale </h2>
     <div class="content" id="abbonamenti">
-        <h2>Abbonamento Stagionale </h2>
         <p>Per chi è interessato ad acquistare l'abbonamento, entro il 30/11/2021 si ha uno sconto del 15% ai prezzi sotto riportati.</p>
         <ul> 
             <li><span lang="en">Junior:</span> 850€</li>
@@ -137,7 +138,6 @@
         <p>In assenza dell'adulto pagante, il bambino è da considerarsi come <span lang="en">Junior.</span></p>
     </div>
 
-
     <footer>
         <div id="address">
             <p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
@@ -146,9 +146,8 @@
         </div>      
         <p class="author" lang="en">Crystal Ski Production</p> 
         <p class="author" lang="en">All rights Reserved</p> 
-        <img class="imgValidCode" src="images/0_html5.png" alt="html valido"/>
-        <img class="imgValidCode" src="images/0_css.png" alt="css valido"/>            
+        <img class="imgValidCode" src="images/html5.png" alt="html valido"/>
+        <img class="imgValidCode" src="images/css.png" alt="css valido"/>         
     </footer>
 </body>
-
 </html>
