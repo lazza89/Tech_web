@@ -8,6 +8,8 @@
 	<meta name="description" content="homePage" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="mini.css"/>
+    <!--<link rel="stylesheet" media="print" href="print.css" />-->
 </head>
 
 <body>
@@ -19,6 +21,8 @@
 		<p>Ti trovi in: <a href="Home.html" lang="en">Home</a> &gt; &gt; Tariffe</p>
 	</nav>
 
+    <label for="menu-hamburger" class="hamburger"></label>
+    <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<nav id="menu">
 		<ul>
 			<li lang="en"><a href="Home.html">Home</a></li>
@@ -49,7 +53,7 @@
         <caption> Prezzi degli <span lang="en">skipass</span></caption>
         <thead> 
             <tr>
-                <th rowspan="2"></th>
+                <th id="double-row" rowspan="2"></th>
                 <th scope="col" colspan="3">Bassa stagione</th>
                 <th scope="col" colspan="3">Alta stagione</th>
             </tr>
@@ -65,66 +69,67 @@
         
         <tbody>
             <tr> 
-                <th scope="row"> 3 Ore </th> 
-                <td> 12€ </td>
-                <td> 27€ </td>
-                <td> 18€ </td> 
-                <td> 15€ </td>
-                <td> 32€ </td>
-                <td> 22€ </td> 
+                <th class="table-header" scope="row"> 3 Ore </th> 
+                <td data-title="Bassa stagione - Junior" > 12€ </td>
+                <td data-title="Bassa stagione - Adulto"> 27€ </td>
+                <td data-title="Bassa stagione - Senior"> 18€ </td> 
+                <td data-title="Alta stagione - Junior"> 15€ </td>
+                <td data-title="Alta stagione - Adulto"> 32€ </td>
+                <td data-title="Alta stagione - Senior"> 22€ </td> 
             </tr>
             
             <tr> 
-                <th scope="row"> Giornaliero </th> 
-                <td> 18€ </td>
-                <td> 35€ </td>
-                <td> 25€ </td> 
-                <td> 20€ </td>
-                <td> 37€ </td>
-                <td> 26€ </td> 
+                <th class="table-header" scope="row"> Giornaliero </th> 
+                <td data-title="Bassa stagione - Junior" > 18€ </td>
+                <td data-title="Bassa stagione - Adulto"> 35€ </td>
+                <td data-title="Bassa stagione - Senior"> 25€ </td> 
+                <td data-title="Alta stagione - Junior"> 20€ </td>
+                <td data-title="Alta stagione - Adulto"> 37€ </td>
+                <td data-title="Alta stagione - Senior"> 26€ </td> 
             </tr>
             
             <tr> 
-                <th scope="row"> 3 Giorni </th> 
-                <td> 44€ </td>
-                <td> 87€ </td>
-                <td> 61€ </td>
-                <td> 51€ </td>
-                <td> 100€ </td>
-                <td> 74€ </td> 
+                <th class="table-header"  scope="row"> 3 Giorni </th> 
+                <td data-title="Bassa stagione - Junior" > 44€ </td>
+                <td data-title="Bassa stagione - Adulto"> 87€ </td>
+                <td data-title="Bassa stagione - Senior"> 61€ </td>
+                <td data-title="Alta stagione - Junior"> 51€ </td>
+                <td data-title="Alta stagione - Adulto"> 100€ </td>
+                <td data-title="Alta stagione - Senior"> 74€ </td> 
             </tr>
 
             <tr> 
-                <th scope="row"> 5 Giorni </th> 
-                <td> 68€ </td>
-                <td> 132€ </td>
-                <td> 105€ </td> 
-                <td> 81€ </td>
-                <td> 158€ </td>
-                <td> 115€ </td> 
+                <th class="table-header" scope="row"> 5 Giorni </th> 
+                <td data-title="Bassa stagione - Junior" > 68€ </td>
+                <td data-title="Bassa stagione - Adulto"> 132€ </td>
+                <td data-title="Bassa stagione - Senior"> 105€ </td> 
+                <td data-title="Alta stagione - Junior"> 81€ </td>
+                <td data-title="Alta stagione - Adulto"> 158€ </td>
+                <td data-title="Alta stagione - Senior"> 115€ </td>
             </tr>
             
             <tr> 
-                <th scope="row"> 7 Giorni </th> 
-                <td> 85€ </td>
-                <td> 164€ </td>
-                <td> 120€ </td>
-                <td> 94€ </td>
-                <td> 190€ </td>
-                <td> 137€ </td> 
+                <th class="table-header" scope="row"> 7 Giorni </th> 
+                <td data-title="Bassa stagione - Junior" > 85€ </td>
+                <td data-title="Bassa stagione - Adulto"> 164€ </td>
+                <td data-title="Bassa stagione - Senior"> 120€ </td>
+                <td data-title="Alta stagione - Junior"> 94€ </td>
+                <td data-title="Alta stagione - Adulto"> 190€ </td>
+                <td data-title="Alta stagione - Senior"> 137€ </td>
             </tr>
 
             <tr>
-                <th scope="row"> Mensile </th> 
-                <td> 300€ </td>
-                <td> 600€ </td>
-                <td> 440€ </td>
-                <td> 359€ </td>
-                <td> 749€ </td>
-                <td> 529€ </td> 
+                <th class="table-header" scope="row"> Mensile </th> 
+                <td data-title="Bassa stagione - Junior" > 300€ </td>
+                <td data-title="Bassa stagione - Adulto"> 600€ </td>
+                <td data-title="Bassa stagione - Senior"> 440€ </td>
+                <td data-title="Alta stagione - Junior"> 359€ </td>
+                <td data-title="Alta stagione - Adulto"> 749€ </td>
+                <td data-title="Alta stagione - Senior"> 529€ </td>
             </tr>
         </tbody>        
     </table>
+
 
     <h2 class="titolo">Abbonamento Stagionale </h2>
     <div class="content" id="abbonamenti">

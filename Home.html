@@ -8,6 +8,8 @@
 	<meta name="description" content="homePage" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="mini.css"/>
+	<!--<link rel="stylesheet" media="print" href="print.css" />-->
 </head>
 
 <body>
@@ -19,15 +21,17 @@
 		<p>Ti trovi in: <span lang="en">Home</span></p>
 	</nav>
 
+	<label for="menu-hamburger" class="hamburger"></label>
+    <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<nav id="menu">
 		<ul>
 			<li lang="en">Home</li>
-			<li><a href="Tariffe.html">Tariffe</a></li>
-			<li><a href="Mappa.html">Mappa</a></li>			
-			<li><a href="Servizi.html">Servizi</a></li>
-			<li><a href="Eventi.html">Eventi e Gare</a></li>
-			<li><a href="Recensioni.html">Recensioni</a></li>
-			<li><a href="Login.html">Login</a></li>
+			<li><a href="Tariffe.html" style="--i:1">Tariffe</a></li>
+			<li><a href="Mappa.html" style="--i:2">Mappa</a></li>			
+			<li><a href="Servizi.html" style="--i:3">Servizi</a></li>
+			<li><a href="Eventi.html" style="--i:4">Eventi e Gare</a></li>
+			<li><a href="Recensioni.html" style="--i:5">Recensioni</a></li>
+			<li><a href="Login.html" style="--i:6">Login</a></li>
 		</ul>
 	</nav>
 

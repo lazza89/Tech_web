@@ -3,6 +3,7 @@
 	margin: 0;
 }
 
+
 html, body{
 	font-size: 100%;
 	font-family: "Helvetica", linear, sans-serif;
@@ -172,7 +173,6 @@ header h1{
 }
 
 #listino{
-	border: 3px solid #336ef0;
 	table-layout: auto; /*flex*/
 	width: 575px;
 	margin: auto;
@@ -190,6 +190,19 @@ header h1{
 
 #listino th,td{
 	border: medium solid #336ef0; /* con fff rapporto 4.54:1*/	
+	padding: 0.5em;	
+}
+
+#listino thead, .table-header{
+	background-color: #6693f5;
+}
+
+#listino #double-row {
+	background-color: #fff;
+}
+
+#listino th,td{
+	border: 3px solid #000; /* con fff rapporto 4.54:1*/	
 	padding: 0.5em;	
 }
 
@@ -369,4 +382,24 @@ footer .imgValidCode{
 	width: 8%;
 	padding: 0.3em;
 	background-color: #000;
+}
+
+/*hamburger testing*/
+
+*{
+	box-sizing: border-box;
+}
+.hamburger {
+	display: none;
+}
+.hamburger:before {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+	content: "\00a0\2261\00a0";
+	font-family: sans-serif;
+	font-size: 1.5em;
+}
+.menu-toggle {
+	display: none;
 }
