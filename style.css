@@ -172,7 +172,6 @@ header h1{
 }
 
 #listino{
-	border: 3px solid #336ef0;
 	table-layout: auto; /*flex*/
 	width: 575px;
 	margin: auto;
@@ -190,6 +189,19 @@ header h1{
 
 #listino th,td{
 	border: medium solid #336ef0; /* con fff rapporto 4.54:1*/	
+	padding: 0.5em;	
+}
+
+#listino thead, .table-header{
+	background-color: #6693f5;
+}
+
+#listino #double-row {
+	background-color: #fff;
+}
+
+#listino th,td{
+	border: 3px solid #000; /* con fff rapporto 4.54:1*/	
 	padding: 0.5em;	
 }
 
