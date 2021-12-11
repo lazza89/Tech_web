@@ -40,9 +40,9 @@
                 <caption>Piste Blu (facile)</caption>
                 <thead>
                     <tr>
-                        <th>Numero Pista</th>
-                        <th>Lunghezza (<abbr title="metri">m</abbr>)</th>
-                        <th>Dislivello (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Numero Pista</th>
+                        <th scope="col">Lunghezza (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Dislivello (<abbr title="metri">m</abbr>)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,9 +63,9 @@
                 <caption>Piste Rosse (media)</caption>
                 <thead>
                     <tr>
-                        <th>Numero Pista</th>
-                        <th>Lunghezza (<abbr title="metri">m</abbr>)</th>
-                        <th>Dislivello (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Numero Pista</th>
+                        <th scope="col">Lunghezza (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Dislivello (<abbr title="metri">m</abbr>)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,9 +96,9 @@
                 <caption>Piste Nere (difficile)</caption>
                 <thead>
                     <tr>
-                        <th>Numero Pista</th>
-                        <th>Lunghezza (<abbr title="metri">m</abbr>)</th>
-                        <th>Dislivello (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Numero Pista</th>
+                        <th scope="col">Lunghezza (<abbr title="metri">m</abbr>)</th>
+                        <th scope="col">Dislivello (<abbr title="metri">m</abbr>)</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -119,9 +119,9 @@
                 <caption>Biglietterie e Parcheggi</caption>
                 <thead>
                     <tr>
-                        <th>Tipo</th>
-                        <th>Icona</th>
-                        <th>Posizione</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">Icona</th>
+                        <th scope="col">Posizione</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -143,11 +143,12 @@
                 <caption>Impianti di risalita</caption>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Icona</th>
-                        <th>Tipologia</th>
-                        <th>Percorrenza</th>
-                        <th colspan="2">Collegamenti</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Icona</th>
+                        <th scope="col">Tipologia</th>
+                        <th scope="col">Percorrenza</th>
+                        <th scope="colgroup" colspan="2">Collegamenti</th>  <!-- se non va cancella questo e scommenta la riga sotto -->
+                        <!-- <th scope="col">Collegamenti</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -157,7 +158,8 @@
                         <td>Seggiovia</td>
                         <td>7'33''</td>
                         <td>1</td>
-                        <td>1bis</td>
+                        <td>1bis</td>   <!-- se non va cancella riga 160 e 161 e scommenta riga 162 -->
+                        <!-- <td>1, 1bis</td> -->
                     </tr>
                     <tr>
                         <td>B</td>
@@ -165,21 +167,24 @@
                         <td>Seggiovia</td>
                         <td>5'30''</td>
                         <td>2</td>
-                        <td>2bis</td>
+                        <td>2bis</td>   <!-- se non va cancella riga 169 e 170 e scommenta riga 171 -->
+                        <!-- <td>2, 2bis</td> -->
                     </tr>
                     <tr>
                         <td>C</td>
                         <td class="icone"><img src="images/icona-cabinovia.png" alt=""></td>
                         <td>Cabinovia</td>
                         <td>9'29''</td>
-                        <td colspan="2">3</td>
+                        <td colspan="2">3</td> <!-- se non va cancella riga 178 e scommenta riga 179 -->
+                        <!-- <td>3</td> -->
                     </tr>
                     <tr>
                         <td>D</td>
                         <td class="icone"><img src="images/icona-tappeto.png" alt=""></td>
                         <td>Tappeto</td>
                         <td>3'55''</td>
-                        <td colspan="2">5</td>
+                        <td colspan="2">5</td>  <!-- se non va cancella riga 186 e scommenta riga 187 -->
+                        <!-- <td>5</td> -->
                     </tr>
                     <tr>
                         <td>E</td>
@@ -187,7 +192,8 @@
                         <td>Cabinovia</td>
                         <td>11'05''</td>
                         <td>4</td>
-                        <td>6</td>
+                        <td>6</td> <!-- se non va cancella riga 194 e 195 e scommenta riga 196 -->
+                        <!-- <td>6, 4</td> -->
                     </tr>
                 </tbody>
             </table>
@@ -195,9 +201,9 @@
                 <caption>Servizi</caption>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Icona</th>
-                        <th>Posizione</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Icona</th>
+                        <th scope="col">Posizione</th>
                     </tr>
                 </thead>
                 <tbody>
