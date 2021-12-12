@@ -1,3 +1,11 @@
+*{
+	box-sizing: border-box;
+}
+
+html, body{
+	max-width: 600px;
+}
+
 body{
 	border: none
 }
@@ -9,7 +17,6 @@ header{
 	background-repeat: no-repeat;
 }
 
-
 header h1{
 	padding: 0.5em;
 	font-size: 3em;
@@ -18,7 +25,44 @@ header h1{
 }
 
 
-/* HOME */
+/* MENU-hamburger */
+.hamburger {
+	display: none;
+}
+.hamburger:before {
+	display: block;
+	position: relative;
+	vertical-align: bottom;
+	text-align: right;
+	content: "\00a0\2261\00a0";
+	font-family: sans-serif;
+	font-size: 2.5em;
+	background-color: #a2ffff;
+}
+.menu-toggle {
+	display: none;
+}
+
+.hamburger {
+	display: block;
+	}
+input[type="checkbox"].menu-toggle + * {
+	display: none;
+}
+input[type="checkbox"].menu-toggle:checked + * {
+	display: flex;
+}
+
+#menu{
+	flex-direction: column;
+}
+
+#menu li{
+		width: 100%;
+}
+
+
+/* HOME, SERVIZI, EVENTI */
 #novita{
 	display: block;
 }
@@ -30,14 +74,25 @@ header h1{
 
 #presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
 	float: none;
-	padding: 1em;
-	width: 70%;
-	margin: 0em;
-	text-align: center;
+	width: 75%;
+	margin: auto;
+	margin-left: 12%;
+}
+
+@media screen and (max-width: 320px) { /*telefoni in modalità portrait*/
+	#presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
+		width: 95%;
+		margin: 0em;
+		padding: 0.5em;
+	}
+
+	.liste_eventi dd{
+		padding-left: 0em;
+	}
 }
 
 
-/* TARIFFE */ 
+/* TARIFFE, MAPPA */ 
 #assicurazione{
 	padding-bottom: 0.8em;
 	font-size: 1.1em;
@@ -54,103 +109,60 @@ header h1{
 
 #listino{
 	width: 80%;
-
 }
 
-#listino thead, #listino #table-header, #listino td:empty{
+@media screen and (max-width: 480px) {
+	#listino{
+		width: 90%;
+	}
+}
+
+#legenda{
+	display:block;
+	margin: 1.5em;
+	font-size: 0.9em;
+}
+
+.slope-table, #biglietterie{
+	width: 90%;
+}
+
+#listino thead, #listino #table-header, #listino td:empty,
+#risalita thead, #servizi thead {
 	display:none;
 }
 
-#listino tr, #listino th, #listino td {
+#listino tr, #listino th, #listino td,
+#risalita tr, #risalita th, #risalita td,
+#servizi tr, #servizi th, #servizi td{
 	display: block;
 	padding: 0.5em;
 	white-space: normal;
 }
 
-#listino th, #listino td{
-	border: 2px solid #000;
-}
-
-#listino th[data-title]:before, #listino td[data-title]:before {
+#listino th[data-title]:before, #listino td[data-title]:before,
+#risalita th[data-title]:before,#risalita td[data-title]:before,
+#servizi th[data-title]:before, #servizi td[data-title]:before  
+{
 	content:
 	attr(data-title) ":\00A0";
 	font-weight: bold;
 }
 
-/* MAPPA */
-#imgMappa{
-	display: block;
-	margin: 0.5em auto;
-	width: 90%;
+#servizi th, #risalita th {
+	background-color: #a2ffff;
 }
 
-#mappa-pdf{
-	margin-left: 2em;
+#risalita td img, #servizi td img{
+	width: 10%;
 }
 
-#legenda {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	margin: 2em 0;
-	font-size: 1.1em;
-}
-
-#inner-box-left {
-	width: 40%;
-	margin-right: 0.5em;
-}	
-
-.slope-table, .black-table {
-	/*width: 100%;*/
-	border-collapse: collapse;
-	margin-bottom: 1em;
-	border: 2px solid;
-	min-width: 150px;
-}
-
-.slope-table caption, .black-table caption {
-	font-size: 1.4em;
-	color: white;
-	border: 2px solid;
-}
-
-.slope-table th, .slope-table td, .black-table th, .black-table td {
-	border: 2px solid;
-	padding: 0.4em 0.5em;
-}
-
-#blue-table, #blue-table th, #blue-table td {
-	border-color: #005ab5;
-}
-
-#blue-table caption {
-	background-color: #005ab5; /* con testo #fff rapporto 6.7:1*/
-	border-color: #005ab5;
-}
-
-#red-table, #red-table th, #red-table td {
-	border-color: #dc3220;
-}
-
-#red-table caption {
-	background-color: #dc3220; /* con testo #fff rapporto 4.64:1*/
-	border-color: #dc3220;
-}
-
-.black-table, .black-table th, .black-table td {
-	border-color: #000;
-}
-
-.black-table caption {
-	background-color: #000; /* con testo #fff rapporto 21:1*/
-	border-color: #000;
-}
+#servizi{
+	margin-top: 5em;
+} 
 
 .icone{
-	text-align: center;
+	text-align: left;
 }
 
 
