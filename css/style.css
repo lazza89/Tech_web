@@ -16,7 +16,7 @@ body{
 }
 
 header{
-	background-image: url('images/sfondo.jpg');
+	background-image: url('../images/sfondo.jpg');
 	background-position: center;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -361,7 +361,7 @@ footer{
 	border-top: 1px solid #000;
 	text-align: left;
 	padding: 0.5em;
-	background-image: url('images/sfondo.jpg');
+	background-image: url('../images/sfondo.jpg');
 	background-position: center;
 	background-size: 100%;
 	background-repeat: no-repeat;
@@ -447,6 +447,118 @@ button:hover {
 	opacity: 0.8;
 }
 
+/* REGISTER TEST */
+
+#register{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#registerBox {
+  padding: 2.5em;
+	width: 60%;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	margin: 0.7em;
+}
+
+#registrati{
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+#registerBox ul{
+	color: red;
+	padding-bottom: 1em;
+}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
 
 
+/* test recensioni */
 
+#comments_intro h2{
+	text-align: center;
+	padding: 1.5em;
+}
+
+#comments_holder{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.comments{
+	flex-direction: row;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	margin: 0.7em;
+	min-width: 300px;
+	padding: 0.8em;
+  	width: 70%;
+}
+.comment{
+	padding-left: 1em;
+}
+
+.userDetails{
+	display: flex;
+	align-items: center;
+}
+
+.commentDate{
+	font-size: 14px;
+	padding-bottom: 1em;
+}
+
+.userDetails h3{
+	padding-right: 1em;
+}
+
+.gold_star {
+	background: gold;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+}
+
+.grey_star {
+	background: grey;
+	clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+}

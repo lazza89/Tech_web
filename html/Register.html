@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<meta charset="utf-8" />
+	<title>Crystal Ski - Home</title>
+	<meta name="keywords" content="Crystal Ski, Sci, monte Cristallo" />
+	<meta name="description" content="homePage" />
+	<meta name="author" content="Crystal Ski" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+	<!--<link rel="stylesheet" media="print" href="print.css" />-->
+</head>
+
+<body>
+	<header>
+		<h1 lang="en">Crystal Ski</h1>
+	</header>
+
+	<nav id="breadcrumb">
+		<p>Ti trovi in: <span lang="en">Registrati</span></p>
+	</nav>
+
+	<label for="menu-hamburger" class="hamburger"></label>
+    <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<nav id="menu">
+		<ul>
+			<li><a href="Home.html" style="--i:1">Home</a></li>
+			<li><a href="Tariffe.html" style="--i:2">Tariffe</a></li>
+			<li><a href="Mappa.html" style="--i:3">Mappa</a></li>			
+			<li><a href="Servizi.html" style="--i:4">Servizi</a></li>
+			<li><a href="Eventi.html" style="--i:5">Eventi e Gare</a></li>
+			<li><a href="Recensioni.html" style="--i:6">Recensioni</a></li>
+			<li><a href="Login.html" style="--i:7">Login</a></li>
+		</ul>
+	</nav>
+
+	<div id="register">
+		<div id="registerBox">
+			<form action="newUser.php" method="post">
+				<h1 id="registrati">Registrati</h1>
+				
+				<ul>
+					<userInputErrors/>
+				</ul>
+
+				<label for="email"><b>Email</b></label>
+				<input type="text" placeholder="Inserisci E-mail" name="REmail" id="email" value="<emailValue />" required>
+			
+				<label for="username"><b>Username</b></label>
+				<input type="text" placeholder="Inserisci Username" name="RUsername" id="username" value="<usernameValue />" required>
+
+				<label for="name"><b>Nome</b></label>
+				<input type="text" placeholder="Inserisci Nome" name="RName" id="name" value="<nameValue />" required>
+
+				<label for="surname"><b>Cognome</b></label>
+				<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="surname" value="<surnameValue />" required>
+
+				<label for="city"><b>Città</b></label>
+				<input type="text" placeholder="Inserisci città" name="RCity" id="city" value="<cityValue />" required>
+
+				<label for="register-psw"><b>Password</b></label>
+				<input type="password" placeholder="Inserisci Password" name="RPassword" id="register-psw" required>
+			
+				<label for="psw-repeat"><b>Ripeti Password</b></label>
+				<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="psw-repeat" required>
+			
+				<button type="submit" name="submit" class="registerbtn">Registrati</button>
+			</form>
+		</div>
+	</div>
+
+
+	<footer>
+		<div id="address">
+			<p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
+			<p>Contatto telefonico: 345 6789102</p>
+			<p lang="en">email: crystalski@gmail.com</p>
+		</div>		
+	    <p class="author" lang="en">Crystal Ski Production</p> 
+		<p class="author" lang="en">All rights Reserved</p>	
+		<img class="imgValidCode" src="../images/html5.png" alt="html valido"/>
+		<img class="imgValidCode" src="../images/css.png" alt="css valido"/>			
+	</footer>
+</body>
+</html>
