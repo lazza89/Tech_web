@@ -7,6 +7,7 @@ $HTMLPage = file_get_contents("../html/Register.html");
 $mail = "";
 $username = "";
 $pw = "";
+$repeatPw = "";
 $name = "";
 $surname = "";
 $city = "";
@@ -32,6 +33,11 @@ if(isset($_POST["submit"])){
     if(!preg_match("/^(?=.*[0-9])(?=.*[a-z])[a-zA-Z0-9!.@#$%^&*]{6,16}$/",$pw)){   
         $errorMSG .= "<li>Password non conforme</li>";
     }
+
+    $repeatPw = $_POST["RPasswordRepeat"];
+    if($pw != $repeatPw){   
+        $errorMSG .= "<li>Le password non coincidono</li>";
+    }
     //deve essere almeno 3 caratteri e lunga 30, può contenere solo lettere
     $name = $_POST["RName"];
     if(!preg_match("/^[A-Z]{2,30}+$/i",$name)){
@@ -47,6 +53,8 @@ if(isset($_POST["submit"])){
     if(!preg_match("/^[A-Z]{2,40}+$/i",$city)){
         $errorMSG .= "<li>Città non conforme</li>";
     }
+
+
 
     if($errorMSG == ""){
         $connection = new DBConnection();
@@ -71,15 +79,18 @@ if(isset($_POST["submit"])){
                     $surname = "";
                     $city = "";
 
+                    $HTMLPage = str_replace("registerNotDone", "registerDone", $HTMLPage);
+                    $HTMLPage = str_replace("registerBox", "registerBoxHidden", $HTMLPage);
+                    
+                    header( "refresh:5; url=login.php" ); 
                 }else{
                     $errorMSG .= "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
                 }
             }
-
+            $connection->closeDBConnection();
         } 
     }
     $HTMLPage = str_replace("<userInputErrors/>", $errorMSG, $HTMLPage);
-    
  
 
 }

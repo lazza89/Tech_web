@@ -20,6 +20,10 @@ class DBConnection{
             return true;
         }
     }
+
+    public function closeDBConnection(){
+        mysqli_close($this->connection);
+    }
     
     /* NEW USER FUNCTION */
     public function createNewUser($mail, $username, $pw, $name, $surname, $city){

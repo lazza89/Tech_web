@@ -456,14 +456,19 @@ button:hover {
 }
 
 #registerBox {
-  padding: 2.5em;
+	padding: 2.5em;
 	width: 60%;
+	min-width: 320px;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
 	border:  2px solid  #336ef0;
 	box-shadow: 5px 8px #6693f5;
 	margin: 0.7em;
+}
+
+#registerBoxHidden{
+	display: none;
 }
 
 #registrati{
@@ -474,6 +479,15 @@ button:hover {
 #registerBox ul{
 	color: red;
 	padding-bottom: 1em;
+}
+
+#registerDone h2{
+	text-align: center;
+	margin: 2em;
+}
+
+#registerNotDone{
+	display: none;
 }
 
 input[type=text], input[type=password] {
