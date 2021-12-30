@@ -57,6 +57,40 @@ class DBConnection{
         }
     }
 
+    public function checkLoginCredentials($username, $password){
+        $checkLoginCredentials = "SELECT `email`, `username`, `password`, `name`, `surname`, `city` from `user` WHERE `username` like \"$username\" and `password` like \"$password\" ";
+        $queryResult = mysqli_query($this->connection, $checkLoginCredentials) or die (mysqli_error($this->connection)); 
+
+        if(mysqli_num_rows($queryResult) > 0){
+            $row = mysqli_fetch_assoc($queryResult);
+            return $row;
+        }else{
+            return "";
+        }
+    }
+
+    public function insertComment($username, $comment, $stars){
+        $insertComment = "INSERT INTO `comment` (`id`, `username`, `comment`, `stars`, `date`, `isBanned`) values (NULL, \"$username\", \"$comment\", \"$stars\", NOW(), NULL);";
+        $queryResult = mysqli_query($this->connection, $insertComment) or die (mysqli_error($this->connection)); 
+
+        if(mysqli_affected_rows($this->connection) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getComments(){
+        $loadComments = "SELECT top 20 * from `comment`";
+        $queryResult = mysqli_query($this->connection, $loadComments) or die (mysqli_error($this->connection)); 
+
+        if(mysqli_num_rows($queryResult) > 0){
+            return $queryResult;
+        }else{
+            return "";
+        }
+    }
+
 
 
 
