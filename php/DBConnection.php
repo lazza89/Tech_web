@@ -81,7 +81,7 @@ class DBConnection{
     }
 
     public function getComments(){
-        $loadComments = "SELECT top 20 * from `comment`";
+        $loadComments = "SELECT * from `comment` LIMIT 10";
         $queryResult = mysqli_query($this->connection, $loadComments) or die (mysqli_error($this->connection)); 
 
         if(mysqli_num_rows($queryResult) > 0){

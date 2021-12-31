@@ -17,7 +17,7 @@ ALTER TABLE
 CREATE TABLE `comment`(
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `username` VARCHAR(255) NOT NULL,
-    `comment` VARCHAR(255) NOT NULL,
+    `comment` VARCHAR(400) NOT NULL,
     `stars` TINYINT UNSIGNED NOT NULL,
     `date` DATETIME NOT NULL,
     `isBanned` VARCHAR(255) NULL,

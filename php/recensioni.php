@@ -19,15 +19,24 @@ $connectionOK = $connection->openDBConnection();
 if($connectionOK){
     $query = $connection->getComments();
     if($query){
-        $i = 0;
         while($row = mysqli_fetch_assoc($query)){
             $finalComment = "";
             $commentHead = "<div class=\"comments\"><div class = \"userDetails\">";
-            $commentName = "<h3>" +  $row["username"] + "</h3>";
-            $stars
+            $commentName = "<h3>" .  $row["username"] . "</h3>";
+            $stars = "";
+            for($i = 0; $i < $row["stars"]; $i++){
+                $stars .= "<div class=\"gold_star\"></div>";
+            }
+            for($i = 5; $i > $row["stars"]; $i--){
+                $stars .= "<div class=\"grey_star\"></div>";
+            }
+            $dateComment = "</div><p class =\"commentDate\">" . $row["date"] . "</p>";
+            $commentItself = "<p class =\"comment\">" . $row["comment"] . "</p></div><comments/>";
 
-
+            $finalComment .= $commentHead .= $commentName .= $stars .= $dateComment .= $commentItself;
+            $HTMLPage = str_replace("<comments/>", $finalComment, $HTMLPage);
         }
+
 
     }else{
         $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
@@ -37,6 +46,21 @@ if($connectionOK){
     $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
 }
 
+
+/*
+<div class="comments">
+			<div class = "userDetails">
+				<h3>Genoveffo semplice</h3>
+				<div class="gold_star"></div>
+				<div class="gold_star"></div>
+				<div class="gold_star"></div>
+				<div class="gold_star"></div>
+				<div class="grey_star"></div>
+			</div>
+			<p class ="commentDate">12/11/2021 - 10:54</p>
+			<p class ="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+		</div>	
+*/
 
 
 
@@ -65,7 +89,7 @@ if(isset($_POST["submit"])){
         if($connectionOK){
             $query = $connection->insertComment($username, $comment, $stars);
             if($query){
-                header( "refresh:5; url=recensioni.php" ); 
+                header( "refresh:0; url=recensioni.php" ); 
 
             }else{
                 $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
