@@ -41,10 +41,12 @@ if($connectionOK){
     }else{
         $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
     }
-
+    
+    $connection->closeDBConnection();
 }else{
     $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
 }
+
 
 
 /*

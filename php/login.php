@@ -52,10 +52,12 @@ if(isset($_POST["submit"])){
             }else{
                 $errorMSG = "<li>Username e Password non corretti</li>";
             }
+
+            $connection->closeDBConnection();
+            
         }else{
             $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
         }
-
 
     }
 
