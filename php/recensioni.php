@@ -9,13 +9,17 @@ if(!isset($_SESSION)) {
 }
 
 if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+    $username = $_SESSION["username"];
     $HTMLPage = str_replace("<li><a href=\"login.php\" style=\"--i:7\">Login</a></li>", "<li><a href=\"logout.php\" style=\"--i:7\">Logout</a></li>", $HTMLPage);
+    $HTMLPage = str_replace("<p>Ti trovi in: <a href=\"home.php\" lang=\"en\">Home</a> &gt; &gt; Recensioni</p>", "<p>Ciao " . $username . "! Ti trovi in: <a href=\"home.php\" lang=\"en\">Home</a> &gt; &gt; Recensioni</p>", $HTMLPage);
+
     $HTMLPage = str_replace("writeACommentHidden", "writeAComment", $HTMLPage);
 }
 
 $connection = new DBConnection();
 $connectionOK = $connection->openDBConnection();
 
+$connectionERR = "";
 if($connectionOK){
     $query = $connection->getComments();
     if($query){
@@ -31,22 +35,25 @@ if($connectionOK){
                 $stars .= "<div class=\"grey_star\"></div>";
             }
             $dateComment = "</div><p class =\"commentDate\">" . $row["date"] . "</p>";
-            $commentItself = "<p class =\"comment\">" . $row["comment"] . "</p></div><comments/>";
+            $commentItself = "<p class =\"comment\">" . $row["comment"] . "</p></div><!--<comments/>-->";
 
             $finalComment .= $commentHead .= $commentName .= $stars .= $dateComment .= $commentItself;
-            $HTMLPage = str_replace("<comments/>", $finalComment, $HTMLPage);
+            $HTMLPage = str_replace("<!--<comments/>-->", $finalComment, $HTMLPage);
         }
 
 
     }else{
-        $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
+        $connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>"; 
     }
     
     $connection->closeDBConnection();
 }else{
-    $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
+    $connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>";
 }
 
+if($connectionERR != ""){
+    $HTMLPage = str_replace("<!--<connectionError/>-->", $connectionERR, $HTMLPage);
+}
 
 
 /*
@@ -110,7 +117,7 @@ if(isset($_POST["submit"])){
         $errorMSG = $openList;
     }
 
-    $HTMLPage = str_replace("<userInputErrors/>", $errorMSG, $HTMLPage);
+    $HTMLPage = str_replace("<!--<userInputErrors/>-->", $errorMSG, $HTMLPage);
 
 
 

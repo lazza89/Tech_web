@@ -91,6 +91,18 @@ class DBConnection{
         }
     }
 
+    public function deleteUser($username){
+        $deleteUserOnTable = "DELETE FROM user WHERE username like \"$username\"";
+        
+        $queryResult = mysqli_query($this->connection, $deleteUserOnTable) or die (mysqli_error($this->connection)); 
+        if(mysqli_affected_rows($this->connection) > 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
 
 
