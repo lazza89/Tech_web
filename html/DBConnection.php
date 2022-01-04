@@ -69,7 +69,7 @@ class DBConnection{
         }
     }
 
-    public function insertComment($username, $comment, $stars, $userId){
+    public function insertComment( $userId, $username, $comment, $stars){
         $insertComment = "INSERT INTO `comment` (`id`, `userId`, `username`, `comment`, `stars`, `date`) values (NULL, \"$userId\", \"$username\", \"$comment\", \"$stars\", NOW());";
         $queryResult = mysqli_query($this->connection, $insertComment) or die (mysqli_error($this->connection)); 
 

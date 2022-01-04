@@ -24,18 +24,13 @@ if(!isset($_SESSION)) {
 	</header>
 
 	<nav id="breadcrumb">
-    <?php
-    if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-        $username = $_SESSION['username'];
-    ?>
-		<p>Ciao <?=$username?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-    <?php
-        }else{
-    ?>
+
+    <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
+		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
+    <?php }else{ ?>
         <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-    <?php
-    }
-    ?>
+    <?php } ?>
+    
 	</nav>
 
     <label for="menu-hamburger" class="hamburger"></label>
