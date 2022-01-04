@@ -420,7 +420,7 @@ footer .imgValidCode{
 
 #loginBox{
 	width: 280px;
-  	border:  2px solid  #336ef0;
+  border:  2px solid  #336ef0;
 	box-shadow: 5px 8px #6693f5;
 	margin: 0.7em;
 }
@@ -443,12 +443,13 @@ footer .imgValidCode{
 }
 
 #LUsername, #LPassword{
-	padding: 12px 25px;
+	width: 100%;
+	padding: 12px 35px;
 	margin: 8px 0;
 	border: 2px solid #ccc;
 	box-sizing: border-box;
 	text-align: center;
-	font-size: large;
+	font-size: medium;
 }
   
 #loginBox button {
@@ -458,7 +459,7 @@ footer .imgValidCode{
 	margin: 8px 0;
 	border: none;
 	cursor: pointer;
-	font-size: large;
+	font-size: medium;
 }
   
 button:hover {

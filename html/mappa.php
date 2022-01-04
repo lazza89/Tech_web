@@ -33,27 +33,16 @@ if(!isset($_SESSION)) {
     
 	</nav>
 
-    <label for="menu-hamburger" class="hamburger"></label>
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
 	<nav id="menu">
 		<ul>
-			<li lang="en"><a href="home.php" style="--i:1">Home</a></li>
-            <li><a href="tariffe.php" style="--i:2">Tariffe</a></li>
+			<li lang="en"><a href="home.php">Home</a></li>
+            <li><a href="tariffe.php">Tariffe</a></li>
             <li>Mappa</li>         
-            <li><a href="servizi.php" style="--i:4">Servizi</a></li>
-            <li><a href="eventi.php" style="--i:5">Eventi e Gare</a></li>
-            <li><a href="recensioni.php" style="--i:6">Recensioni</a></li>
-            <?php 
-			if(isset($_SESSION['login']) && $_SESSION['login'] == true){
-			?>
-				<li><a href="logout.php" style="--i:7">Profilo e Logout</a></li>
-			<?php
-		 	}else{ 
-			?>
-				<li><a href="login.php" style="--i:7">Login</a></li>
-			<?php
-			}        
-			?>
+            <li><a href="servizi.php">Servizi</a></li>
+            <li><a href="eventi.php">Eventi e Gare</a></li>
+            <li><a href="recensioni.php">Recensioni</a></li>
 		</ul>
 	</nav>
 

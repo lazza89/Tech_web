@@ -125,8 +125,8 @@ if($errorMSG){
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Registrati</p>
 	</nav>
 
-	<label for="menu-hamburger" class="hamburger"></label>
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
 	<nav id="menu">
 		<ul>
 			<li><a href="home.php">Home</a></li>
