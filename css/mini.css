@@ -189,11 +189,11 @@ footer .imgValidCode{
 
 .hamburger {
 	display: block;
-	}
-input[type="checkbox"].menu-toggle + * {
+}
+input[type="checkbox"].menu-toggle ~ nav {
 	display: none;
 }
-input[type="checkbox"].menu-toggle:checked + * {
+input[type="checkbox"].menu-toggle:checked ~ nav {
 	display: flex;
 }
 

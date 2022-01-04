@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -18,7 +24,18 @@
 	</header>
 
 	<nav id="breadcrumb">
-		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
+    <?php
+    if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+        $username = $_SESSION['username'];
+    ?>
+		<p>Ciao <?=$username?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
+    <?php
+        }else{
+    ?>
+        <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
+    <?php
+    }
+    ?>
 	</nav>
 
     <label for="menu-hamburger" class="hamburger"></label>
@@ -31,7 +48,17 @@
             <li><a href="servizi.php" style="--i:4">Servizi</a></li>
             <li><a href="eventi.php" style="--i:5">Eventi e Gare</a></li>
             <li><a href="recensioni.php" style="--i:6">Recensioni</a></li>
-            <li><a href="login.php" style="--i:7">Login</a></li>
+            <?php 
+			if(isset($_SESSION['login']) && $_SESSION['login'] == true){
+			?>
+				<li><a href="logout.php" style="--i:7">Profilo e Logout</a></li>
+			<?php
+		 	}else{ 
+			?>
+				<li><a href="login.php" style="--i:7">Login</a></li>
+			<?php
+			}        
+			?>
 		</ul>
 	</nav>
 

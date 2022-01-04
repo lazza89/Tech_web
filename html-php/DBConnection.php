@@ -27,7 +27,7 @@ class DBConnection{
     
     /* NEW USER FUNCTION */
     public function createNewUser($mail, $username, $pw, $name, $surname, $city){
-        $createNewUserQuery = "INSERT INTO `user` (`email`,`username`, `password`, `name`, `surname`, `city`, `isAdmin`) values (\"$mail\", \"$username\", \"$pw\", \"$name\", \"$surname\", \"$city\", 0)";
+        $createNewUserQuery = "INSERT INTO `user` (`id`, `email`,`username`, `password`, `name`, `surname`, `city`, `isAdmin`) values (NULL, \"$mail\", \"$username\", \"$pw\", \"$name\", \"$surname\", \"$city\", 0)";
         
         $queryResult = mysqli_query($this->connection, $createNewUserQuery) or die (mysqli_error($this->connection)); 
         if(mysqli_affected_rows($this->connection) > 0){
@@ -58,7 +58,7 @@ class DBConnection{
     }
 
     public function checkLoginCredentials($username, $password){
-        $checkLoginCredentials = "SELECT `email`, `username`, `password`, `name`, `surname`, `city` from `user` WHERE `username` like \"$username\" and `password` like \"$password\" ";
+        $checkLoginCredentials = "SELECT `id`, `email`, `username`, `password`, `name`, `surname`, `city` from `user` WHERE `username` = \"$username\" and `password` = \"$password\" ";
         $queryResult = mysqli_query($this->connection, $checkLoginCredentials) or die (mysqli_error($this->connection)); 
 
         if(mysqli_num_rows($queryResult) > 0){
@@ -69,8 +69,8 @@ class DBConnection{
         }
     }
 
-    public function insertComment($username, $comment, $stars){
-        $insertComment = "INSERT INTO `comment` (`id`, `username`, `comment`, `stars`, `date`, `isBanned`) values (NULL, \"$username\", \"$comment\", \"$stars\", NOW(), NULL);";
+    public function insertComment($username, $comment, $stars, $userId){
+        $insertComment = "INSERT INTO `comment` (`id`, `userId`, `username`, `comment`, `stars`, `date`) values (NULL, \"$userId\", \"$username\", \"$comment\", \"$stars\", NOW());";
         $queryResult = mysqli_query($this->connection, $insertComment) or die (mysqli_error($this->connection)); 
 
         if(mysqli_affected_rows($this->connection) > 0){

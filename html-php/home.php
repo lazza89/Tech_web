@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -18,11 +24,19 @@
 	</header>
 
 	<nav id="breadcrumb">
+
+	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
+		<p>Ciao <?= $_SESSION['username'] ?>! Ti trovi in: <span lang="en">Home</span></p>
+		<a href="logout.php">Logout</a>
+	<?php } else { ?>
 		<p>Ti trovi in: <span lang="en">Home</span></p>
+		<a href="login.php">Login</a>
+	<?php } ?>
+	
 	</nav>
 
-	<label for="menu-hamburger" class="hamburger"></label>
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
 	<nav id="menu">
 		<ul>
 			<li lang="en">Home</li>
@@ -31,7 +45,9 @@
 			<li><a href="servizi.php" style="--i:3">Servizi</a></li>
 			<li><a href="eventi.php" style="--i:4">Eventi e Gare</a></li>
 			<li><a href="recensioni.php" style="--i:5">Recensioni</a></li>
-			<li><a href="login.php" style="--i:6">Login</a></li>
+			<?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
+				<li><a href="areaPersonale.php" style="--i:6">Profilo</a></li>
+			<?php } ?>
 		</ul>
 	</nav>
 
@@ -47,7 +63,7 @@
 		<article id="news">
 			<h2 lang="en">News giornaliere </h2>
 			<ul>
-				<li> <strong> 4/4 </strong> impianti aperti</li>
+				<li> <strong>4/4</strong> impianti aperti</li>
 				<li><p> <strong> 9/10 </strong> piste aperte</p>
 				<p> (Chiusa per mancanza di neve la pista 1) </p></li>
 				<li>Sole con <strong> +3° </strong></li>
@@ -56,7 +72,7 @@
 	</div>
  
 	<div class="content" id="presentazione">
-		<img id="imgHome" src="../images/sciatori.jpg" alt=" "/> 		
+		<img id="imgHome" src="../images/sciatori.jpg" alt=" da fare irene"/> 		
 		<p>Nel punto più alto del gruppo del Cristallo, oltre 2000 metri,  si trova il comprensorio sciistico “<span lang="en">Crystal Ski</span>” vicino a Cortina e situato nel comune Auronzo di Cadore, in provincia di Belluno.</p> 
 		<p>Con ben 5 impianti di risalita e più di 50 chilometri di piste avrete la possibilità di trascorrere indimenticabili giornate nelle nostre 9 piste, sempre ben battute e ricche di neve grazie ai 100 cannoni posti ai lati.</p> 
 		<p>Quando arrivi in cima, non avere fretta di scendere, goditi la vista mozzafiato insieme ad un delizioso piatto caldo nella nostra baita “360gradi”
@@ -86,18 +102,6 @@
 		<p>Una leggenda narra che si ergesse un castello con un’incantevole principessa, dove la sua bellezza non passò inosservata al pastore Bertoldo, di cui s’innamorò. Ancor oggi, il nome di Bertoldo è legato al monte Cristallo, che gli ampezzani chiamano “Croda de Bertoldo”.</p>
 		<p>Fu scalato per la prima volta dall’alpinista austriaco di Vienna <span lang="de">Paul Grohmann</span> il 14 Settembre 1865.</p>
 	</div>
-
-	
-	<footer>
-		<div id="address">
-			<p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
-			<p>Contatto telefonico: 345 6789102</p>
-			<p lang="en">email: crystalski@gmail.com</p>
-		</div>		
-	    <p class="author" lang="en">Crystal Ski Production</p> 
-		<p class="author" lang="en">All rights Reserved</p>	
-		<img class="imgValidCode" src="../images/html5.png" alt="html valido"/>
-		<img class="imgValidCode" src="../images/css.png" alt="css valido"/>			
-	</footer>
+	<?php include('../components/footer.php') ?>
 </body>
 </html>
