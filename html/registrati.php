@@ -65,9 +65,6 @@ if(!isset($_SESSION["login"])){
 			$connectionOK = $connection->openDBConnection();
 
 			if($connectionOK){
-				if($connection->checkEmailOnDB($mail)){
-					$errorMSG .= "<li>Email già associata ad un account</li>";
-				}
 				if($connection->checkUsernameOnDB($username)){
 					$errorMSG .= "<li>Username già associato ad un account</li>";
 				}

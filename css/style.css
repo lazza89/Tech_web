@@ -657,19 +657,10 @@ input[type=text]:focus, input[type=password]:focus {
 	margin: 0.7em;
 }
 
-#personalAreaBoxHidden{
-	display: none;
-}
-
 #modificationDone h2{
 	text-align: center;
 	margin: 2em;
 }
-
-#modificationNotDone{
-	display: none;
-}
-
 
 #datiUtente{
 	text-align: center;
@@ -681,7 +672,7 @@ input[type=text]:focus, input[type=password]:focus {
 	padding-bottom: 1em;
 }
 
-#PEmail, #PUsername, #PName, #PSurname, #PCity, #AreaPersonal-psw {
+#PEmail, #PUsername, #PName, #PSurname, #PCity, #PPassword, #POldPassword {
 	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;

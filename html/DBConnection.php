@@ -37,16 +37,6 @@ class DBConnection{
         }
     }
 
-    public function checkEmailOnDB($mail){
-        $checkEmailQuery = "SELECT `email` from `user` WHERE `email` = \"$mail\"";
-        $queryResult = mysqli_query($this->connection, $checkEmailQuery) or die (mysqli_error($this->connection)); 
-        if(mysqli_num_rows($queryResult) > 0 ){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
     public function checkUsernameOnDB($username){
         $checkUsernameQuery = "SELECT `username` from `user` WHERE `username` = \"$username\"";
         $queryResult = mysqli_query($this->connection, $checkUsernameQuery) or die (mysqli_error($this->connection)); 
@@ -91,10 +81,20 @@ class DBConnection{
         }
     }
 
+    public function updateUser($id, $mail, $username, $pw, $name, $surname, $city){
+        $modifyUserQuery = "UPDATE `user` SET `email` = \"$mail\", `username` = \"$username\", `password` = \"$pw\", `name` = \"$name\", `surname` = \"$surname\", `city` = \"$city\" WHERE `id` = \"$id\"";
+        mysqli_query($this->connection, $modifyUserQuery) or die (mysqli_error($this->connection)); 
+        if(mysqli_affected_rows($this->connection) > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public function deleteUser($username){
-        $deleteUserOnTable = "DELETE FROM user WHERE username = \"$username\"";
+        $deleteUserOnTable = "DELETE FROM `user` WHERE `username` = \"$username\"";
         
-        $queryResult = mysqli_query($this->connection, $deleteUserOnTable) or die (mysqli_error($this->connection)); 
+        mysqli_query($this->connection, $deleteUserOnTable) or die (mysqli_error($this->connection)); 
         if(mysqli_affected_rows($this->connection) > 0){
             return true;
         }else{
@@ -104,7 +104,7 @@ class DBConnection{
     }
 
     public function deleteComment($commentID){
-        $deleteComment = "DELETE FROM comment WHERE id = \"$commentID\"";
+        $deleteComment = "DELETE FROM `comment` WHERE `id` = \"$commentID\"";
         
         $queryResult = mysqli_query($this->connection, $deleteComment) or die (mysqli_error($this->connection)); 
         if(mysqli_affected_rows($this->connection) > 0){

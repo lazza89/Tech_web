@@ -119,6 +119,9 @@ if(isset($_POST["submit"])){
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
 			<li>Recensioni</li>
+			<?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
+				<li><a href="areaPersonale.php">Profilo</a></li>
+			<?php } ?>
 		</ul>
 	</nav>
 

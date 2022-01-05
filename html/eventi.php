@@ -44,6 +44,10 @@ if(!isset($_SESSION)) {
 			<li><a href="servizi.php">Servizi</a></li>
 			<li>Eventi e Gare</li>
 			<li><a href="recensioni.php">Recensioni</a></li>
+			<?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
+				<li><a href="areaPersonale.php">Profilo</a></li>
+			<?php } ?>
+
 		</ul>
 	</nav> 
 
