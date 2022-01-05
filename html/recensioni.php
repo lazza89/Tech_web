@@ -155,7 +155,7 @@ if(isset($_POST["submit"])){
 		?>
 			<div class="comments">
 				<div class = "userDetails">
-					<h3><?=mysqli_fetch_assoc($connection->getUsernameById($row["id"]))["username"]?></h3>
+					<h3><?=mysqli_fetch_assoc($connection->getUsernameById($row["userId"]))["username"]?></h3>
 
 					<?php for ($i = 0; $i < 5; $i++) { ?>
 							<div class='star<?=$row['stars'] > $i ? ' gold' : '' ?>'></div>
