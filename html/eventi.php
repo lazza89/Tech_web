@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -9,7 +15,6 @@
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
-	<!--<link rel="stylesheet" media="print" href="print.css" />-->
 </head>
 
 <body>
@@ -18,20 +23,27 @@
 	</header>
 
 	<nav id="breadcrumb">
-		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi e Gare</p>
+
+		<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
+			<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi</p>
+			<a href="logout.php">Logout</a>
+		<?php } else { ?>
+			<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi</p>
+			<a href="login.php">Login</a>
+		<?php } ?>
+
 	</nav>
 	
-	<label for="menu-hamburger" class="hamburger"></label>
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
 	<nav id="menu">
 		<ul>
-			<li lang="en"><a href="home.php" style="--i:1">Home</a></li>
-			<li><a href="tariffe.php" style="--i:2">Tariffe</a></li>
-			<li><a href="mappa.php" style="--i:3">Mappa</a></li>			
-			<li><a href="servizi.php" style="--i:4">Servizi</a></li>
+			<li lang="en"><a href="home.php">Home</a></li>
+			<li><a href="tariffe.php">Tariffe</a></li>
+			<li><a href="mappa.php">Mappa</a></li>			
+			<li><a href="servizi.php">Servizi</a></li>
 			<li>Eventi e Gare</li>
-			<li><a href="recensioni.php" style="--i:6">Recensioni</a></li>
-			<li><a href="login.php" style="--i:7">Login</a></li>
+			<li><a href="recensioni.php">Recensioni</a></li>
 		</ul>
 	</nav> 
 
@@ -69,16 +81,7 @@
 		</dl>
 	</div>
 	
-	<footer>
-		<div id="address">
-			<p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
-			<p>Contatto telefonico: 345 6789102</p>
-			<p lang="en">email: crystalski@gmail.com</p>
-		</div>		
-	    <p class="author" lang="en">Crystal Ski Production</p> 
-		<p class="author" lang="en">All rights Reserved</p>	
-		<img class="imgValidCode" src="../images/html5.png" alt="html valido"/>
-		<img class="imgValidCode" src="../images/css.png" alt="css valido"/>			
-	</footer>
+	<?php include('../components/footer.php') ?>
+
 </body>
 </html>

@@ -90,7 +90,6 @@ if(isset($_POST["submit"])){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
-	<!--<link rel="stylesheet" media="print" href="print.css" />-->
 </head>
 
 <body>
@@ -104,7 +103,7 @@ if(isset($_POST["submit"])){
 		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Recensioni</p>
 		<a href="logout.php">Logout</a>
 	<?php } else { ?>
-		<p>Ti trovi in: <span lang="en">Recensioni</span></p>
+		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Recensioni</p>
 		<a href="login.php">Login</a>
 	<?php } ?>
 
@@ -186,8 +185,6 @@ if(isset($_POST["submit"])){
 
 	</div>
 	
-	<footer>
 		<?php include('../components/footer.php') ?>			
-	</footer>
 </body>
 </html>

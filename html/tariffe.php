@@ -1,3 +1,12 @@
+<?php
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="it">
 
@@ -9,7 +18,6 @@
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
-    <!--<link rel="stylesheet" media="print" href="print.css" />-->
 </head>
 
 <body>
@@ -18,11 +26,19 @@
 	</header>
 
 	<nav id="breadcrumb">
-		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
-	</nav>
 
-    <label for="menu-hamburger" class="hamburger"></label>
+    <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
+        <p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
+        <a href="logout.php">Logout</a>
+    <?php }else{ ?>
+        <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
+        <a href="login.php">Login</a>
+    <?php } ?>
+
+    </nav>
+
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
+	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
 	<nav id="menu">
 		<ul>
 			<li lang="en"><a href="home.php">Home</a></li>
@@ -31,7 +47,6 @@
             <li><a href="servizi.php">Servizi</a></li>
             <li><a href="eventi.php">Eventi e Gare</a></li>
             <li><a href="recensioni.php">Recensioni</a></li>
-            <li><a href="login.php">Login</a></li>
 		</ul>
 	</nav>
 
@@ -143,16 +158,7 @@
         <p>In assenza dell'adulto pagante, il bambino è da considerarsi come <span lang="en">Junior.</span></p>
     </div>
 
-    <footer>
-        <div id="address">
-            <p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
-            <p>Contatto telefonico: 345 6789102</p>
-            <p lang="en">email: crystalski@gmail.com</p>
-        </div>      
-        <p class="author" lang="en">Crystal Ski Production</p> 
-        <p class="author" lang="en">All rights Reserved</p> 
-        <img class="imgValidCode" src="../images/html5.png" alt="html valido"/>
-        <img class="imgValidCode" src="../images/css.png" alt="css valido"/>         
-    </footer>
+    <?php include('../components/footer.php') ?>			        
+
 </body>
 </html>
