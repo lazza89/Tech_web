@@ -34,6 +34,7 @@ if(isset($_POST["submit"])){
                     $_SESSION['name'] = $query['name'];
                     $_SESSION['surname'] = $query['surname'];
                     $_SESSION['city'] = $query['city'];
+					$_SESSION['isAdmin'] = $query['isAdmin'];
            
                     header( "refresh:0; url=home.php" ); 
 

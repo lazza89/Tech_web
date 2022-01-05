@@ -9,8 +9,22 @@ if(!isset($_SESSION)) {
 $connection = new DBConnection();
 $connectionOK = $connection->openDBConnection();
 
+$errorMSG = "";
 $connectionERR = "";
 $commentsQuery = "";
+
+if(isset($_POST["DComment"])){
+	if($connectionOK){
+		$query = $connection->deleteComment($_POST["DComment"]);
+		if($query){
+			header( "refresh:0; url=recensioni.php" ); 
+		}else{
+			$connectionERR = "<li>Problemi di connessione, Commento non cancellato</li>";
+		}
+	}else{
+		$connectionERR = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
+	}
+}
 
 
 /*
@@ -28,7 +42,6 @@ $commentsQuery = "";
 		</div>	
 */
 
-$errorMSG = "";
 
 if(isset($_POST["submit"])){
 
@@ -61,6 +74,7 @@ if(isset($_POST["submit"])){
         $errorMSG = $openList;
     }
 }
+
 
 ?>
 
@@ -148,6 +162,14 @@ if(isset($_POST["submit"])){
 				</div>
 				<p class ="commentDate"><?=$row["date"]?></p>
 				<p class ="comment"><?=$row["comment"]?></p>
+				
+				<?php if((isset($_SESSION['login']) && $_SESSION['id'] == $row["userId"]) || (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'])){  ?>
+					<div class = "commentsHeader">
+						<form action="recensioni.php" method="post">
+						<button class="DComment" name="DComment" value="<?=$row["id"]?>">Cancella</button>
+						</form>
+					</div>
+				<?php } ?>
 			</div>	
 				
 		<?php
@@ -155,7 +177,6 @@ if(isset($_POST["submit"])){
 			}else{
 					$connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>"; 
 				}
-    
 				$connection->closeDBConnection();
 			}else{
 				$connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>";
