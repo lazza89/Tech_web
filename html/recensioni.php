@@ -57,7 +57,7 @@ if(isset($_POST["submit"])){
 
     if($errorMSG == ""){
         if($connectionOK){
-            $query = $connection->insertComment($_SESSION["id"], $_SESSION['username'], $comment, $stars);
+            $query = $connection->insertComment($_SESSION["id"], $comment, $stars);
             if($query){
                 header( "refresh:0; url=recensioni.php" ); 
             }else{
@@ -155,7 +155,7 @@ if(isset($_POST["submit"])){
 		?>
 			<div class="comments">
 				<div class = "userDetails">
-					<h3><?=$row["username"]?></h3>
+					<h3><?=mysqli_fetch_assoc($connection->getUsernameById($row["id"]))["username"]?></h3>
 
 					<?php for ($i = 0; $i < 5; $i++) { ?>
 							<div class='star<?=$row['stars'] > $i ? ' gold' : '' ?>'></div>
@@ -177,7 +177,7 @@ if(isset($_POST["submit"])){
 		<?php
 				}
 			}else{
-					$connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>"; 
+				$connectionERR = "<p>Problemi di connessione, ci scusiamo per il disagio</p>"; 
 				}
 				$connection->closeDBConnection();
 			}else{

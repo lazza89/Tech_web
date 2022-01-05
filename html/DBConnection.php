@@ -59,9 +59,9 @@ class DBConnection{
         }
     }
 
-    public function insertComment( $userId, $username, $comment, $stars){
-        $insertComment = "INSERT INTO `comment` (`id`, `userId`, `username`, `comment`, `stars`, `date`) values (NULL, \"$userId\", \"$username\", \"$comment\", \"$stars\", NOW());";
-        $queryResult = mysqli_query($this->connection, $insertComment) or die (mysqli_error($this->connection)); 
+    public function insertComment( $userId, $comment, $stars){
+        $insertComment = "INSERT INTO `comment` (`id`, `userId`, `comment`, `stars`, `date`) values (NULL, \"$userId\", \"$comment\", \"$stars\", NOW());";
+        mysqli_query($this->connection, $insertComment) or die (mysqli_error($this->connection)); 
 
         if(mysqli_affected_rows($this->connection) > 0){
             return true;
@@ -88,6 +88,17 @@ class DBConnection{
             return true;
         }else{
             return false;
+        }
+    }
+
+    public function getUsernameById($id){
+        $getUsernameById = "SELECT `username` FROM `user` WHERE `id` = \"$id\" ";
+        $queryResult = mysqli_query($this->connection, $getUsernameById) or die (mysqli_error($this->connection)); 
+
+        if(mysqli_num_rows($queryResult) > 0){
+            return $queryResult;
+        }else{
+            return "";
         }
     }
 
