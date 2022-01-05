@@ -123,6 +123,7 @@ if($errorMSG){
 
 	<nav id="breadcrumb">
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Registrati</p>
+		<a href="login.php">Login</a>
 	</nav>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
@@ -135,7 +136,6 @@ if($errorMSG){
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
 			<li><a href="recensioni.php">Recensioni</a></li>
-			<li><a href="login.php">Login</a></li>
 		</ul>
 	</nav>
 

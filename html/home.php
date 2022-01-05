@@ -40,13 +40,13 @@ if(!isset($_SESSION)) {
 	<nav id="menu">
 		<ul>
 			<li lang="en">Home</li>
-			<li><a href="tariffe.php" style="--i:1">Tariffe</a></li>
-			<li><a href="mappa.php" style="--i:2">Mappa</a></li>			
-			<li><a href="servizi.php" style="--i:3">Servizi</a></li>
-			<li><a href="eventi.php" style="--i:4">Eventi e Gare</a></li>
-			<li><a href="recensioni.php" style="--i:5">Recensioni</a></li>
+			<li><a href="tariffe.php">Tariffe</a></li>
+			<li><a href="mappa.php">Mappa</a></li>			
+			<li><a href="servizi.php">Servizi</a></li>
+			<li><a href="eventi.php">Eventi e Gare</a></li>
+			<li><a href="recensioni.php">Recensioni</a></li>
 			<?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
-				<li><a href="areaPersonale.php" style="--i:6">Profilo</a></li>
+				<li><a href="areaPersonale.php">Profilo</a></li>
 			<?php } ?>
 		</ul>
 	</nav>

@@ -1,68 +1,71 @@
 <?php
 require_once("DBConnection.php");
 use DB\DBConnection;
+
+if(!isset($_SESSION)) {
+    session_start();
+}
+
 $errorMSG = "";
 
-if(isset($_POST["submit"])){
+if(!isset($_SESSION["login"])){
+	if(isset($_POST["submit"])){
 
-    $username = $_POST["LUsername"];
-    if(!preg_match("/^[A-Z\d]{1,20}+$/i",$username)){
-        $errorMSG = "<li>username non conforme</li>";
-    }
-    $password = $_POST["LPassword"];
-    if(!preg_match("/^[A-Z\d]{1,20}+$/i",$password)){   
-        $errorMSG .= "<li>password non conforme</li>";
-    }
+		$username = $_POST["LUsername"];
+		if(!preg_match("/^[A-Z\d]{1,20}+$/i",$username)){
+			$errorMSG = "<li>username non conforme</li>";
+		}
+		$password = $_POST["LPassword"];
+		if(!preg_match("/^[A-Z\d]{1,20}+$/i",$password)){   
+			$errorMSG .= "<li>password non conforme</li>";
+		}
 
-    if($errorMSG == ""){
-        $connection = new DBConnection();
-        $connectionOK = $connection->openDBConnection();
+		if($errorMSG == ""){
+			$connection = new DBConnection();
+			$connectionOK = $connection->openDBConnection();
 
-        if($connectionOK){
-            $query = $connection->checkLoginCredentials($username, $password);
-            if($query != ""){
+			if($connectionOK){
+				$query = $connection->checkLoginCredentials($username, $password);
+				if($query != ""){
+					if(!isset($_SESSION['login'])) {
+						
+						session_start();
+						$_SESSION['login'] = true;
+						
+						$_SESSION['id'] = $query['id'];
+						$_SESSION['email'] = $query['email'];
+						$_SESSION['username'] = $query['username'];
+						$_SESSION['password'] = $query['password'];
+						$_SESSION['name'] = $query['name'];
+						$_SESSION['surname'] = $query['surname'];
+						$_SESSION['city'] = $query['city'];
+						$_SESSION['isAdmin'] = $query['isAdmin'];
+			
+						header( "refresh:0; url=home.php" ); 
+					}else{
+						$errorMSG = "<li>Login error, Riprova</li>";
+						session_destroy();
+					} 
+				}else{
+					$errorMSG = "<li>Username e Password non corretti</li>";
+				}
+				$connection->closeDBConnection();    
+			}else{
+				$errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
+			}
+		}
 
-                if(!isset($_SESSION['login'])) {
-                    
-                    session_start();
-                    $_SESSION['login'] = true;
-                    
-					$_SESSION['id'] = $query['id'];
-                    $_SESSION['email'] = $query['email'];
-                    $_SESSION['username'] = $query['username'];
-                    $_SESSION['password'] = $query['password'];
-                    $_SESSION['name'] = $query['name'];
-                    $_SESSION['surname'] = $query['surname'];
-                    $_SESSION['city'] = $query['city'];
-					$_SESSION['isAdmin'] = $query['isAdmin'];
-           
-                    header( "refresh:0; url=home.php" ); 
+	}
+}else{
+	$errorMSG = "<li>Hey! che ci fai tu qui?</li>";
+	header( "refresh:3; url=home.php" );
+}
 
-                }else{
-                    $errorMSG = "<li>Login error, Riprova</li>";
-                    session_destroy();
-                }
-
-               
-            }else{
-                $errorMSG = "<li>Username e Password non corretti</li>";
-            }
-
-            $connection->closeDBConnection();
-            
-        }else{
-            $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
-        }
-
-    }
-
-    if($errorMSG){
-        $openList = "<ul>";
-        $closeList = "</ul>";
-        $openList .= $errorMSG .= $closeList;
-        $errorMSG = $openList;
-    }
-
+if($errorMSG){
+	$openList = "<ul>";
+	$closeList = "</ul>";
+	$openList .= $errorMSG .= $closeList;
+	$errorMSG = $openList;
 }
 
 ?>
@@ -100,7 +103,6 @@ if(isset($_POST["submit"])){
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
 			<li><a href="recensioni.php">Recensioni</a></li>
-			<li lang="en">Login</li>
 		</ul>
 	</nav>
 
@@ -125,15 +127,7 @@ if(isset($_POST["submit"])){
 	</div>
 	
 	<footer>
-		<div id="address">
-			<p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
-			<p>Contatto telefonico: 345 6789102</p>
-			<p lang="en">email: crystalski@gmail.com</p>
-		</div>		
-	    <p class="author" lang="en">Crystal Ski Production</p> 
-		<p class="author" lang="en">All rights Reserved</p>	
-		<img class="imgValidCode" src="../images/html5.png" alt="html valido"/>
-		<img class="imgValidCode" src="../images/css.png" alt="css valido"/>			
+		<?php include('../components/footer.php') ?>			
 	</footer>
 </body>
 </html>

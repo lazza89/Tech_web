@@ -119,7 +119,7 @@ if(isset($_POST["submit"])){
 			<li><a href="mappa.php">Mappa</a></li>			
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
-			<li lang="en">Recensioni</li>
+			<li>Recensioni</li>
 		</ul>
 	</nav>
 
