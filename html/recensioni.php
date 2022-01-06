@@ -27,28 +27,14 @@ if(isset($_POST["DComment"])){
 }
 
 
-/*
-<div class="comments">
-			<div class = "userDetails">
-				<h3>Genoveffo semplice</h3>
-				<div class="gold_star"></div>
-				<div class="gold_star"></div>
-				<div class="gold_star"></div>
-				<div class="gold_star"></div>
-				<div class="grey_star"></div>
-			</div>
-			<p class ="commentDate">12/11/2021 - 10:54</p>
-			<p class ="comment">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
-		</div>	
-*/
-
-
 if(isset($_POST["submit"])){
 
     $comment = $_POST["commentBox"];
-    if(!preg_match("/^[A-Z\d,.èéàò!?() ]{1,300}+$/i", $comment)){
+    if(!preg_match("/^[A-Z\d,.èéì% àò!?() ]{1,300}+$/i", $comment)){
         $errorMSG .= "<li>Commento non valido</li>";
-    }
+		$errorMSG .= "<li>Il commento non può contenere nuove linee a capo e caratteri inerenti a linguaggi di programmazione</li>";
+		$errorMSG .= "<li>Il commento può essere lungo massimo 300 caratteri</li>";
+	}
 
     $stars = $_POST["starsQuantity"];
     if($stars > 5 or $stars < 0){

@@ -25,37 +25,37 @@ if(!isset($_SESSION["login"])){
 		//deve essere in formato email, non può contenere caratteri speciali riferiti a linguaggi (html, sql)
 		$mail = $_POST["REmail"];
 		if(!preg_match("/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/",$mail)){
-			$errorMSG .= "<li>Email non conforme</li>";
+			$errorMSG .= "<li>Email non conforme, la mail deve essere in formato: testo@dominio.nomedominio</li>";
 		}
 		//deve essere almeno 3 caratteri e lunga 20, può contenere solo numeri e lettere
 		$username = $_POST["RUsername"];
 		if(!preg_match("/^[A-Z\d]{3,20}+$/i",$username)){
-			$errorMSG .= "<li>Username non conforme</li>";
+			$errorMSG .= "<li>Username non conforme, l'username deve contenere solo caratteri alfanumerici senza spaziature, minimo 3 caratteri massimo 20</li>";
+		}
+		//deve essere almeno 3 caratteri e lunga 30, può contenere solo lettere
+		$name = $_POST["RName"];
+		if(!preg_match("/^[A-Z ]{2,30}+$/i",$name)){
+			$errorMSG .= "<li>Nome non conforme, il nome può contenere solo lettere, minimo 2 caratteri massimo 30</li>";
+		}
+		//deve essere almeno 3 caratteri e lunga 30, può contenere solo lettere
+		$surname = $_POST["RSurname"];
+		if(!preg_match("/^[A-Z ]{2,30}+$/i",$surname)){
+			$errorMSG .= "<li>Cognome non conforme, il cognome può contenere solo lettere, minimo 2 caratteri massimo 30</li>";
+		}
+		//deve essere almeno 3 caratteri e lunga 40, può contenere solo lettere
+		$city = $_POST["RCity"];
+		if($city && !preg_match("/^[A-Z ]{2,40}+$/i",$city)){
+			$errorMSG .= "<li>Città non conforme, la città può contenere solo lettere, minimo 2 caratteri massimo 40</li>";
 		}
 		//PASSWORD lunga almeno 6 caratteri, deve contenere almeno un numero e una lettera, può contenere caratteri speciali ma non robe html e sql
 		$pw = $_POST["RPassword"];
 		if(!preg_match("/^[A-Z\d]{3,20}+$/i",$pw)){   
-			$errorMSG .= "<li>Password non conforme</li>";
+			$errorMSG .= "<li>Password non conforme, la password deve contenere solo caratteri alfanumerici senza spaziature, minimo 3 caratteri massimo 20</li>";
 		}
 
 		$repeatPw = $_POST["RPasswordRepeat"];
 		if($pw != $repeatPw){   
 			$errorMSG .= "<li>Le password non coincidono</li>";
-		}
-		//deve essere almeno 3 caratteri e lunga 30, può contenere solo lettere
-		$name = $_POST["RName"];
-		if(!preg_match("/^[A-Z]{2,30}+$/i",$name)){
-			$errorMSG .= "<li>Nome non conforme</li>";
-		}
-		//deve essere almeno 3 caratteri e lunga 30, può contenere solo lettere
-		$surname = $_POST["RSurname"];
-		if(!preg_match("/^[A-Z]{2,30}+$/i",$surname)){
-			$errorMSG .= "<li>Cognome non conforme</li>";
-		}
-		//deve essere almeno 3 caratteri e lunga 40, può contenere solo lettere
-		$city = $_POST["RCity"];
-		if($city && !preg_match("/^[A-Z]{2,40}+$/i",$city)){
-			$errorMSG .= "<li>Città non conforme</li>";
 		}
 
 
