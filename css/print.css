@@ -1,0 +1,85 @@
+*{
+	page-break-inside: avoid;
+	background-color: #fff;
+}
+
+html, body{
+	font-size: 13pt;
+	font-family: "Times New Roman", serif;
+	margin: auto;
+}
+
+body{
+	border: none;
+}
+
+header{
+	background-image: none;
+}
+
+header h1{
+	font-size: 3em;
+	color: #000;
+}
+
+#breadcrumb{
+	border: none;
+}
+
+#menu{
+	display: none;
+}
+
+/* HOME */
+#offerte, #news{
+	box-shadow: none;
+}
+
+/* TARIFFE, MAPPA */
+#legenda{
+	page-break-inside: initial;
+}
+
+#mappa-pdf{
+	display: none;
+}
+
+#listino, .slope-table, .black-table{
+	page-break-inside: avoid;
+}
+
+#listino thead, .table-header{
+	background-color: #fff;
+}
+
+#blue-table caption {
+	background-color: #fff;
+	color: #005ab5;
+}
+
+#red-table caption {
+	background-color: #fff;
+	color: #dc3220;
+}
+
+.black-table caption {
+	background-color: #fff;
+	color: #000;
+}
+
+/*SERVIZI,  EVENTI*/
+.box{
+	box-shadow: none;
+}
+
+/* FOOTER */
+footer{
+	background-image: none;
+	background-color: #fff;
+}
+
+footer .imgValidCode{
+	width: 10%;
+	background-color: #fff;
+}
+

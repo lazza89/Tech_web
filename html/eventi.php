@@ -9,7 +9,7 @@ if(!isset($_SESSION)) {
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Eventi</title>
+	<title>Eventi e gare - Crystal Ski</title>
 	<meta name="keywords" content="Eventi, Gare, Crystal Ski, Sci, monte Cristallo" />
 	<meta name="description" content="Pagina per gli eventi e gare" />
 	<meta name="author" content="Crystal Ski" />
@@ -54,7 +54,7 @@ if(!isset($_SESSION)) {
 	<div class="box">
 		<h2>Eventi</h2>
 		<img class="img_eventi" src="../images/eventi.jpg" alt=" "/>
-		<dl>
+		<dl class="liste_eventi">
 			<dt>Notte bianca:</dt>
 				<dd><p>Ogni martedì dalle 21 alle 24 sarà possibile sciare usufruendo dell’illuminazione a bordo pista</p></dd>
 			<dt>31 Dicembre e 1 Gennaio:</dt>
@@ -72,7 +72,7 @@ if(!isset($_SESSION)) {
 	<div class="box">
 		<h2>Gare</h2>
 		<img class="img_eventi" src="../images/gare.jpg" alt=" "/>
-		<dl>
+		<dl class="liste_eventi">
 			<dt>Gara della Settimana:
 				<dd><p>Ogni venerdì mattina nella pista rossa X , ogni gruppo della Scuola di Sci sosterrà una gara di velocità.</p>
 				<p>Verrà premiato il podio ma per il primo classificato ci sarà anche un regalo.</p>

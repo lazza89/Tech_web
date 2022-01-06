@@ -135,8 +135,8 @@ header h1{
 #presentazione #imgHome{
 	float: right;
 	padding: 1em;
-	width: 45%;
- 	vertical-align: middle; 
+	width: 40%;
+	vertical-align: middle; 
 }
 
 #strada dt{
@@ -175,7 +175,7 @@ header h1{
 }
 
 #listino{
-	table-layout: auto;
+	table-layout: auto; /*flex*/
 	width: 575px;
 	margin: auto;
 	text-align: center;
@@ -191,7 +191,7 @@ header h1{
 }
 
 #listino th,td{
-	border: medium solid #336ef0;
+	border: medium solid #336ef0; /* con fff rapporto 4.54:1*/	
 	padding: 0.5em;	
 }
 
@@ -204,7 +204,7 @@ header h1{
 }
 
 #listino th,td{
-	border: 3px solid #000;
+	border: 3px solid #000; /* con fff rapporto 4.54:1*/	
 	padding: 0.5em;	
 }
 
@@ -283,9 +283,12 @@ header h1{
 	text-align: center;
 }
 
-#posizione-parcheggi{
+#collocazione p{
 	padding: 0.2em;
 }
+
+
+
 
 /*SERVIZI,  EVENTI*/
 .box{

@@ -12,12 +12,14 @@ if(!isset($_SESSION)) {
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Tariffe</title>
-	<meta name="keywords" content="Crystal Ski, Tariffe, Prezzo" />
+	<title>Tariffe - Crystal Ski</title>
+	<meta name="keywords" content="Tariffe, Listino Prezzi, Abbonamenti, Crystal Ski" />
 	<meta name="description" content="homePage" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+    <link rel="stylesheet" media="print" href="../css/print.css"/>
+
 </head>
 
 <body>

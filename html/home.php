@@ -9,13 +9,13 @@ if(!isset($_SESSION)) {
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Home</title>
-	<meta name="keywords" content="Crystal Ski, Sci, monte Cristallo" />
+	<title>Home - Crystal Ski</title>
+	<meta name="keywords" content="Crystal Ski, monte Cristallo, sci, come arrivare" />
 	<meta name="description" content="homePage" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
-	<!--<link rel="stylesheet" media="print" href="print.css" />-->
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 </head>
 
 <body>
@@ -64,7 +64,7 @@ if(!isset($_SESSION)) {
 			<h2 lang="en">News giornaliere </h2>
 			<ul>
 				<li> <strong>4/4</strong> impianti aperti</li>
-				<li><p> <strong> 9/10 </strong> piste aperte</p>
+				<li><p> <strong>9/10</strong> piste aperte</p>
 				<p> (Chiusa per mancanza di neve la pista 1) </p></li>
 				<li>Sole con <strong> +3° </strong></li>
 			</ul> 
@@ -72,7 +72,7 @@ if(!isset($_SESSION)) {
 	</div>
  
 	<div class="content" id="presentazione">
-		<img id="imgHome" src="../images/sciatori.jpg" alt=" da fare irene"/> 		
+		<img id="imgHome" src="../images/sciatori.jpg" alt=""/> 		
 		<p>Nel punto più alto del gruppo del Cristallo, oltre 2000 metri,  si trova il comprensorio sciistico “<span lang="en">Crystal Ski</span>” vicino a Cortina e situato nel comune Auronzo di Cadore, in provincia di Belluno.</p> 
 		<p>Con ben 5 impianti di risalita e più di 50 chilometri di piste avrete la possibilità di trascorrere indimenticabili giornate nelle nostre 9 piste, sempre ben battute e ricche di neve grazie ai 100 cannoni posti ai lati.</p> 
 		<p>Quando arrivi in cima, non avere fretta di scendere, goditi la vista mozzafiato insieme ad un delizioso piatto caldo nella nostra baita “360gradi”
