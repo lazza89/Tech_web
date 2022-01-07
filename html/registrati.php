@@ -109,6 +109,9 @@ if($errorMSG){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+
+	<script src="../javascript/script.js"></script>
+
 </head>
 
 <body>
@@ -146,31 +149,38 @@ if($errorMSG){
 		<?php }else{ ?>
 
 		<div id="registerBox">
-			<form action="registrati.php" method="post">
+			<form action="registrati.php" id="registerForm" method="post">
 				<h2 id="registrati">Registrati</h2>
 				
 				<?=$errorMSG?>
 			
-				<label for="email"><b>Email</b></label>
-				<input type="text" placeholder="Inserisci E-mail" name="REmail" id="email" value="<?=$mail?>" required>
+				<label for="REmail"><b>Email</b></label>
+				<p style="color:red"id="registerEmailERR"></p>
+				<input type="text" placeholder="Inserisci E-mail" name="REmail" id="REmail" value="<?=$mail?>" required>
 			
-				<label for="username"><b>Username</b></label>
-				<input type="text" placeholder="Inserisci Username" name="RUsername" id="username" value="<?=$username?>" required>
+				<label for="RUsername"><b>Username</b></label>
+				<p style="color:red"id="registerUsernameERR"></p>
+				<input type="text" placeholder="Inserisci Username" name="RUsername" id="RUsername" value="<?=$username?>" required>
 
-				<label for="name"><b>Nome</b></label>
-				<input type="text" placeholder="Inserisci Nome" name="RName" id="name" value="<?=$name?>" required>
+				<label for="RName"><b>Nome</b></label>
+				<p style="color:red"id="registerNameERR"></p>
+				<input type="text" placeholder="Inserisci Nome" name="RName" id="RName" value="<?=$name?>" required>
 
-				<label for="surname"><b>Cognome</b></label>
-				<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="surname" value="<?=$surname?>" required>
+				<label for="RSurname"><b>Cognome</b></label>
+				<p style="color:red"id="registerSurnameERR"></p>
+				<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="RSurname" value="<?=$surname?>" required>
 
-				<label for="city"><b>Città</b></label>
-				<input type="text" placeholder="Inserisci città" name="RCity" id="city" value="<?=$city?>">
+				<label for="RCity"><b>Città</b></label>
+				<p style="color:red"id="registerCityERR"></p>
+				<input type="text" placeholder="Inserisci città" name="RCity" id="RCity" value="<?=$city?>">
 
-				<label for="register-psw"><b>Password</b></label>
-				<input type="password" placeholder="Inserisci Password" name="RPassword" id="register-psw" required>
+				<label for="RPassword"><b>Password</b></label>
+				<p style="color:red"id="registerPasswordERR"></p>
+				<input type="password" placeholder="Inserisci Password" name="RPassword" id="RPassword" required>
 			
-				<label for="psw-repeat"><b>Ripeti Password</b></label>
-				<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="psw-repeat" required>
+				<label for="RPasswordRepeat"><b>Ripeti Password</b></label>
+				<p style="color:red"id="registerRPasswordERR"></p>
+				<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="RPasswordRepeat" required>
 			
 				<button type="submit" name="submit" class="registerbtn">Registrati</button>
 			</form>

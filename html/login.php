@@ -81,6 +81,9 @@ if($errorMSG){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+
+	<script src="../javascript/script.js"></script>
+
 </head>
 
 <body>
@@ -110,11 +113,13 @@ if($errorMSG){
 
 			<?=$errorMSG?>
 		
-			<form action="login.php" method="post">
-				<label for="email"><b>Username</b></label>
+			<form action="login.php" id="loginForm" method="post">
+				<label for="LUsername"><b>Username</b></label>
+				<p style="color:red"id="loginUsernameERR"></p>
 				<input type="text" placeholder="Username" name="LUsername" id="LUsername" required>
 			
-				<label for="email"><b>Password</b></label>
+				<label for="LPassword"><b>Password</b></label>
+				<p style="color:red"id="loginPasswordERR"></p>
 				<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
 			
 				<div id=loginAndRegister>

@@ -498,7 +498,7 @@ button:hover {
 	margin: 2em;
 }
 
-#email, #username, #name, #surname, #city, #register-psw, #psw-repeat {
+#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat {
 	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
@@ -513,7 +513,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .registerbtn {
-  background-color: #04AA6D;
+  background-color: #336ef0;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -679,7 +679,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .personalAreabtn {
-  background-color: #04AA6D;
+  background-color: #336ef0;
   color: white;
   padding: 16px 20px;
   margin: 8px 0;
@@ -693,8 +693,8 @@ input[type=text]:focus, input[type=password]:focus {
   opacity:1;
 }
 
-
 /*screen reader only*/
+
 .sr-only {
 	position: absolute;
 	width: 1px;
