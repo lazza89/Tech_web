@@ -3,6 +3,7 @@ const CHECK_USERNAME = /^[A-Z]{1,20}$/i;
 const CHECK_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const CHECK_NAME_AND_SURNAME = /^[A-Z ]{2,30}$/i;
 const CHECK_CITY = /^[A-Z ]{2,40}$/i;
+const CHECK_COMMENT = /^[A-Z\d,.èéì% àò\n!?() ]{1,300}$/i;
 
 
 window.onload = function () {
@@ -34,13 +35,41 @@ window.onload = function () {
       });
   }
 
+  if (document.getElementById("personalAreaForm") != null) {
+    items = [
+      "PEmail",
+      "PUsername",
+      "PName",
+      "PSurname",
+      "PCity",
+      "POldPassword",
+      "PPassword"
+    ];
+    items.forEach(function (item) {
+      document.getElementById(item).addEventListener("blur", checkPersonalArea);
+      document.querySelector('button').addEventListener("blur", checkPersonalArea);
+    });
+  }
 
+  if (document.getElementById("commentForm") != null) {
+    document.getElementById("commentBox").addEventListener("blur", checkComment);
+    document.querySelector('button').addEventListener("blur", checkComment);
+  }
 
+}
 
-
-
-
-
+function checkComment(){
+  const button = document.querySelector('button');
+  var comment = document.getElementById("commentBox").value;
+  console.log(comment);
+ 
+  if(checkInput(comment, "commentERR", "Commento non conforme, per il commento non si possono usare certi tipi di caratteri speciali", CHECK_COMMENT)){
+    document.querySelector('button').style["background-color"] = "red";
+    button.disabled = true;
+  }else{
+    document.querySelector('button').style["background-color"] = "#336ef0";
+    button.disabled = false;
+  }
 
 }
 
@@ -92,6 +121,35 @@ function checkRegister(){
   }
 }
 
+function checkPersonalArea(){
+  const button = document.querySelector('button');
+  var i = 0;
+
+  var mail = document.getElementById("PEmail").value;
+  var username = document.getElementById("PUsername").value;
+  var name = document.getElementById("PName").value;
+  var surname = document.getElementById("PSurname").value;
+  var city = document.getElementById("PCity").value;
+  var password = document.getElementById("POldPassword").value;
+  var RPassword = document.getElementById("PPassword").value;
+
+  i += checkInput(mail, "PAreaEmailERR", "Email non conforme, l'email deve essere in formato email", CHECK_EMAIL);
+  i += checkInput(username, "PAreaUsernameERR", "Username non conforme, per l'username si possono usare solo caratteri alfanumerici ", CHECK_USERNAME);
+  i += checkInput(name, "PAreaNameERR", "Nome non conforme, per il nome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);
+  i += checkInput(surname, "PAreaSurnameERR", "Cognome non conforme, per ll cognome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);
+  i += checkInput(city, "PAreaCityERR", "Città non conforme, per la città si possono usare solo caratteri alfabetici ", CHECK_CITY);
+  i += checkInput(password, "PAreaPasswordERR", "Password non conforme, per la password si possono usare solo caratteri alfanumerici ", CHECK_PASSWORD);
+  i += checkInput(RPassword, "PAreaRPasswordERR", "Password non conforme, per la password si possono usare solo caratteri alfanumerici ", CHECK_PASSWORD);
+
+  if(i > 0){
+    document.querySelector('button').style["background-color"] = "red";
+    button.disabled = true;
+  }else{
+    document.querySelector('button').style["background-color"] = "#336ef0";
+    button.disabled = false;
+  }
+}
+
 function checkInput(inputType, errorID, failureText, RE){
   if(inputType == ""){
     document.getElementById(errorID).innerHTML = "";
@@ -105,7 +163,6 @@ function checkInput(inputType, errorID, failureText, RE){
 
   return 0;
 }
-
 
 function checkRepetedPassword(password, RPassword, errorID, failureText){
   const button = document.querySelector('button');
@@ -121,41 +178,6 @@ function checkRepetedPassword(password, RPassword, errorID, failureText){
   }
   return 0;
 }
-
-
-function checkItem(item, re) {
-    if (!item.value == "" && !re.test(item.value)) {
-      setErrorBox(item);
-      return false;
-    }
-    removeErrorBox(item, true);
-    return true;
-  }
-
-function checkRegisterInput() {
-    var email = document.getElementById("email");
-    var password = document.getElementById("password");
-    var nome = document.getElementById("nome");
-    var tel = document.getElementById("cel");
-    var cognome = document.getElementById("cognome");
-    var nascita = document.getElementById("nascita");
-    var repeatpassword = document.getElementById("repeatpassword");
-    checkItem(password, RE_PASSWORD);
-    checkItem(email, RE_EMAIL);
-    checkItem(nome, RE_NOME);
-    checkItem(cognome, RE_NOME);
-    checkItem(tel, RE_TEL);
-    checkNascita(nascita);
-    checkRepeatPassword(password, repeatpassword);
-  }
-
-
-
-
-
-
-
-
 
 
 

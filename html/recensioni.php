@@ -30,7 +30,7 @@ if(isset($_POST["DComment"])){
 if(isset($_POST["submit"])){
 
     $comment = $_POST["commentBox"];
-    if(!preg_match("/^[A-Z\d,.èéì% àò!?() ]{1,300}+$/i", $comment)){
+    if(!preg_match("/^[A-Z\d\r\n,.èéì% àò!?() ]{1,300}+$/i", $comment)){
         $errorMSG .= "<li>Commento non valido</li>";
 		$errorMSG .= "<li>Il commento non può contenere nuove linee a capo e caratteri inerenti a linguaggi di programmazione</li>";
 		$errorMSG .= "<li>Il commento può essere lungo massimo 300 caratteri</li>";
@@ -76,6 +76,9 @@ if(isset($_POST["submit"])){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+
+	<script src="../javascript/script.js"></script>
+
 </head>
 
 <body>
@@ -117,13 +120,13 @@ if(isset($_POST["submit"])){
 
 	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 	<div id=writeAComment>
-		<form action="recensioni.php" method="post">
+		<form action="recensioni.php" id="commentForm" method="post">
 
 			<?=$errorMSG?>
-
+			<p style="color:red" id="commentERR"></p>
 			<label for="starsQuantity">Stelle (da 1 a 5):</label>
 			<input type="number" id="starsQuantity" name="starsQuantity" value="1" min="1" max="5">	
-			<textarea name="commentBox" id=commentBox placeholder="Scrivi qui il tuo commento..."></textarea>
+			<textarea name="commentBox" id="commentBox" placeholder="Scrivi qui il tuo commento..."></textarea>
 
 			<button type="submit" name="submit" class="submitComment">Pubblica</button>
 		</form>

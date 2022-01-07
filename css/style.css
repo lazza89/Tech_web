@@ -569,7 +569,7 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .submitComment{
-	background-color: #04AA6D;
+	background-color: #336ef0;
 	color: white;
 	padding: 16px 20px;
 	margin: 8px 0;

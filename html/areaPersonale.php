@@ -125,6 +125,9 @@ if($errorMSG){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+
+	<script src="../javascript/script.js"></script>
+
 </head>
 
 <body>
@@ -154,7 +157,6 @@ if($errorMSG){
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
 			<li><a href="recensioni.php">Recensioni</a></li>
-			<li><a href="login.php">Login</a></li>
 		</ul>
 	</nav>
 
@@ -169,30 +171,37 @@ if($errorMSG){
 		<?php }else{ ?>
 
 			<div id="personalAreaBox">
-				<form action="areaPersonale.php" method="post">
+				<form action="areaPersonale.php" id="personalAreaForm" method="post">
 					<h2 id="datiUtente">Dati utente</h2>
 					
 					<?=$errorMSG?>
 
 					<label for="PEmail"><b>Email</b></label>
+					<p style="color:red"id="PAreaEmailERR"></p>
 					<input type="text" placeholder="Inserisci E-mail" name="PEmail" id="PEmail" value="<?=$mail?>" required>
 				
 					<label for="PUsername"><b>Username</b></label>
+					<p style="color:red"id="PAreaUsernameERR"></p>
 					<input type="text" placeholder="Inserisci Username" name="PUsername" id="PUsername" value="<?=$username?>" required>
 
 					<label for="PName"><b>Nome</b></label>
+					<p style="color:red"id="PAreaNameERR"></p>
 					<input type="text" placeholder="Inserisci Nome" name="PName" id="PName" value="<?=$name?>" required>
 
 					<label for="PSurname"><b>Cognome</b></label>
+					<p style="color:red"id="PAreaSurnameERR"></p>
 					<input type="text" placeholder="Inserisci Cognome" name="PSurname" id="PSurname" value="<?=$surname?>" required>
 
 					<label for="PCity"><b>Città</b></label>
+					<p style="color:red"id="PAreaCityERR"></p>
 					<input type="text" placeholder="Inserisci città" name="PCity" id="PCity" value="<?=$city?>">
 
 					<label for="POldPassword"><b>Password attuale</b></label>
+					<p style="color:red"id="PAreaPasswordERR"></p>
 					<input type="password" placeholder="Inserisci Password" name="POldPassword" id="POldPassword" value="" required>
 
 					<label for="PPassword"><b>Password</b></label>
+					<p style="color:red"id="PAreaRPasswordERR"></p>
 					<input type="password" placeholder="Inserisci Password" name="PPassword" id="PPassword" value="">
 							
 					<button type="submit" name="submit" class="personalAreabtn">Modifica</button>
