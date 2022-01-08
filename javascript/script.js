@@ -3,7 +3,7 @@ const CHECK_USERNAME = /^[A-Z]{1,20}$/i;
 const CHECK_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const CHECK_NAME_AND_SURNAME = /^[A-Z ]{2,30}$/i;
 const CHECK_CITY = /^[A-Z ]{2,40}$/i;
-const CHECK_COMMENT = /^[A-Z\d,.èéì% àò\n!?() ]{1,300}$/i;
+const CHECK_COMMENT = /^[A-Z\d,.èé'ì% àò\n!?() ]{1,300}$/i;
 
 
 window.onload = function () {
@@ -80,8 +80,8 @@ function checkLogin(){
   var username = document.getElementById("LUsername").value;
   var password = document.getElementById("LPassword").value;
 
-  i += checkInput(username, "loginUsernameERR", "Username non conforme, per l'username si possono usare solo caratteri alfabetici ", CHECK_USERNAME);
-  i += checkInput(password, "loginPasswordERR", "Password non conforme, per la password si possono usare solo caratteri alfanumerici", CHECK_PASSWORD);
+  i += checkInput(username, "loginUsernameERR", "Username non conforme", CHECK_USERNAME);
+  i += checkInput(password, "loginPasswordERR", "Password non conforme", CHECK_PASSWORD);
 
   if(i > 0){
     document.querySelector('button').style["background-color"] = "red";

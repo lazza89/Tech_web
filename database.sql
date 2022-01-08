@@ -32,7 +32,7 @@ INSERT INTO
 `user` (`id`, `email`,`username`, `password`, `name`, `surname`, `city`, `isAdmin`)
 values
 (NULL, 'admin@admin.com','admin', 'admin', 'genoveffo', 'paloduro', 'skskucity', 1),
-(NULL, 'user@user.com','user', 'user', 'franco', 'battiatino', 'cuccuruccucù', 0),
+(NULL, 'user@user.com','user', 'user', 'franco', 'battiatino', 'cuccuruccuc', 0),
 (NULL, 'giovanni@mail.com','giovanni', 'giovanni', 'giovanni', 'giovannini', 'giovannopoli', 0),
 (NULL, 'francesco@mail.com','francesco', 'francesco', 'francesco', 'franceschini', 'francescopoli', 0),
 (NULL, 'giulio@mail.com','giulio', 'giulio', 'giulio', 'giulini', 'giulienopoli', 0);

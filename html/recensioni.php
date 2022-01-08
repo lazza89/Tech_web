@@ -30,7 +30,7 @@ if(isset($_POST["DComment"])){
 if(isset($_POST["submit"])){
 
     $comment = $_POST["commentBox"];
-    if(!preg_match("/^[A-Z\d\r\n,.èéì% àò!?() ]{1,300}+$/i", $comment)){
+    if(!preg_match("/^[A-Z\d\r\n,.èéì'% àò!?() ]{1,300}+$/i", $comment)){
         $errorMSG .= "<li>Commento non valido</li>";
 		$errorMSG .= "<li>Il commento non può contenere nuove linee a capo e caratteri inerenti a linguaggi di programmazione</li>";
 		$errorMSG .= "<li>Il commento può essere lungo massimo 300 caratteri</li>";
