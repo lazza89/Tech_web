@@ -5,9 +5,9 @@ use mysqli;
 
 class DBConnection{
     private const HOST_DB = "127.0.0.1";
-    private const DATABASE_NAME = "nlazzari";
-    private const USERNAME = "nlazzari";
-    private const PASSWORD = "ooqu1SeeD0ohjoox";
+    private const DATABASE_NAME = "ibenetaz";
+    private const USERNAME = "ibenetaz";
+    private const PASSWORD = "zeiwai3vuchou7Th";
 
     private $connection;
 

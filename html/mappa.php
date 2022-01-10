@@ -20,10 +20,11 @@ if(!isset($_SESSION)) {
 
 <body>
 	<header>
+        <a id="salta" href="#inizio">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
-	<nav id="breadcrumb">
+	<div id="breadcrumb">
 
     <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
 		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
@@ -33,7 +34,7 @@ if(!isset($_SESSION)) {
         <a href="login.php">Login</a>
     <?php } ?>
     
-	</nav>
+	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
@@ -52,7 +53,7 @@ if(!isset($_SESSION)) {
 	</nav>
 
 
-    <h2 class="titolo">Mappa e piste</h2>
+    <h2 class="titolo" id="inizio">Mappa e piste</h2>
     <img id="imgMappa" src="../images/mappa-piste.png" alt=""/>
     <a id="mappa-pdf" href="../images/mappa-piste.png" target="_blank" rel="noopener noreferrer" download>Clicca qui per scaricare la mappa</a>
     <article id="legenda">
@@ -174,14 +175,14 @@ if(!isset($_SESSION)) {
                 <tbody>
                     <tr>
                         <th scope="row">A</th>
-                        <td class="icone" data-title="Icona"><img src="../images/icona-seggiovia.png" alt="icona seggiovia"></td>
+                        <td class="icone" data-title="Icona"><img src="../images/icona-seggiovia.png" alt=""></td>
                         <td data-title="Tipologia" >Seggiovia</td>
                         <td data-title="Percorrenza">7'33''</td>
                         <td data-title="Collegamenti">1, 1bis</td>
                     </tr>
                     <tr>
                         <th scope="row">B</th>
-                        <td class="icone" data-title="Icona"><img src="../images/icona-seggiovia.png" alt="icona seggiovia"></td>
+                        <td class="icone" data-title="Icona"><img src="../images/icona-seggiovia.png" alt=""></td>
                         <td data-title="Impianto">Seggiovia</td>
                         <td data-title="Percorrenza">5'30''</td>
                         <td data-title="Collegamenti"> 2, 2bis </td>

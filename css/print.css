@@ -4,7 +4,7 @@
 }
 
 html, body{
-	font-size: 13pt;
+	font-size: 12pt;
 	font-family: "Times New Roman", serif;
 	margin: auto;
 }
@@ -46,6 +46,7 @@ header h1{
 
 #listino, .slope-table, .black-table{
 	page-break-inside: avoid;
+	background-color: #fff;
 }
 
 #listino thead, .table-header{
@@ -65,6 +66,10 @@ header h1{
 .black-table caption {
 	background-color: #fff;
 	color: #000;
+}
+
+#listino tbody tr:nth-child(odd), #risalita tbody tr:nth-child(odd), #servizi tbody tr:nth-child(odd){
+	background: none;
 }
 
 /*SERVIZI,  EVENTI*/

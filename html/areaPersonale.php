@@ -119,9 +119,9 @@ if($errorMSG){
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Home</title>
-	<meta name="keywords" content="Crystal Ski, Sci, monte Cristallo" />
-	<meta name="description" content="homePage" />
+	<title>Profilo - Crystal Ski</title>
+	<meta name="keywords" content="Profilo, Area Riservata, Crystal Ski, monte Cristallo" />
+	<meta name="description" content="Profilo" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
@@ -132,11 +132,11 @@ if($errorMSG){
 
 <body>
 	<header>
+		<a id="salta" href="#personalArea">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
-	<nav id="breadcrumb">
-
+	<div id="breadcrumb">
 	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Area Personale</p>
 		<a href="logout.php">Logout</a>
@@ -144,8 +144,7 @@ if($errorMSG){
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Area Personale</p>
 		<a href="login.php">Login</a>
 	<?php } ?>
-
-	</nav>
+	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
@@ -157,6 +156,7 @@ if($errorMSG){
 			<li><a href="servizi.php">Servizi</a></li>
 			<li><a href="eventi.php">Eventi e Gare</a></li>
 			<li><a href="recensioni.php">Recensioni</a></li>
+			<li>Profilo</li>
 		</ul>
 	</nav>
 

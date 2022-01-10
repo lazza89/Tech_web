@@ -1,3 +1,4 @@
+/*Media query 320px e 480px alla fine*/
 *{
 	box-sizing: border-box;
 }
@@ -10,133 +11,11 @@ body{
 	border: none
 }
 
-header{
-	background-image: url('../images/sfondo.jpg');
-	background-position: center;
-	background-size: 100%;
-	background-repeat: no-repeat;
-}
-
 header h1{
-	padding: 0.5em;
 	font-size: 3em;
-	text-align: center;
-	color: rgb(255, 253, 253);
 }
 
-/* HOME */
-#novita{
-	display: block;
-}
-
-#offerte, #news{
-	max-width: 600px;
-	min-width: 100px;	
-}
-
-#presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
-	float: none;
-	width: 75%;
-	margin: auto;
-	margin-left: 12%;
-}
-
-@media screen and (max-width: 320px) { /*telefoni in modalità portrait*/
-	#presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
-		width: 95%;
-		margin: 0em;
-		padding: 0.5em;
-	}
-
-	.liste_eventi dd{
-		padding-left: 0em;
-	}
-}
-/* TARIFFE, MAPPA */ 
-#assicurazione{
-	padding-bottom: 0.8em;
-	font-size: 1.1em;
-}
-
-#abbonamenti ul, #skipass ul{
-	margin-left:40px;
-	list-style-type: disc;
-}
-
-#abbonamenti ul li, #skipass ul li{
-	padding: 0.3em;
-}
-
-#listino{
-	width: 80%;
-}
-@media screen and (max-width: 480px) {
-	#listino{
-		width: 90%;
-	}
-}
-#legenda{
-	display:block;
-	margin: 1.5em;
-	font-size: 0.9em;
-}
-
-.slope-table, #biglietterie{
-	width: 90%;
-}
-
-#listino thead, #listino #table-header, #listino td:empty,
-#risalita thead, #servizi thead {
-	display:none;
-}
-
-#listino tr, #listino th, #listino td,
-#risalita tr, #risalita th, #risalita td,
-#servizi tr, #servizi th, #servizi td{
-	display: block;
-	padding: 0.5em;
-	white-space: normal;
-}
-
-#listino th[data-title]:before, #listino td[data-title]:before,
-#risalita th[data-title]:before,#risalita td[data-title]:before,
-#servizi th[data-title]:before, #servizi td[data-title]:before  
-{
-	content:
-	attr(data-title) ":\00A0";
-	font-weight: bold;
-}
-
-#servizi th, #risalita th {
-	background-color: #a2ffff;
-}
-
-#risalita td img, #servizi td img{
-	width: 10%;
-}
-
-#servizi{
-	margin-top: 5em;
-} 
-
-.icone{
-	text-align: left;
-}
-
-
-/* FOOTER */
-footer{
-	background-image: none;
-	background-color: #a2ffff;
-}
-
-footer .imgValidCode{
-	width: 20%;
-	background-color: #a2ffff;
-}
-
-/* hamburger test */
-
+/* MENU' HAMBURGER */
 *{
 	padding: 0;
 	margin: 0;
@@ -174,4 +53,112 @@ input[type="checkbox"].menu-toggle:checked ~ nav {
 }
 #menu li{
 		width: 100%;
+}
+
+/* HOME */
+#novita{
+	display: block;
+}
+
+#offerte, #news{
+	max-width: 600px;
+	min-width: 100px;	
+}
+
+#presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
+	float: none;
+	width: 75%;
+	margin: auto;
+	margin-left: 12%;
+}
+
+/* TARIFFE, MAPPA */ 
+#listino{
+	width: 80%;
+}
+
+#legenda {
+	display:block;
+	margin: 1.5em;
+	font-size: 0.9em;
+}
+
+#listino tbody tr:nth-child(odd), #red-table tbody tr:nth-child(odd), 
+#risalita tbody tr:nth-child(odd), #servizi tbody tr:nth-child(odd){
+	background: none;
+}
+
+#listino thead, #listino #table-header, #listino td:empty,
+#risalita thead, 
+#servizi thead {
+	display:none;
+}
+
+#listino tr, #listino th, #listino td,
+#risalita tr, #risalita th, #risalita td,
+#servizi tr, #servizi th, #servizi td{
+	display: block;
+	padding: 0.5em;
+	white-space: normal;
+}
+
+#listino th[data-title]:before, #listino td[data-title]:before,
+#risalita th[data-title]:before,#risalita td[data-title]:before,
+#servizi th[data-title]:before, #servizi td[data-title]:before  
+{
+	content:
+	attr(data-title) ":\00A0";
+	font-weight: bold;
+}
+
+#listino th, #servizi th, #risalita th{
+	background-color: #a2ffff;
+}
+
+#risalita td img, #servizi td img{
+	width: 10%;
+} 
+
+#servizi{
+	margin-top: 5em;
+} 
+
+.icone{
+	text-align: left;
+}
+
+
+/* FOOTER */
+footer{
+	background-image: none;
+	background-color: #a2ffff;
+}
+
+footer .imgValidCode{
+	width: 20%;
+	background-color: #a2ffff;
+}
+
+
+/*MEDIA QUERY*/
+@media screen and (max-width: 480px) {
+	#listino{
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 320px) { /*telefoni in modalità portrait*/
+	#presentazione #imgHome, #curiosita #imgCristallo, #noleggio #imgNoleggio, #scuola #imgMaestri{
+		width: 95%;
+		margin: 0em;
+		padding: 0.5em;
+	}
+
+	.liste_eventi dd{
+		padding-left: 0em;
+	}
+
+	header h1{
+		font-size: 2.5em;
+	}
 }

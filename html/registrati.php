@@ -103,9 +103,9 @@ if($errorMSG){
 
 <head>
 	<meta charset="utf-8" />
-	<title>Crystal Ski - Home</title>
-	<meta name="keywords" content="Crystal Ski, Sci, monte Cristallo" />
-	<meta name="description" content="homePage" />
+	<title>Registrati - Crystal Ski</title>
+	<meta name="keywords" content="Registrazione, Crystal Ski, monte Cristallo" />
+	<meta name="description" content="Registrazione" />
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
@@ -116,13 +116,14 @@ if($errorMSG){
 
 <body>
 	<header>
+		<a id="salta" href="#registerBox">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
-	<nav id="breadcrumb">
+	<div id="breadcrumb">
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Registrati</p>
 		<a href="login.php">Login</a>
-	</nav>
+	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>

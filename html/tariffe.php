@@ -24,10 +24,11 @@ if(!isset($_SESSION)) {
 
 <body>
 	<header>
+        <a id="salta" href="#inizio">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
-	<nav id="breadcrumb">
+	<div id="breadcrumb">
 
     <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
         <p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
@@ -37,7 +38,7 @@ if(!isset($_SESSION)) {
         <a href="login.php">Login</a>
     <?php } ?>
 
-    </nav>
+    </div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
 	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
@@ -55,12 +56,12 @@ if(!isset($_SESSION)) {
 		</ul>
 	</nav>
 
-    <h2 class="titolo">Listino prezzi</h2>
+    <h2 class="titolo" id="inizio">Listino prezzi</h2>
     <div class="content" id="skipass">        
         <p id="assicurazione">L'ASSICURAZIONE DAL 1 GENNAIO 2022 E' OBBLIGATORIA, LA TARIFFA E' DI 5€ AL GIORNO A PERSONA</p>           
-        <p>Indicazoni importanti:</p>
+        <p>Indicazioni importanti:</p>
         <ul> 
-            <li>I bambini nati dopo il 31/12/2013 entrano gratis se è presente un adulto pagante, altrimenti fare riferimento alla categoria <span lang="en">junior.</span></li>
+            <li>I bambini nati dopo il 31/12/2013 entrano gratis se è presente un adulto pagante, altrimenti fare riferimento alla categoria <span lang="en">junior</span></li>
             <li><span lang="en">Junior</span> comprende i ragazzi nati entro il 31/12/2007</li>
             <li><span lang="en">Senior</span> comprende le persone nate prima del 31/12/1956</li>
             <li>Per l'età non comprese nelle categoire precedenti fare riferimmento ad adulto</li>
@@ -73,7 +74,7 @@ if(!isset($_SESSION)) {
         <caption> Prezzi degli <span lang="en">skipass</span></caption>
         <thead> 
             <tr>
-                <th id="double-row" rowspan="2"></th>
+                <th rowspan="2">-</th>
                 <th scope="col" colspan="3">Bassa stagione</th>
                 <th scope="col" colspan="3">Alta stagione</th>
             </tr>

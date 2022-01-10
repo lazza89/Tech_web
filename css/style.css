@@ -26,7 +26,7 @@ header h1{
 	padding: 0.5em;
 	font-size: 4em;
 	text-align: center;
-	color: rgb(255, 253, 253);
+	color: #e60000;
 }
 
 #breadcrumb{
@@ -38,16 +38,16 @@ header h1{
 }
 
 #breadcrumb a:link{
-	color: #0000ff; /* con fff rapporto 8.59:1*/
+	color: #0000ff;
 }
 
 #breadcrumb a:visited{
-	color: #800080; /* con fff rapporto 9.42:1*/
+	color: #800080;
 }
 
 #menu{	
 	background-color: #a2ffff;
-	color: #000; /*con a2ffff rapporto 18.28:1*/
+	color: #000;
 	text-align: center;
 }
 
@@ -59,12 +59,29 @@ header h1{
 }
 
 #menu a:link{
-	color: #0000ff; /*con a2ffff rapporto 7.48: 1*/
+	color: #0000ff;
 }
 
 #menu a:visited{
-	color: #800080 /*con a2ffff rapporto 8.20:1*/
+	color: #800080;
 }
+
+/*Menù hamburger*/
+.hamburger {
+	display: none;
+}
+.hamburger:before {
+	display: inline-block;
+	position: relative;
+	vertical-align: bottom;
+	content: "\00a0\2261\00a0";
+	font-family: sans-serif;
+	font-size: 1.5em;
+}
+.menu-toggle {
+	display: none;
+}
+
 
 /* GENERAL CONTENT */
 .content{
@@ -82,11 +99,11 @@ header h1{
 }
 
 .content a:link{
-	color: #0000ff; /* con fff rapporto 8.59:1*/
+	color: #0000ff;
 }
 
 .content a:visited{
-	color: #800080; /*con fff rapporto 9.42:1*/
+	color: #800080;
 }
 
 .titolo{
@@ -118,7 +135,7 @@ header h1{
 }
 
 #offerte h2, #news h2{
-	color: #e60000; /*con fff rapporto 4.81:1*/
+	color: #e60000;
 	padding-top: 0.3em;
 }
 
@@ -143,7 +160,7 @@ header h1{
 	font-size: 1.3em;
 	padding: 0.2em 1em 0.0em 1em;
 	list-style-type: square;
-	color: #005ab5; /* con fff rapporto 6.7:1*/
+	color: #005ab5;
 }
 
 #strada dd{
@@ -191,21 +208,12 @@ header h1{
 }
 
 #listino th,td{
-	border: medium solid #336ef0;
+	border: 2px solid #000;	
 	padding: 0.5em;	
 }
 
-#listino thead, .table-header{
-	background-color: #6693f5;
-}
-
-#listino #double-row {
-	background-color: #fff;
-}
-
-#listino th,td{
-	border: 3px solid #000;
-	padding: 0.5em;	
+#listino tbody tr:nth-child(odd) {
+	background: #a2ffff;
 }
 
 /* MAPPA */
@@ -257,7 +265,7 @@ header h1{
 }
 
 #blue-table caption {
-	background-color: #005ab5; /* con testo #fff rapporto 6.7:1*/
+	background-color: #005ab5;
 	border-color: #005ab5;
 }
 
@@ -266,8 +274,12 @@ header h1{
 }
 
 #red-table caption {
-	background-color: #dc3220; /* con testo #fff rapporto 4.64:1*/
+	background-color: #dc3220;
 	border-color: #dc3220;
+}
+
+#red-table tbody tr:nth-child(odd) {
+	background: #f9d6d2;
 }
 
 .black-table, .black-table th, .black-table td {
@@ -275,8 +287,12 @@ header h1{
 }
 
 .black-table caption {
-	background-color: #000; /* con testo #fff rapporto 21:1*/
+	background-color: #000;
 	border-color: #000;
+}
+
+#risalita tbody tr:nth-child(odd), #servizi tbody tr:nth-child(odd) {
+	background: #d8dada;
 }
 
 .icone{
@@ -289,7 +305,6 @@ header h1{
 
 /*SERVIZI,  EVENTI*/
 .box{
-	float: left;
 	border:  2px solid  #336ef0;
 	box-shadow: 5px 8px #6693f5;
 	padding: 1em;
@@ -353,188 +368,7 @@ header h1{
 	margin: 1em;
 }
 
-
-/* FOOTER */
-footer{
-	clear: both;
-	border-top: 1px solid #000;
-	text-align: left;
-	padding: 0.5em;
-	background-image: url('../images/sfondo.jpg');
-	background-position: center;
-	background-size: 100%;
-	background-repeat: no-repeat;
-}
-
-footer #address{
-	font-size: 1.1em;
-	font-weight: bold;
-	padding-bottom: 0.5em;
-}
-
-footer .author{
-	font-style: italic;
-	font-size: 1em;
-}
-
-footer .imgValidCode{
-	width: 8%;
-	padding: 0.3em;
-	background-color: #000;
-}
-
-/*hamburger testing*/
-
-*{
-	box-sizing: border-box;
-}
-.hamburger {
-	display: none;
-}
-.hamburger:before {
-	display: inline-block;
-	position: relative;
-	vertical-align: bottom;
-	content: "\00a0\2261\00a0";
-	font-family: sans-serif;
-	font-size: 1.5em;
-}
-.menu-toggle {
-	display: none;
-}
-
-
-/* LOGIN TEST */
-
-.login, #loginBox{
-	display: flex;
-	flex-wrap: nowrap;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	padding: 1em;
-}
-
-#loginBox{
-	width: 280px;
-  	border:  2px solid  #336ef0;
-	box-shadow: 5px 8px #6693f5;
-	margin: 0.7em;
-}
-
-#loginBox ul{
-	color: red;
-	padding-bottom: 1em;
-}
-
-#loggedSuccessful h2{
-	padding: 1em;
-}
-
-#loginAndRegister{
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	padding: 0.5em;
-}
-
-#LUsername, #LPassword{
-	width: 100%;
-	padding: 0.8em 0.4em;
-	margin: 0.6em 0;
-	border: 2px solid #ccc;
-	box-sizing: border-box;
-	text-align: center;
-	font-size: medium;
-}
-  
-#loginBox button {
-	background-color: #336ef0;
-	color: white;
-	padding: 14px 50px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	font-size: medium;
-}
-  
-button:hover {
-	opacity: 0.8;
-}
-
-/* REGISTER TEST */
-
-#register{
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}
-
-#registerBox {
-	padding: 2.5em;
-	width: 60%;
-	min-width: 320px;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	border:  2px solid  #336ef0;
-	box-shadow: 5px 8px #6693f5;
-	margin: 0.7em;
-}
-
-#registrati{
-	text-align: center;
-	padding-bottom: 1em;
-}
-
-#registerBox ul{
-	color: red;
-	padding-bottom: 1em;
-}
-
-#registerDone h2{
-	text-align: center;
-	margin: 2em;
-}
-
-#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-	border: none;
-	background: #f1f1f1;
-  }
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-.registerbtn {
-  background-color: #336ef0;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity:1;
-}
-
-
-/* test recensioni */
-
-#comments_intro h2{
-	text-align: center;
-	padding: 1.5em;
-}
-
+/* RECENSIONI */
 #comments_holder{
 	display: flex;
 	flex-direction: column;
@@ -634,7 +468,130 @@ input[type=text]:focus, input[type=password]:focus {
 	background: gold;
 }
 
-/* area personale */
+/* LOGIN */
+
+.login, #loginBox{
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1em;
+}
+
+#loginBox{
+	width: 280px;
+  border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	margin: 0.7em;
+}
+
+#loginBox ul{
+	color: red;
+	padding-bottom: 1em;
+}
+
+#loggedSuccessful h2{
+	padding: 1em;
+}
+
+#loginAndRegister{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0.5em;
+}
+
+#LUsername, #LPassword{
+	width: 100%;
+	padding: 0.8em 0.4em;
+	margin: 0.6em 0;
+	border: 2px solid #ccc;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: medium;
+}
+  
+#loginBox button {
+	background-color: #336ef0;
+	color: white;
+	padding: 14px 50px;
+	margin: 8px 0;
+	border: none;
+	cursor: pointer;
+	font-size: medium;
+}
+  
+button:hover {
+	opacity: 0.8;
+}
+
+/* REGISTER */
+
+#register{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}
+
+#registerBox {
+	padding: 2.5em;
+	width: 60%;
+	min-width: 320px;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	border:  2px solid  #336ef0;
+	box-shadow: 5px 8px #6693f5;
+	margin: 0.7em;
+}
+
+#registrati{
+	text-align: center;
+	padding-bottom: 1em;
+}
+
+#registerBox ul{
+	color: red;
+	padding-bottom: 1em;
+}
+
+#registerDone h2{
+	text-align: center;
+	margin: 2em;
+}
+
+#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat {
+	width: 100%;
+	padding: 15px;
+	margin: 5px 0 22px 0;
+	display: inline-block;
+	border: none;
+	background: #f1f1f1;
+  }
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+.registerbtn {
+  background-color: #336ef0;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+/* PROFILO - Area Personale */
 
 #personalArea{
 	display: flex;
@@ -694,7 +651,6 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 /*screen reader only*/
-
 .sr-only {
 	position: absolute;
 	width: 1px;
@@ -706,5 +662,58 @@ input[type=text]:focus, input[type=password]:focus {
 	border: 0;
   }
 
+
+/* FOOTER */
+footer{
+	clear: both;
+	border-top: 1px solid #000;
+	text-align: left;
+	padding: 0.5em;
+	background-image: url('../images/sfondo.jpg');
+	background-position: center;
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+footer #address{
+	font-size: 1.1em;
+	font-weight: bold;
+	padding-bottom: 0.5em;
+}
+
+footer .author{
+	font-style: italic;
+	font-size: 1em;
+}
+
+footer .imgValidCode{
+	width: 8%;
+	padding: 0.3em;
+	background-color: #000;
+}
+
+/*ERROR 404*/
+#error, #contatti{
+	text-align: center;
+	margin-top: 2em;
+}
+
+#error h2{
+	font-size: 2.5em;
+}
+
+#img404{
+	width: 60%;
+	padding: 1em;
+}
+
+#error p{
+	font-size: 1.3em;
+}
+
+#error a{
+	padding: 1.5em;
+	font-size: 1.5em;
+}
 
 
