@@ -155,32 +155,32 @@ if($errorMSG){
 				
 				<?=$errorMSG?>
 			
-				<label for="REmail"><b>Email</b></label>
-				<p style="color:red"id="registerEmailERR"></p>
+				<label for="REmail" aria-hidden="true"><b>Email</b></label>
+				<p class="JSError" id="registerEmailERR"></p>
 				<input type="text" placeholder="Inserisci E-mail" name="REmail" id="REmail" value="<?=$mail?>" required>
 			
-				<label for="RUsername"><b>Username</b></label>
-				<p style="color:red"id="registerUsernameERR"></p>
+				<label for="RUsername" aria-hidden="true"><b>Username</b></label>
+				<p class="JSError" id="registerUsernameERR"></p>
 				<input type="text" placeholder="Inserisci Username" name="RUsername" id="RUsername" value="<?=$username?>" required>
 
-				<label for="RName"><b>Nome</b></label>
-				<p style="color:red"id="registerNameERR"></p>
+				<label for="RName" aria-hidden="true"><b>Nome</b></label>
+				<p class="JSError" id="registerNameERR"></p>
 				<input type="text" placeholder="Inserisci Nome" name="RName" id="RName" value="<?=$name?>" required>
 
-				<label for="RSurname"><b>Cognome</b></label>
-				<p style="color:red"id="registerSurnameERR"></p>
+				<label for="RSurname" aria-hidden="true"><b>Cognome</b></label>
+				<p class="JSError" id="registerSurnameERR"></p>
 				<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="RSurname" value="<?=$surname?>" required>
 
-				<label for="RCity"><b>Città</b></label>
-				<p style="color:red"id="registerCityERR"></p>
+				<label for="RCity" aria-hidden="true"><b>Città</b></label>
+				<p class="JSError" id="registerCityERR"></p>
 				<input type="text" placeholder="Inserisci città" name="RCity" id="RCity" value="<?=$city?>">
 
-				<label for="RPassword"><b>Password</b></label>
-				<p style="color:red"id="registerPasswordERR"></p>
+				<label for="RPassword" aria-hidden="true"><b>Password</b></label>
+				<p class="JSError" id="registerPasswordERR"></p>
 				<input type="password" placeholder="Inserisci Password" name="RPassword" id="RPassword" required>
 			
-				<label for="RPasswordRepeat"><b>Ripeti Password</b></label>
-				<p style="color:red"id="registerRPasswordERR"></p>
+				<label for="RPasswordRepeat" aria-hidden="true"><b>Ripeti Password</b></label>
+				<p class="JSError" id="registerRPasswordERR"></p>
 				<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="RPasswordRepeat" required>
 			
 				<button type="submit" name="submit" class="registerbtn">Registrati</button>

@@ -1,5 +1,5 @@
 const CHECK_PASSWORD = /^[A-Z\d]{1,20}$/i;
-const CHECK_USERNAME = /^[A-Z]{1,20}$/i;
+const CHECK_USERNAME = /^[A-Z\d]{1,20}$/i;
 const CHECK_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const CHECK_NAME_AND_SURNAME = /^[A-Z ]{2,30}$/i;
 const CHECK_CITY = /^[A-Z ]{2,40}$/i;

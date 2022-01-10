@@ -31,19 +31,16 @@ ALTER TABLE
 INSERT INTO
 `user` (`id`, `email`,`username`, `password`, `name`, `surname`, `city`, `isAdmin`)
 values
-(NULL, 'admin@admin.com','admin', 'admin', 'genoveffo', 'paloduro', 'skskucity', 1),
-(NULL, 'user@user.com','user', 'user', 'franco', 'battiatino', 'cuccuruccuc', 0),
-(NULL, 'giovanni@mail.com','giovanni', 'giovanni', 'giovanni', 'giovannini', 'giovannopoli', 0),
-(NULL, 'francesco@mail.com','francesco', 'francesco', 'francesco', 'franceschini', 'francescopoli', 0),
-(NULL, 'giulio@mail.com','giulio', 'giulio', 'giulio', 'giulini', 'giulienopoli', 0);
+(NULL, 'admin@admin.com','admin', 'admin', 'genoveffo', 'ginevro', 'Padova', 1),
+(NULL, 'user@user.com','user', 'user', 'franco', 'battiatino', 'Padova', 0),
+(NULL, 'user1@user1.com','user1', 'user1', 'bob', 'sponge', 'Padova', 0);
 
 INSERT INTO
 `comment` (`id`, `userId`, `comment`, `stars`, `date`) 
 values 
-(NULL, 2, 'Bellssimo impianto! costa 800 mila euro uno skipass però ne vale la pena!', 5, NOW()),
-(NULL, 3, '800 mila euro per uno skipass? neanche a cortina costa così tanto!', 2, NOW()),
-(NULL, 4, 'Che schifo!, le piste sono battuta male e gli impianti di risalita sono pieni di barboni! orrore!', 1, NOW()),
-(NULL, 5, 'Fanc*lo sto skifo di pise, nn ci o mai scato pero dalle recenzioni dicono che fa skifo quindi fa skifo!', 1, NOW());
+(NULL, 2, 'Consiglio a tutti Crystal Ski, impianti di risalita veloci e efficaci, piste con neve fresca e ben battuta e vista spettacolare. Unica pecca la cioccolata calda della baita.', 5, NOW()),
+(NULL, 3, ' Brutte piste, la neve sparata dai cannoni era insufficiente, personale poco cordiale', 2, NOW());
+
 
 
 

@@ -41,7 +41,7 @@ if(!isset($_SESSION["login"])){
 						$_SESSION['city'] = $query['city'];
 						$_SESSION['isAdmin'] = $query['isAdmin'];
 			
-						header( "refresh:0; url=home.php" ); 
+						header("Location: home.php");
 					}else{
 						$errorMSG = "<li>Login error, Riprova</li>";
 						session_destroy();
@@ -57,8 +57,7 @@ if(!isset($_SESSION["login"])){
 
 	}
 }else{
-	$errorMSG = "<li>Hey! che ci fai tu qui?</li>";
-	header( "refresh:3; url=home.php" );
+	header("Location: home.php");
 }
 
 if($errorMSG){
@@ -115,12 +114,12 @@ if($errorMSG){
 			<?=$errorMSG?>
 		
 			<form action="login.php" id="loginForm" method="post">
-				<label for="LUsername"><b>Username</b></label>
-				<p style="color:red"id="loginUsernameERR"></p>
+				<label for="LUsername" aria-hidden="true"><b>Username</b></label>
+				<p class="JSError" id="loginUsernameERR"></p>
 				<input type="text" placeholder="Username" name="LUsername" id="LUsername" required>
 			
-				<label for="LPassword"><b>Password</b></label>
-				<p style="color:red"id="loginPasswordERR"></p>
+				<label for="LPassword" aria-hidden="true"><b>Password</b></label>
+				<p class="JSError" id="loginPasswordERR"></p>
 				<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
 			
 				<div id=loginAndRegister>
@@ -134,3 +133,4 @@ if($errorMSG){
 		<?php include('../components/footer.php') ?>			
 </body>
 </html>
+

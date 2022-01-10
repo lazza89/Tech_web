@@ -120,7 +120,7 @@ if(isset($_POST["submit"])){
 		<form action="recensioni.php" id="commentForm" method="post">
 
 			<?=$errorMSG?>
-			<p style="color:red" id="commentERR"></p>
+			<p class="JSError"  id="commentERR"></p>
 			<label for="starsQuantity">Stelle (da 1 a 5):</label>
 			<input type="number" id="starsQuantity" name="starsQuantity" value="1" min="1" max="5">	
 			<textarea name="commentBox" id="commentBox" placeholder="Scrivi qui il tuo commento..."></textarea>
@@ -128,6 +128,8 @@ if(isset($_POST["submit"])){
 			<button type="submit" name="submit" class="submitComment">Pubblica</button>
 		</form>
 	</div>
+	<?php }else{ ?>
+		<h4 class="warning">Bisogna aver effettuato il login per scrivere un commento</h4>
 	<?php } ?>
 
 	<div id="comments_holder">
@@ -142,10 +144,11 @@ if(isset($_POST["submit"])){
 			<div class="comments">
 				<div class = "userDetails">
 					<h3><?=mysqli_fetch_assoc($connection->getUsernameById($row["userId"]))["username"]?></h3>
+					<span class="visually-hidden"><?=$row['stars']?> su 5 stelle</span>
 
 					<?php for ($i = 0; $i < 5; $i++) { ?>
 							<div class='star<?=$row['stars'] > $i ? ' gold' : '' ?>'></div>
-					<?php } ?>
+					<?php }?>
 
 				</div>
 				<p class ="commentDate"><?=$row["date"]?></p>
