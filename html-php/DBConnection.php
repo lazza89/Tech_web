@@ -1,8 +1,6 @@
 <?php
 namespace DB;
 
-use mysqli;
-
 class DBConnection{
     private const HOST_DB = "127.0.0.1";
     private const DATABASE_NAME = "nlazzari";
@@ -25,7 +23,6 @@ class DBConnection{
         mysqli_close($this->connection);
     }
     
-    /* NEW USER FUNCTION */
     public function createNewUser($mail, $username, $pw, $name, $surname, $city){
         $createNewUserQuery = "INSERT INTO `user` (`id`, `email`,`username`, `password`, `name`, `surname`, `city`, `isAdmin`) values (NULL, \"$mail\", \"$username\", \"$pw\", \"$name\", \"$surname\", \"$city\", 0)";
         
@@ -125,37 +122,7 @@ class DBConnection{
         }
     }
 
-
-
-
-
-
-
-
-
-
 }
-/*
-QUERY EXAMPLE
-    public function getUserList(){
-            $query = "SELECT username FROM user";
-            $queryResult = mysqli_query($this->connection, $query) 
-            or die ("errore di non so che cosa: " . mysqli_errno($this->connection));
-
-            if(mysqli_num_rows($queryResult) == 0){
-                return null;
-            }else{
-                $result = array();
-                while($row = mysqli_fetch_assoc($queryResult)){
-                    array_push($result, $row);
-                }
-            }
-            $queryResult->free();
-            return $result;
-    }
-}
-*/
-
 
 
 ?>

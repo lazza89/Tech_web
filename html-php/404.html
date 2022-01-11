@@ -15,7 +15,7 @@
 
 <body>
 	<header>
-		<a id="salta" href="#error">Vai al contenuto</a>
+		<a class="sr-only" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -32,20 +32,22 @@
         </ul>
     </nav>
 
-    <div id="error">
-		<h2 lang="en">Error 404 - Page not found</h2>
-		<img id="img404" src="../images/404.jpg" alt=""/>
-		<p>Uno di questi link può aiutarti a continuare la navigazione</p>
-		<a lang="en" href="home.php">Home</a>
-	    <a href="tariffe.php">Tariffe</a>
-	    <a href="mappa.php">Mappa</a>
-	</div>
-	<div class="box" id="contatti">
-		<h2>Contatti</h2>
-        <p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
-        <p>Contatto telefonico: 3330000000</p>
-        <p lang="en">E-mail: crystalski@mail.com</p>
-    </div>
+	<main id="main">
+		<div id="error">
+			<h2 lang="en">Error 404 - Page not found</h2>
+			<img id="img404" src="../images/404.jpg" alt=""/>
+			<p>Uno di questi link può aiutarti a continuare la navigazione</p>
+			<a lang="en" href="home.php">Home</a>
+			<a href="tariffe.php">Tariffe</a>
+			<a href="mappa.php">Mappa</a>
+		</div>
+		<div class="box" id="contatti">
+			<h2>Contatti</h2>
+			<p>Località Monte Cristallo, Auronzo di Cadore (<abbr title="Belluno">BL</abbr>), Italia</p>
+			<p>Contatto telefonico: 3330000000</p>
+			<p lang="en">E-mail: crystalski@mail.com</p>
+		</div>
+	</main>
 
     <footer>		
     <p class="author" lang="en">Crystal Ski Production</p> 
