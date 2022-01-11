@@ -20,7 +20,7 @@ if(!isset($_SESSION)) {
 
 <body>
 	<header>
-		<a id="salta" href="#novita">Vai al contenuto</a>
+		<a class="sr-only" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -52,57 +52,59 @@ if(!isset($_SESSION)) {
 		</ul>
 	</nav>
 
-	<div id="novita">
-		<article id="offerte">
-			<h2> Offerte della Settimana </h2>
-			<ul>
-				<li>Con l'acquisto dello skipass settimanale si ha l'accesso scontato al <strong> 50% </strong>al centro benessere di Cortina</li>
-				<li>Il quinto skipass plurigiornaliero acquistato è scontato al <strong> 15%</strong></li>
-			</ul>
-		</article> 
+	<main id="main">
+		<div id="novita">
+			<article id="offerte">
+				<h2> Offerte della Settimana </h2>
+				<ul>
+					<li>Con l'acquisto dello skipass settimanale si ha l'accesso scontato al <strong> 50% </strong>al centro benessere di Cortina</li>
+					<li>Il quinto skipass plurigiornaliero acquistato è scontato al <strong> 15%</strong></li>
+				</ul>
+			</article> 
 
-		<article id="news">
-			<h2 lang="en">News giornaliere </h2>
-			<ul>
-				<li> <strong>5/5</strong> impianti aperti</li>
-				<li><p> <strong>7/8</strong> piste aperte</p>
-				<p> (Chiusa per mancanza di neve la pista 1) </p></li>
-				<li>Sole con <strong> +3° </strong></li>
-			</ul> 
-		</article>
-	</div>
- 
-	<div class="content" id="presentazione">
-		<img id="imgHome" src="../images/sciatori.jpg" alt="Le piste sono ampie e spaziose."/> 
-		<p>Nel punto più alto del gruppo del Cristallo, oltre 2000 metri,  si trova il comprensorio sciistico “<span lang="en">Crystal Ski</span>” vicino a Cortina e situato nel comune Auronzo di Cadore, in provincia di Belluno.</p> 
-		<p>Con ben 5 impianti di risalita e più di 50 chilometri di piste avrete la possibilità di trascorrere indimenticabili giornate nelle nostre 8 piste, sempre ben battute e ricche di neve grazie ai 70 cannoni posti ai lati.</p> 
-		<p>Quando arrivi in cima, non avere fretta di scendere, goditi la vista mozzafiato insieme ad un delizioso piatto caldo nella nostra baita “360gradi”
-	</div>
-
-	<div class="content" id="strada">	
-		<h2>Come raggiungere <span lang="en">Crystal Ski</span></h2>
-		<dl>
-			<dt>Macchina</dt>
-			<dd><p>Segui le indicazioni per A27 verso Belluno. Uscire al termine dell’autostrada (dopo l’uscita Belluno) e immettersi nella Strada Statale SS51 verso Cadore, Dolomiti/Cortina.</p>
-			<p>Giunti a Cortina prendere la Strada Regionare SR48 per Misurina, successivamente le indicazioni per Monte del Cristallo.</p>
-			</dd>
-			<dt>Mezzi pubblici</dt>
-			<dd><p>Grazie a <a href="https://www.cortinaexpress.it/it">Cortina Express</a> puoi decidere di arrivare tramite autobus anche dalla tua città.</p>
-			<p>E poi da Cortina usufruire della navetta.</p>
-			</dd>
-			<dt>Navetta da Cortina</dt>
-			<dd><p>Dirigersi alla stazione degli autobus e prendere la navetta con direzione Monte Cristallo.</p>
-			</dd>
-		</dl>
-	</div>
+			<article id="news">
+				<h2 lang="en">News giornaliere </h2>
+				<ul>
+					<li> <strong>5/5</strong> impianti aperti</li>
+					<li><p> <strong>7/8</strong> piste aperte</p>
+					<p> (Chiusa per mancanza di neve la pista 1) </p></li>
+					<li>Sole con <strong> +3° </strong></li>
+				</ul> 
+			</article>
+		</div>
 	
-	<div class="content" id="curiosita">
-		<h2>Curiosità</h2>
-		<img id="imgCristallo" src="../images/cristallo.jpg" alt="A basse altitudini una fitta vegetazione, mentre in alto roccia esposta"/>
-		<p>Il Monte Cristallo è alto 3221 metri ed è uno dei monti più maestosi delle Dolomiti Ampezzane.</p>
-		<p>Una leggenda narra che si ergesse un castello con un incantevole principessa, dove la sua bellezza non passò inosservata al pastore Bertoldo, di cui s’innamorò. Ancora oggi, il nome di Bertoldo è legato al Monte Cristallo, che gli ampezzani chiamano “Croda de Bertoldo”.</p>
-		<p>Il monte fu scalato per la prima volta dall’alpinista austriaco di Vienna, <span lang="de">Paul Grohmann</span> il 14 Settembre 1865.</p>
-	</div>
+		<div class="content" id="presentazione">
+			<img id="imgHome" src="../images/sciatori.jpg" alt="Le piste sono ampie e spaziose."/> 
+			<p>Nel punto più alto del gruppo del Cristallo, oltre 2000 metri,  si trova il comprensorio sciistico “<span lang="en">Crystal Ski</span>” vicino a Cortina e situato nel comune Auronzo di Cadore, in provincia di Belluno.</p> 
+			<p>Con ben 5 impianti di risalita e più di 50 chilometri di piste avrete la possibilità di trascorrere indimenticabili giornate nelle nostre 8 piste, sempre ben battute e ricche di neve grazie ai 70 cannoni posti ai lati.</p> 
+			<p>Quando arrivi in cima, non avere fretta di scendere, goditi la vista mozzafiato insieme ad un delizioso piatto caldo nella nostra baita “360gradi”
+		</div>
+
+		<div class="content" id="strada">	
+			<h2>Come raggiungere <span lang="en">Crystal Ski</span></h2>
+			<dl>
+				<dt>Macchina</dt>
+				<dd><p>Segui le indicazioni per A27 verso Belluno. Uscire al termine dell’autostrada (dopo l’uscita Belluno) e immettersi nella Strada Statale SS51 verso Cadore, Dolomiti/Cortina.</p>
+				<p>Giunti a Cortina prendere la Strada Regionare SR48 per Misurina, successivamente le indicazioni per Monte del Cristallo.</p>
+				</dd>
+				<dt>Mezzi pubblici</dt>
+				<dd><p>Grazie a <a href="https://www.cortinaexpress.it/it">Cortina Express</a> puoi decidere di arrivare tramite autobus anche dalla tua città.</p>
+				<p>E poi da Cortina usufruire della navetta.</p>
+				</dd>
+				<dt>Navetta da Cortina</dt>
+				<dd><p>Dirigersi alla stazione degli autobus e prendere la navetta con direzione Monte Cristallo.</p>
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="content" id="curiosita">
+			<h2>Curiosità</h2>
+			<img id="imgCristallo" src="../images/cristallo.jpg" alt="A basse altitudini una fitta vegetazione, mentre in alto roccia esposta"/>
+			<p>Il Monte Cristallo è alto 3221 metri ed è uno dei monti più maestosi delle Dolomiti Ampezzane.</p>
+			<p>Una leggenda narra che si ergesse un castello con un incantevole principessa, dove la sua bellezza non passò inosservata al pastore Bertoldo, di cui s’innamorò. Ancora oggi, il nome di Bertoldo è legato al Monte Cristallo, che gli ampezzani chiamano “Croda de Bertoldo”.</p>
+			<p>Il monte fu scalato per la prima volta dall’alpinista austriaco di Vienna, <span lang="de">Paul Grohmann</span> il 14 Settembre 1865.</p>
+		</div>
+	</main>
 	<?php include('../components/footer.php') ?>
 </body>
 </html>

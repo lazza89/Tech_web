@@ -85,8 +85,7 @@ if(!isset($_SESSION["login"])){
 
 	}
 }else{
-	$errorMSG = "<li>Hey! che ci fai qui? non dovresti essere qui!</li>";
-	header( "refresh:3; url=home.php" );
+	header("Location: home.php");
 }
 
 if($errorMSG){
@@ -116,7 +115,7 @@ if($errorMSG){
 
 <body>
 	<header>
-		<a id="salta" href="#registerBox">Vai al contenuto</a>
+		<a class="sr-only" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -138,57 +137,59 @@ if($errorMSG){
 		</ul>
 	</nav>
 
-	<div id="register">
+	<main id="main">
+		<div id="register">
 
-		<?php if($queryResult){ ?>
+			<?php if($queryResult){ ?>
 
-		<div id="registerDone">
-			<h2>Registrazione effettuata!</h2>
-			<h2>Ti mando alla pagina di login...</h2>
-		</div>
+			<div id="registerDone">
+				<h2>Registrazione effettuata!</h2>
+				<h2>Ti mando alla pagina di login...</h2>
+			</div>
 
-		<?php }else{ ?>
+			<?php }else{ ?>
 
-		<div id="registerBox">
-			<form action="registrati.php" id="registerForm" method="post">
-				<h2 id="registrati">Registrati</h2>
+			<div id="registerBox">
+				<form action="registrati.php" id="registerForm" method="post">
+					<h2 id="registrati">Registrati</h2>
+					
+					<?=$errorMSG?>
 				
-				<?=$errorMSG?>
-			
-				<label for="REmail" aria-hidden="true"><b>Email</b></label>
-				<p class="JSError" id="registerEmailERR"></p>
-				<input type="text" placeholder="Inserisci E-mail" name="REmail" id="REmail" value="<?=$mail?>" required>
-			
-				<label for="RUsername" aria-hidden="true"><b>Username</b></label>
-				<p class="JSError" id="registerUsernameERR"></p>
-				<input type="text" placeholder="Inserisci Username" name="RUsername" id="RUsername" value="<?=$username?>" required>
+					<label for="REmail"><b>Email</b></label>
+					<p class="JSError" id="registerEmailERR"></p>
+					<input type="text" placeholder="Inserisci E-mail" name="REmail" id="REmail" value="<?=$mail?>" required>
+				
+					<label for="RUsername"><b>Username</b></label>
+					<p class="JSError" id="registerUsernameERR"></p>
+					<input type="text" placeholder="Inserisci Username" name="RUsername" id="RUsername" value="<?=$username?>" required>
 
-				<label for="RName" aria-hidden="true"><b>Nome</b></label>
-				<p class="JSError" id="registerNameERR"></p>
-				<input type="text" placeholder="Inserisci Nome" name="RName" id="RName" value="<?=$name?>" required>
+					<label for="RName"><b>Nome</b></label>
+					<p class="JSError" id="registerNameERR"></p>
+					<input type="text" placeholder="Inserisci Nome" name="RName" id="RName" value="<?=$name?>" required>
 
-				<label for="RSurname" aria-hidden="true"><b>Cognome</b></label>
-				<p class="JSError" id="registerSurnameERR"></p>
-				<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="RSurname" value="<?=$surname?>" required>
+					<label for="RSurname"><b>Cognome</b></label>
+					<p class="JSError" id="registerSurnameERR"></p>
+					<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="RSurname" value="<?=$surname?>" required>
 
-				<label for="RCity" aria-hidden="true"><b>Città</b></label>
-				<p class="JSError" id="registerCityERR"></p>
-				<input type="text" placeholder="Inserisci città" name="RCity" id="RCity" value="<?=$city?>">
+					<label for="RCity"><b>Città</b></label>
+					<p class="JSError" id="registerCityERR"></p>
+					<input type="text" placeholder="Inserisci città" name="RCity" id="RCity" value="<?=$city?>">
 
-				<label for="RPassword" aria-hidden="true"><b>Password</b></label>
-				<p class="JSError" id="registerPasswordERR"></p>
-				<input type="password" placeholder="Inserisci Password" name="RPassword" id="RPassword" required>
-			
-				<label for="RPasswordRepeat" aria-hidden="true"><b>Ripeti Password</b></label>
-				<p class="JSError" id="registerRPasswordERR"></p>
-				<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="RPasswordRepeat" required>
-			
-				<button type="submit" name="submit" class="registerbtn">Registrati</button>
-			</form>
+					<label for="RPassword"><b>Password</b></label>
+					<p class="JSError" id="registerPasswordERR"></p>
+					<input type="password" placeholder="Inserisci Password" name="RPassword" id="RPassword" required>
+				
+					<label for="RPasswordRepeat"><b>Ripeti Password</b></label>
+					<p class="JSError" id="registerRPasswordERR"></p>
+					<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="RPasswordRepeat" required>
+				
+					<button type="submit" name="submit" class="registerbtn">Registrati</button>
+				</form>
+			</div>
+
+			<?php } ?>
 		</div>
-
-		<?php } ?>
-	</div>
+	</main>
 
 	<?php include('../components/footer.php') ?>
 

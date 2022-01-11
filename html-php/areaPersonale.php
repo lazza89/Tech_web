@@ -101,7 +101,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
     }
 }else{
 	header("Location: home.php");
-
 }
 
 if($errorMSG){
@@ -131,7 +130,7 @@ if($errorMSG){
 
 <body>
 	<header>
-		<a id="salta" href="#personalArea">Vai al contenuto</a>
+		<a class="sr-only" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -158,46 +157,47 @@ if($errorMSG){
 			<li>Profilo</li>
 		</ul>
 	</nav>
+	<main id="main">
+		<div id="personalArea">
+			<div id="personalAreaBox">
+				<form action="areaPersonale.php" id="personalAreaForm" method="post">
+					<h2 id="datiUtente">Dati utente</h2>
+					
+					<?=$errorMSG?>
 
-	<div id="personalArea">
-		<div id="personalAreaBox">
-			<form action="areaPersonale.php" id="personalAreaForm" method="post">
-				<h2 id="datiUtente">Dati utente</h2>
+					<label for="PEmail"><b>Email</b></label>
+					<p class="JSError" id="PAreaEmailERR"></p>
+					<input type="text" placeholder="Inserisci E-mail" name="PEmail" id="PEmail" value="<?=$mail?>" required>
 				
-				<?=$errorMSG?>
+					<label for="PUsername"><b>Username</b></label>
+					<p class="JSError" id="PAreaUsernameERR"></p>
+					<input type="text" placeholder="Inserisci Username" name="PUsername" id="PUsername" value="<?=$username?>" required>
 
-				<label for="PEmail" aria-hidden="true"><b>Email</b></label>
-				<p class="JSError" id="PAreaEmailERR"></p>
-				<input type="text" placeholder="Inserisci E-mail" name="PEmail" id="PEmail" value="<?=$mail?>" required>
-			
-				<label for="PUsername" aria-hidden="true"><b>Username</b></label>
-				<p class="JSError" id="PAreaUsernameERR"></p>
-				<input type="text" placeholder="Inserisci Username" name="PUsername" id="PUsername" value="<?=$username?>" required>
+					<label for="PName"><b>Nome</b></label>
+					<p class="JSError" id="PAreaNameERR"></p>
+					<input type="text" placeholder="Inserisci Nome" name="PName" id="PName" value="<?=$name?>" required>
 
-				<label for="PName" aria-hidden="true"><b>Nome</b></label>
-				<p class="JSError" id="PAreaNameERR"></p>
-				<input type="text" placeholder="Inserisci Nome" name="PName" id="PName" value="<?=$name?>" required>
+					<label for="PSurname"><b>Cognome</b></label>
+					<p class="JSError" id="PAreaSurnameERR"></p>
+					<input type="text" placeholder="Inserisci Cognome" name="PSurname" id="PSurname" value="<?=$surname?>" required>
 
-				<label for="PSurname" aria-hidden="true"><b>Cognome</b></label>
-				<p class="JSError" id="PAreaSurnameERR"></p>
-				<input type="text" placeholder="Inserisci Cognome" name="PSurname" id="PSurname" value="<?=$surname?>" required>
+					<label for="PCity"><b>Città</b></label>
+					<p class="JSError" id="PAreaCityERR"></p>
+					<input type="text" placeholder="Inserisci città" name="PCity" id="PCity" value="<?=$city?>">
 
-				<label for="PCity" aria-hidden="true"><b>Città</b></label>
-				<p class="JSError" id="PAreaCityERR"></p>
-				<input type="text" placeholder="Inserisci città" name="PCity" id="PCity" value="<?=$city?>">
+					<label for="POldPassword"><b>Password attuale</b></label>
+					<p class="JSError" id="PAreaPasswordERR"></p>
+					<input type="password" placeholder="Inserisci Password Attuale" name="POldPassword" id="POldPassword" value="" required>
 
-				<label for="POldPassword" aria-hidden="true"><b>Password attuale</b></label>
-				<p class="JSError" id="PAreaPasswordERR"></p>
-				<input type="password" placeholder="Inserisci Password Attuale" name="POldPassword" id="POldPassword" value="" required>
-
-				<label for="PPassword" aria-hidden="true"><b>Password</b></label>
-				<p class="JSError" id="PAreaRPasswordERR"></p>
-				<input type="password" placeholder="Inserisci Nuova Password" name="PPassword" id="PPassword" value="">
-						
-				<button type="submit" name="submit" class="personalAreabtn">Modifica</button>
-			</form>
+					<label for="PPassword"><b>Nuova Password</b></label>
+					<p class="JSError" id="PAreaRPasswordERR"></p>
+					<input type="password" placeholder="Inserisci Nuova Password" name="PPassword" id="PPassword" value="">
+							
+					<button type="submit" name="submit" class="personalAreabtn">Modifica</button>
+				</form>
+			</div>
 		</div>
-	</div>
+	</main>
 
 	<?php include('../components/footer.php') ?>			
 

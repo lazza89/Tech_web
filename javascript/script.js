@@ -3,7 +3,7 @@ const CHECK_USERNAME = /^[A-Z\d]{1,20}$/i;
 const CHECK_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const CHECK_NAME_AND_SURNAME = /^[A-Z ]{2,30}$/i;
 const CHECK_CITY = /^[A-Z ]{2,40}$/i;
-const CHECK_COMMENT = /^[A-Z\d,.èé'ì% àò\n!?() ]{1,300}$/i;
+const CHECK_COMMENT = /^[A-Z\d,.èéù'ì% àò\n!?() ]{1,300}$/i;
 
 
 window.onload = function () {

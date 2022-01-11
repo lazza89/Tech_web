@@ -87,7 +87,7 @@ if($errorMSG){
 
 <body>
 	<header>
-		<a id="salta" href="#loginBox">Vai al contenuto</a>
+		<a class="sr-only" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -107,29 +107,30 @@ if($errorMSG){
 			<li><a href="recensioni.php">Recensioni</a></li>
 		</ul>
 	</nav>
-
-	<div class="login">
-		<div id="loginBox">
-
-			<?=$errorMSG?>
-		
-			<form action="login.php" id="loginForm" method="post">
-				<label for="LUsername" aria-hidden="true"><b>Username</b></label>
-				<p class="JSError" id="loginUsernameERR"></p>
-				<input type="text" placeholder="Username" name="LUsername" id="LUsername" required>
-			
-				<label for="LPassword" aria-hidden="true"><b>Password</b></label>
-				<p class="JSError" id="loginPasswordERR"></p>
-				<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
-			
-				<div id=loginAndRegister>
-					<button type="submit" name="submit">Login</button>
-					<a href="registrati.php">Registrati!</a>
-				</div>
-			</form>
-		</div>
-	</div>
 	
+	<main id="main">
+		<div class="login">
+			<div id="loginBox">
+
+				<?=$errorMSG?>
+			
+				<form action="login.php" id="loginForm" method="post">
+					<label for="LUsername"><b>Username</b></label>
+					<p class="JSError" id="loginUsernameERR"></p>
+					<input type="text" placeholder="Username" name="LUsername" id="LUsername" required>
+				
+					<label for="LPassword"><b>Password</b></label>
+					<p class="JSError" id="loginPasswordERR"></p>
+					<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
+				
+					<div id=loginAndRegister>
+						<button type="submit" name="submit">Login</button>
+						<a href="registrati.php">Registrati!</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</main>
 		<?php include('../components/footer.php') ?>			
 </body>
 </html>
