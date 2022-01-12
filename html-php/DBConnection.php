@@ -88,6 +88,18 @@ class DBConnection{
         }
     }
 
+    public function getUserDetailsById($id){
+        $getUsernameById = "SELECT `email`, `username`, `name`, `surname`, `city` FROM `user` WHERE `id` = \"$id\" ";
+        $queryResult = mysqli_query($this->connection, $getUsernameById) or die (mysqli_error($this->connection)); 
+
+        if(mysqli_num_rows($queryResult) > 0){
+            $row = mysqli_fetch_assoc($queryResult);
+            return $row;
+        }else{
+            return "";
+        }
+    }
+
     public function getUsernameById($id){
         $getUsernameById = "SELECT `username` FROM `user` WHERE `id` = \"$id\" ";
         $queryResult = mysqli_query($this->connection, $getUsernameById) or die (mysqli_error($this->connection)); 

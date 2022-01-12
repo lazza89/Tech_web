@@ -115,12 +115,12 @@ if($errorMSG){
 				<?=$errorMSG?>
 			
 				<form action="login.php" id="loginForm" method="post">
-					<label for="LUsername"><b>Username</b></label>
 					<p class="JSError" id="loginUsernameERR"></p>
+					<label for="LUsername"><b>Username</b></label>
 					<input type="text" placeholder="Username" name="LUsername" id="LUsername" required>
-				
-					<label for="LPassword"><b>Password</b></label>
+					
 					<p class="JSError" id="loginPasswordERR"></p>
+					<label for="LPassword"><b>Password</b></label>
 					<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
 				
 					<div id=loginAndRegister>

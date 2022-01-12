@@ -8,6 +8,7 @@ if(!isset($_SESSION)) {
 
 $queryUpdateResult = "";
 $errorMSG = "";
+$doneMSG = "";
 
 $connection = new DBConnection();
 $connectionOK = $connection->openDBConnection();
@@ -68,6 +69,18 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
             $errorMSG .= "<li>Città non conforme</li>";
         }
 
+		if($errorMSG == ""){
+			if($pw == $oldPw){
+				$errorMSG .= "<li>Le password sono identiche</li>";
+			}
+
+			$checkChange = $connection->getUserDetailsById($_SESSION['id']);
+			if($checkChange != "" && !$pw){
+				if($checkChange['email'] == $mail && $checkChange['username'] == $username && $checkChange['name'] == $name && $checkChange['surname'] == $surname && $checkChange['city'] == $city){
+					$errorMSG .= "<li>I dati inseriti sono identici a quelli nel database</li>";
+				}
+			}
+		}
 
         if($errorMSG == ""){
             if($connectionOK){
@@ -87,12 +100,13 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
                         $_SESSION['name'] = $name;
                         $_SESSION['surname'] = $surname;
                         $_SESSION['city'] = $city;
+
+						$doneMSG = "Modifica avvenuta con successo";
                         
-                     }else{
+                    }else{
                         $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
                     }
                 }
-                $connection->closeDBConnection();
             }else{
                 $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
             }
@@ -102,12 +116,19 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
 }else{
 	header("Location: home.php");
 }
+$connection->closeDBConnection();
 
 if($errorMSG){
 	$openList = "<ul>";
 	$closeList = "</ul>";
 	$openList .= $errorMSG .= $closeList;
 	$errorMSG = $openList;
+}
+if($doneMSG){
+	$openList = "<h3 id=\"doneChanges\">";
+	$closeList = "</h3>";
+	$openList .= $doneMSG .= $closeList;
+	$doneMSG = $openList;
 }
 
 ?>
@@ -164,33 +185,34 @@ if($errorMSG){
 					<h2 id="datiUtente">Dati utente</h2>
 					
 					<?=$errorMSG?>
+					<?=$doneMSG?>
 
-					<label for="PEmail"><b>Email</b></label>
 					<p class="JSError" id="PAreaEmailERR"></p>
+					<label for="PEmail"><b>Email</b></label>
 					<input type="text" placeholder="Inserisci E-mail" name="PEmail" id="PEmail" value="<?=$mail?>" required>
 				
-					<label for="PUsername"><b>Username</b></label>
 					<p class="JSError" id="PAreaUsernameERR"></p>
+					<label for="PUsername"><b>Username</b></label>
 					<input type="text" placeholder="Inserisci Username" name="PUsername" id="PUsername" value="<?=$username?>" required>
 
-					<label for="PName"><b>Nome</b></label>
 					<p class="JSError" id="PAreaNameERR"></p>
+					<label for="PName"><b>Nome</b></label>
 					<input type="text" placeholder="Inserisci Nome" name="PName" id="PName" value="<?=$name?>" required>
 
-					<label for="PSurname"><b>Cognome</b></label>
 					<p class="JSError" id="PAreaSurnameERR"></p>
+					<label for="PSurname"><b>Cognome</b></label>
 					<input type="text" placeholder="Inserisci Cognome" name="PSurname" id="PSurname" value="<?=$surname?>" required>
 
-					<label for="PCity"><b>Città</b></label>
 					<p class="JSError" id="PAreaCityERR"></p>
+					<label for="PCity"><b>Città</b></label>
 					<input type="text" placeholder="Inserisci città" name="PCity" id="PCity" value="<?=$city?>">
 
-					<label for="POldPassword"><b>Password attuale</b></label>
 					<p class="JSError" id="PAreaPasswordERR"></p>
+					<label for="POldPassword"><b>Password attuale</b></label>
 					<input type="password" placeholder="Inserisci Password Attuale" name="POldPassword" id="POldPassword" value="" required>
 
-					<label for="PPassword"><b>Nuova Password</b></label>
 					<p class="JSError" id="PAreaRPasswordERR"></p>
+					<label for="PPassword"><b>Nuova Password</b></label>
 					<input type="password" placeholder="Inserisci Nuova Password" name="PPassword" id="PPassword" value="">
 							
 					<button type="submit" name="submit" class="personalAreabtn">Modifica</button>

@@ -77,7 +77,6 @@ if(!isset($_SESSION["login"])){
 						$errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
 					}
 				}
-				$connection->closeDBConnection();
 			}else{
 				$errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
 			}
@@ -94,6 +93,7 @@ if($errorMSG){
 	$openList .= $errorMSG .= $closeList;
 	$errorMSG = $openList;
 } 
+$connection->closeDBConnection();
 
 ?>
 
@@ -155,32 +155,32 @@ if($errorMSG){
 					
 					<?=$errorMSG?>
 				
-					<label for="REmail"><b>Email</b></label>
 					<p class="JSError" id="registerEmailERR"></p>
+					<label for="REmail"><b>Email</b></label>
 					<input type="text" placeholder="Inserisci E-mail" name="REmail" id="REmail" value="<?=$mail?>" required>
 				
-					<label for="RUsername"><b>Username</b></label>
 					<p class="JSError" id="registerUsernameERR"></p>
+					<label for="RUsername"><b>Username</b></label>
 					<input type="text" placeholder="Inserisci Username" name="RUsername" id="RUsername" value="<?=$username?>" required>
 
-					<label for="RName"><b>Nome</b></label>
 					<p class="JSError" id="registerNameERR"></p>
+					<label for="RName"><b>Nome</b></label>
 					<input type="text" placeholder="Inserisci Nome" name="RName" id="RName" value="<?=$name?>" required>
 
-					<label for="RSurname"><b>Cognome</b></label>
 					<p class="JSError" id="registerSurnameERR"></p>
+					<label for="RSurname"><b>Cognome</b></label>
 					<input type="text" placeholder="Inserisci Cognome" name="RSurname" id="RSurname" value="<?=$surname?>" required>
 
-					<label for="RCity"><b>Città</b></label>
 					<p class="JSError" id="registerCityERR"></p>
+					<label for="RCity"><b>Città</b></label>
 					<input type="text" placeholder="Inserisci città" name="RCity" id="RCity" value="<?=$city?>">
 
-					<label for="RPassword"><b>Password</b></label>
 					<p class="JSError" id="registerPasswordERR"></p>
+					<label for="RPassword"><b>Password</b></label>
 					<input type="password" placeholder="Inserisci Password" name="RPassword" id="RPassword" required>
 				
-					<label for="RPasswordRepeat"><b>Ripeti Password</b></label>
 					<p class="JSError" id="registerRPasswordERR"></p>
+					<label for="RPasswordRepeat"><b>Ripeti Password</b></label>
 					<input type="password" placeholder="Ripeti Password" name="RPasswordRepeat" id="RPasswordRepeat" required>
 				
 					<button type="submit" name="submit" class="registerbtn">Registrati</button>
