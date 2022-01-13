@@ -80,6 +80,7 @@ if(!isset($_SESSION["login"])){
 			}else{
 				$errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
 			}
+			$connection->closeDBConnection();
 		}
 
 	}
@@ -93,7 +94,6 @@ if($errorMSG){
 	$openList .= $errorMSG .= $closeList;
 	$errorMSG = $openList;
 } 
-$connection->closeDBConnection();
 
 ?>
 

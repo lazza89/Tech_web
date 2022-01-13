@@ -104,7 +104,7 @@ function checkRegister(){
   var password = document.getElementById("RPassword").value;
   var RPassword = document.getElementById("RPasswordRepeat").value;
 
-  i += checkInput(mail, "registerEmailERR", "Email non conforme, l'email deve essere in formato email", CHECK_EMAIL);
+  i += checkInput(mail, "registerEmailERR", "Email non conforme, la mail deve essere in formato: testo@dominio.nomedominio", CHECK_EMAIL);
   i += checkInput(username, "registerUsernameERR", "Username non conforme, per l'username si possono usare solo caratteri alfanumerici ", CHECK_USERNAME);
   i += checkInput(name, "registerNameERR", "Nome non conforme, per il nome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);
   i += checkInput(surname, "registerSurnameERR", "Cognome non conforme, per ll cognome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);

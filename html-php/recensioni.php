@@ -129,7 +129,7 @@ if(isset($_POST["submit"])){
 			</form>
 		</div>
 		<?php }else{ ?>
-			<h3 class="warning">Bisogna aver effettuato il login per scrivere un commento</h3>
+			<h3 class="warning">Effettua il login per scrivere un commento</h3>
 		<?php } ?>
 
 		<div id="comments_holder">

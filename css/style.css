@@ -35,6 +35,7 @@ header h1{
 	padding: 0.5em 0.5em 0.5em 1em;
 	border: 4.5px solid #0000ff;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 #breadcrumb a:link{
@@ -435,7 +436,7 @@ header h1{
 	border:  2px solid  #336ef0;
 	box-shadow: 5px 8px #6693f5;
 	margin: 0.7em;
-	min-width: 300px;
+	min-width: 200px;
 	padding: 0.8em;
   	width: 70%;
 }
