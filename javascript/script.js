@@ -2,7 +2,7 @@ const CHECK_PASSWORD = /^[A-Z\d]{1,20}$/i;
 const CHECK_USERNAME = /^[A-Z\d]{1,20}$/i;
 const CHECK_EMAIL = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const CHECK_NAME_AND_SURNAME = /^[A-Z ]{2,30}$/i;
-const CHECK_CITY = /^[A-Z ]{2,40}$/i;
+const CHECK_CITY = /^[A-Z ùèàéòì]{2,40}$/i;
 const CHECK_COMMENT = /^[A-Z\d,.èéù'ì% àò\n!?() ]{1,300}$/i;
 
 
@@ -43,7 +43,8 @@ window.onload = function () {
       "PSurname",
       "PCity",
       "POldPassword",
-      "PPassword"
+      "PPassword",
+      "PRPassword"
     ];
     items.forEach(function (item) {
       document.getElementById(item).addEventListener("blur", checkPersonalArea);
@@ -132,6 +133,7 @@ function checkPersonalArea(){
   var city = document.getElementById("PCity").value;
   var password = document.getElementById("POldPassword").value;
   var RPassword = document.getElementById("PPassword").value;
+  var RepeatPassword = document.getElementById("PRPassword").value;
 
   i += checkInput(mail, "PAreaEmailERR", "Email non conforme, l'email deve essere in formato email", CHECK_EMAIL);
   i += checkInput(username, "PAreaUsernameERR", "Username non conforme, per l'username si possono usare solo caratteri alfanumerici ", CHECK_USERNAME);
@@ -140,6 +142,8 @@ function checkPersonalArea(){
   i += checkInput(city, "PAreaCityERR", "Città non conforme, per la città si possono usare solo caratteri alfabetici ", CHECK_CITY);
   i += checkInput(password, "PAreaPasswordERR", "Password non conforme, per la password si possono usare solo caratteri alfanumerici ", CHECK_PASSWORD);
   i += checkInput(RPassword, "PAreaRPasswordERR", "Password non conforme, per la password si possono usare solo caratteri alfanumerici ", CHECK_PASSWORD);
+  i += checkRepetedPassword(RPassword, RepeatPassword, "PAreaRepeatPasswordERR", "Le password non combaciano");
+
 
   if(i > 0){
     document.querySelector('button').style["background-color"] = "red";
@@ -165,8 +169,6 @@ function checkInput(inputType, errorID, failureText, RE){
 }
 
 function checkRepetedPassword(password, RPassword, errorID, failureText){
-  const button = document.querySelector('button');
-
   if(password != "" && RPassword != ""){
     if(password != RPassword){
       document.getElementById(errorID).innerHTML = failureText;
@@ -175,6 +177,8 @@ function checkRepetedPassword(password, RPassword, errorID, failureText){
       document.getElementById(errorID).innerHTML = "";
       return 0;
     }
+  }else{
+    document.getElementById(errorID).innerHTML = "";
   }
   return 0;
 }

@@ -44,6 +44,11 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
 			$errorMSG .= "<li>Password non conforme</li>";
 		}
 
+		$repeatPw = $_POST["PRPassword"];
+		if($pw != $repeatPw){   
+			$errorMSG .= "<li>Password nuova non combacia con quella ripetuta</li>";
+		}
+
 		$oldPw = $_POST["POldPassword"];
 		if(!preg_match("/^[A-Z\d]{3,20}+$/i",$oldPw)){   
 			$errorMSG .= "<li>Password non conforme</li>";
@@ -65,7 +70,7 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
         }
         //deve essere almeno 3 caratteri e lunga 40, può contenere solo lettere
         $city = $_POST["PCity"];
-        if($city && !preg_match("/^[A-Z]{2,40}+$/i",$city)){
+        if($city && !preg_match("/^[A-Z ùèàéòì]{2,40}+$/i",$city)){
             $errorMSG .= "<li>Città non conforme</li>";
         }
 
@@ -215,6 +220,10 @@ if($doneMSG){
 					<p class="JSError" id="PAreaRPasswordERR"></p>
 					<label for="PPassword"><b>Nuova Password</b></label>
 					<input type="password" placeholder="Inserisci Nuova Password" name="PPassword" id="PPassword" value="">
+
+					<p class="JSError" id="PAreaRepeatPasswordERR"></p>
+					<label for="PRPassword"><b>Ripeti Nuova Password</b></label>
+					<input type="password" placeholder="Ripeti Nuova Password" name="PRPassword" id="PRPassword" value="">
 							
 					<button type="submit" name="submit" class="personalAreabtn">Modifica</button>
 				</form>

@@ -44,7 +44,7 @@ if(!isset($_SESSION["login"])){
 		}
 		//deve essere almeno 3 caratteri e lunga 40, può contenere solo lettere
 		$city = $_POST["RCity"];
-		if($city && !preg_match("/^[A-Z ]{2,40}+$/i",$city)){
+		if($city && !preg_match("/^[A-Z ùèàéòì]{2,40}+$/i",$city)){
 			$errorMSG .= "<li>Città non conforme, la città può contenere solo lettere, minimo 2 caratteri massimo 40</li>";
 		}
 		//PASSWORD lunga almeno 6 caratteri, deve contenere almeno un numero e una lettera, può contenere caratteri speciali ma non robe html e sql
