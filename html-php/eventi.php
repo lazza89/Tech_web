@@ -15,6 +15,8 @@ if(!isset($_SESSION)) {
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+	<link rel="shortcut icon" href="../images/icona.png" />
+
 </head>
 
 <body>
