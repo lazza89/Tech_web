@@ -149,6 +149,7 @@ if($doneMSG){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 	<link rel="shortcut icon" href="../images/icona.png" />
 
 	<script src="../javascript/script.js"></script>
@@ -163,11 +164,11 @@ if($doneMSG){
 
 	<div id="breadcrumb">
 	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
-		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Area Personale</p>
-		<a href="logout.php">Logout</a>
+		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Profilo</p>
+		<a class="areaRiservata" href="logout.php">Logout</a>
 	<?php } else { ?>
-		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Area Personale</p>
-		<a href="login.php">Login</a>
+		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Profilo</p>
+		<a class="areaRiservata" href="login.php">Login</a>
 	<?php } ?>
 	</div>
 

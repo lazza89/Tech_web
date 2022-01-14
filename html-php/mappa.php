@@ -30,10 +30,10 @@ if(!isset($_SESSION)) {
 
     <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
 		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-        <a href="logout.php">Logout</a>
+        <a class="areaRiservata" href="logout.php">Logout</a>
     <?php }else{ ?>
         <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-        <a href="login.php">Login</a>
+        <a class="areaRiservata" href="login.php">Login</a>
     <?php } ?>
     
 	</div>
@@ -55,9 +55,9 @@ if(!isset($_SESSION)) {
 	</nav>
 
 	<main id="main">
-        <h2 class="titolo" id="inizio">Mappa e piste</h2>
+        <h2 class="titolo">Mappa e piste</h2>
         <img id="imgMappa" src="../images/mappa-piste.png" alt=""/>
-        <a id="mappa-pdf" href="../images/mappa-piste.png" target="_blank" rel="noopener noreferrer" download>Clicca qui per scaricare la mappa (980KB)</a>
+        <a id="mappa-pdf" href="../images/mappa-piste.png" target="_blank" rel="noopener noreferrer" download>Clicca qui per scaricare la mappa [981 KB]</a>
         <article id="legenda">
             <div id="inner-box-left">
             <table class="slope-table" id="blue-table" title="Informazioni sulle due piste blu di facile livello">

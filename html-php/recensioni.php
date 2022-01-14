@@ -76,6 +76,7 @@ if(isset($_POST["submit"])){
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
 	<link rel="shortcut icon" href="../images/icona.png" />
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 
 	<script src="../javascript/script.js"></script>
 
@@ -90,10 +91,10 @@ if(isset($_POST["submit"])){
 	<div id="breadcrumb">
 	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Recensioni</p>
-		<a href="logout.php">Logout</a>
+		<a class="areaRiservata" href="logout.php">Logout</a>
 	<?php } else { ?>
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Recensioni</p>
-		<a href="login.php">Login</a>
+		<a class="areaRiservata" href="login.php">Login</a>
 	<?php } ?>
 	</div>
 
@@ -114,7 +115,7 @@ if(isset($_POST["submit"])){
 	</nav>
 
 	<main id="main">
-		<h2 class="titolo" id="inizio">Cosa pensano di noi</h2>
+		<h2 class="titolo">Cosa pensano di noi</h2>
 
 		<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 		<div id=writeAComment>

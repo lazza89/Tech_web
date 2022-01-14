@@ -1,5 +1,4 @@
 *{
-	page-break-inside: avoid;
 	background-color: #fff;
 }
 
@@ -26,7 +25,11 @@ header h1{
 	border: none;
 }
 
-#menu{
+.areaRiservata{
+	display: none;
+}
+
+#menu, #menu-hamburger, .hamburger{
 	display: none;
 }
 
@@ -36,17 +39,17 @@ header h1{
 }
 
 /* TARIFFE, MAPPA */
-#legenda{
-	page-break-inside: initial;
-}
-
 #mappa-pdf{
 	display: none;
 }
 
+#legenda{
+	page-break-inside: initial;
+}
+
 #listino, .slope-table, .black-table{
-	page-break-inside: avoid;
 	background-color: #fff;
+	page-break-inside: avoid;
 }
 
 #listino thead, .table-header{
@@ -75,7 +78,37 @@ header h1{
 /*SERVIZI,  EVENTI*/
 .box{
 	box-shadow: none;
+	border: none;
 }
+
+#gare{
+	page-break-before: always;
+}
+
+
+/*RECENSIONI, PROFILO LOGIN, REGISTRATI*/
+#writeAComment, .warning, .commentsHeader, #loginAndRegister, .registerbtn, .personalAreabtn{
+	display: none;
+}
+
+.comments{
+	box-shadow: none;
+}
+
+#loginBox, #registerBox, #personalAreaBox{
+	border: none;
+	box-shadow: none;
+}
+
+#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat,
+#PEmail, #PUsername, #PName, #PSurname, #PCity, #PPassword, #POldPassword, #PRPassword{
+	background-color: #fff;
+}
+
+input[type=text]:focus, input[type=password]:focus{
+  background-color: #fff;
+}
+
 
 /* FOOTER */
 footer{
@@ -87,4 +120,3 @@ footer .imgValidCode{
 	width: 10%;
 	background-color: #fff;
 }
-

@@ -108,6 +108,7 @@ if($errorMSG){
 	<meta name="author" content="Crystal Ski" />
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 	<link rel="shortcut icon" href="../images/icona.png" />
 
 	<script src="../javascript/script.js"></script>
@@ -122,7 +123,7 @@ if($errorMSG){
 
 	<div id="breadcrumb">
 		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Registrati</p>
-		<a href="login.php">Login</a>
+		<a class="areaRiservata" href="login.php">Login</a>
 	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />

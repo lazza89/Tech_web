@@ -16,6 +16,7 @@ if(!isset($_SESSION)) {
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
 	<link rel="shortcut icon" href="../images/icona.png" />
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 
 </head>
 
@@ -29,10 +30,10 @@ if(!isset($_SESSION)) {
 
 		<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 			<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi</p>
-			<a href="logout.php">Logout</a>
+			<a class="areaRiservata" href="logout.php">Logout</a>
 		<?php } else { ?>
 			<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi</p>
-			<a href="login.php">Login</a>
+			<a class="areaRiservata" href="login.php">Login</a>
 		<?php } ?>
 
 	</div>
@@ -54,7 +55,7 @@ if(!isset($_SESSION)) {
 		</ul>
 	</nav> 
 	<main id="main">
-		<div class="box" id="inizio">
+		<div class="box" id="eventi">
 			<h2>Eventi</h2>
 			<img class="img_eventi" src="../images/eventi.jpg" alt=""/>
 			<dl class="liste_eventi">
@@ -74,7 +75,7 @@ if(!isset($_SESSION)) {
 		</div>
 
 
-		<div class="box">
+		<div class="box" id="gare">
 			<h2>Gare</h2>
 			<img class="img_eventi" src="../images/gare.jpg" alt=""/>
 			<dl class="liste_eventi">

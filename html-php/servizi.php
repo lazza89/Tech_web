@@ -31,10 +31,10 @@ if(!isset($_SESSION)) {
 
         <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
             <p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Servizi</p>
-            <a href="logout.php">Logout</a>
+            <a class="areaRiservata" href="logout.php">Logout</a>
         <?php }else{ ?>
             <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Servizi</p>
-            <a href="login.php">Login</a>
+            <a class="areaRiservata" href="login.php">Login</a>
         <?php } ?>
 
     </div>
@@ -56,11 +56,11 @@ if(!isset($_SESSION)) {
 	</nav>      
 
     <main id="main">
-        <h2 class="titolo" id="inizio"> Le nostre baite </h2>
+        <h2 class="titolo"> Le nostre baite </h2>
         <article class="box">  
             <h3> 360 Gradi </h3>
             <p> Pranzare mentre si ammira un panorama mozzafiato? 
-            E' possibile in cima al Monte Cristallo, in prossimità dell'impianto di risalita, grazie alla nostra terrazza dotata di pannelli di vetro che vi assicura un'ottima sosta per recuperare le forze e per rimanere al caldo almeno per un po'.</p> 
+            E' possibile in cima al Monte Cristallo, in prossimità dell'impianto di risalita, grazie alla nostra terrazza dotata di pannelli di vetro che vi assicura un'ottima sosta per recuperare le forze e per rimanere al caldo.</p> 
             <p>Il posto offre una tavola calda con ampia scelta di primi e secondi piatti originali del posto, tra una portata e l'altra potrete godervi la splendida vista dei monti innevati.</p>
             <p>Numero di telefono 3330000001</p>
         </article>

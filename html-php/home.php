@@ -29,10 +29,10 @@ if(!isset($_SESSION)) {
 
 	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
 		<p>Ciao <?= $_SESSION['username'] ?>! Ti trovi in: <span lang="en">Home</span></p>
-		<a href="logout.php">Logout</a>
+		<a class="areaRiservata" href="logout.php">Logout</a>
 	<?php } else { ?>
 		<p>Ti trovi in: <span lang="en">Home</span></p>
-		<a href="login.php">Login</a>
+		<a class="areaRiservata" href="login.php">Login</a>
 	<?php } ?>
 	
 	</div>

@@ -38,6 +38,10 @@ header h1{
 	flex-wrap: wrap;
 }
 
+#breadcrumb p{
+	padding-right: 1em;
+}
+
 #breadcrumb a:link{
 	color: #0000ff;
 }
@@ -59,11 +63,11 @@ header h1{
 	font-weight: bold;
 }
 
-#menu a:link{
+#menu a:link, .content a:link, #error a:link{
 	color: #0000ff;
 }
 
-#menu a:visited{
+#menu a:visited, .error a:visited, .error a:visited{
 	color: #800080;
 }
 
@@ -97,14 +101,6 @@ header h1{
 	text-align: center;
 	font-size: 1.7em;
 	padding-bottom: 0.3em;
-}
-
-.content a:link{
-	color: #0000ff;
-}
-
-.content a:visited{
-	color: #800080;
 }
 
 .titolo{
@@ -379,9 +375,7 @@ header h1{
 }
 
 #writeAComment{
-	padding: 2em;
-	padding-left: 4em;
-	padding-right: 4em;
+	padding: 2em 4em 2em 4em;
 }
 
 #writeAComment ul{
@@ -400,8 +394,7 @@ header h1{
 }
 
 .comment{
-  word-wrap: 
-  break-word;
+  word-wrap: break-word;
 }
 
 .commentsHeader{
@@ -410,8 +403,9 @@ header h1{
 }
 
 .submitComment{
-	background-color: #336ef0;
-	color: white;
+	background-color: #005ab5;
+	color: #fff;
+	font-size: 1.2em;
 	padding: 16px 20px;
 	margin: 8px 0;
 	border: none;
@@ -438,7 +432,7 @@ header h1{
 	margin: 0.7em;
 	min-width: 200px;
 	padding: 0.8em;
-  	width: 70%;
+  width: 70%;
 }
 .comment{
 	padding-left: 1em;
@@ -519,33 +513,34 @@ header h1{
 	text-align: center;
 	font-size: medium;
 }
-  
-#loginBox button {
-	background-color: #336ef0;
-	color: white;
-	padding: 14px 50px;
-	margin: 8px 0;
-	border: none;
-	cursor: pointer;
-	font-size: medium;
-}
-  
-button:hover {
-	opacity: 0.8;
+
+/* REGISTRATI e PROFILO Area Personale */
+.loginbtn, .registerbtn, .personalAreabtn{
+  background-color: #005ab5;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
 }
 
-/* REGISTER */
+.loginbtn:hover, .registerbtn:hover, .personalAreabtn:hover{
+  opacity:1;
+}
 
-#register{
+#register, #personalArea{
 	display: flex;
 	justify-content: center;
 	align-content: center;
 }
 
-#registerBox {
+#registerBox, #personalAreaBox{
 	padding: 2.5em;
 	width: 60%;
-	min-width: 320px;
+	min-width: 225px;
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
@@ -554,22 +549,23 @@ button:hover {
 	margin: 0.7em;
 }
 
-#registrati{
+#registrati, #datiUtente{
 	text-align: center;
 	padding-bottom: 1em;
 }
 
-#registerBox ul{
+#registerBox ul, #personalAreaBox ul{
 	color: red;
 	padding-bottom: 1em;
 }
 
-#registerDone h2{
+#registerDone h2, #modificationDone h2{
 	text-align: center;
 	margin: 2em;
 }
 
-#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat {
+#REmail, #RUsername, #RName, #RSurname, #RCity, #RPassword, #RPasswordRepeat,
+#PEmail, #PUsername, #PName, #PSurname, #PCity, #PPassword, #POldPassword, #PRPassword{
 	width: 100%;
 	padding: 15px;
 	margin: 5px 0 22px 0;
@@ -583,83 +579,14 @@ input[type=text]:focus, input[type=password]:focus {
   outline: none;
 }
 
-.registerbtn {
-  background-color: #336ef0;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.registerbtn:hover {
-  opacity:1;
-}
-
-/* PROFILO - Area Personale */
-
-#personalArea{
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}
-
-#personalAreaBox {
-	padding: 2.5em;
-	width: 60%;
-	min-width: 320px;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	border:  2px solid  #336ef0;
-	box-shadow: 5px 8px #6693f5;
-	margin: 0.7em;
-}
-
-#modificationDone h2{
-	text-align: center;
-	margin: 2em;
-}
-
-#datiUtente{
-	text-align: center;
-	padding-bottom: 1em;
-}
-
-#personalAreaBox ul{
-	color: red;
-	padding-bottom: 1em;
-}
-
 #doneChanges{
 	color: #005ab5;
 	text-align: center;
 }
 
-#PEmail, #PUsername, #PName, #PSurname, #PCity, #PPassword, #PRPassword, #POldPassword {
-	width: 100%;
-	padding: 15px;
-	margin: 5px 0 22px 0;
-	display: inline-block;
-	border: none;
-	background: #f1f1f1;
-}
-
-.personalAreabtn {
-  background-color: #336ef0;
-  color: white;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-.personalAreabtn:hover {
-  opacity:1;
+/*javascript error*/
+.JSError{
+	color: #e60000;
 }
 
 /*screen reader only*/
@@ -686,12 +613,6 @@ input[type=text]:focus, input[type=password]:focus {
     clip: rect(1px, 1px, 1px, 1px); /*maybe deprecated but we need to support legacy browsers */
     clip-path: inset(50%); /*modern browsers, clip-path works inwards from each corner*/
     white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
-}
-
-/*javascript error*/
-
-.JSError{
-	color:red;
 }
 
 
@@ -731,7 +652,8 @@ footer .imgValidCode{
 }
 
 #error h2{
-	font-size: 2.5em;
+	font-size: 2em;
+	margin: 0.5em;
 }
 
 #img404{
@@ -741,11 +663,12 @@ footer .imgValidCode{
 
 #error p{
 	font-size: 1.3em;
+	margin: 0em 0.5em 0em 0.5em;
 }
 
-#error a{
-	padding: 1.5em;
+#error li{
+	display: inline-flex;
+	padding: 0.7em;
 	font-size: 1.5em;
 }
-
 

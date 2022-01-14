@@ -34,10 +34,10 @@ if(!isset($_SESSION)) {
 
     <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
         <p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
-        <a href="logout.php">Logout</a>
+        <a class="areaRiservata" href="logout.php">Logout</a>
     <?php }else{ ?>
         <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Tariffe</p>
-        <a href="login.php">Login</a>
+        <a class="areaRiservata" href="login.php">Login</a>
     <?php } ?>
 
     </div>
@@ -59,7 +59,7 @@ if(!isset($_SESSION)) {
 	</nav>
 
     <main id="main">
-        <h2 class="titolo" id="inizio">Listino prezzi</h2>
+        <h2 class="titolo">Listino prezzi</h2>
         <div class="content" id="skipass">        
             <p id="assicurazione">L'ASSICURAZIONE DAL 1 GENNAIO 2022 E' OBBLIGATORIA, LA TARIFFA E' DI 5€ AL GIORNO A PERSONA</p>           
             <p>Indicazioni importanti:</p>

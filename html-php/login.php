@@ -81,6 +81,7 @@ if($errorMSG){
 	<link rel="stylesheet" href="../css/style.css" />
 	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
 	<link rel="shortcut icon" href="../images/icona.png" />
+	<link rel="stylesheet" media="print" href="../css/print.css"/>
 
 	<script src="../javascript/script.js"></script>
 
@@ -125,7 +126,7 @@ if($errorMSG){
 					<input type="password" placeholder="Password" name="LPassword" id="LPassword" required>
 				
 					<div id=loginAndRegister>
-						<button type="submit" name="submit">Login</button>
+						<button type="submit" name="submit" class="loginbtn">Login</button>
 						<a href="registrati.php">Registrati!</a>
 					</div>
 				</form>
