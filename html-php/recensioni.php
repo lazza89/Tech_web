@@ -84,7 +84,7 @@ if(isset($_POST["submit"])){
 
 <body>
 	<header>
-		<a class="sr-only" href="#main">Vai al contenuto</a>
+		<a class="visually-hidden" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -99,7 +99,7 @@ if(isset($_POST["submit"])){
 	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
-	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
+	<label for="menu-hamburger" class="hamburger"><span class="visually-hidden">menu</span></label>
 	<nav id="menu">
 		<ul>
 			<li><a href="home.php">Home</a></li>
@@ -124,7 +124,8 @@ if(isset($_POST["submit"])){
 				<?=$errorMSG?>
 				<p class="JSError"  id="commentERR"></p>
 				<label for="starsQuantity">Stelle (da 1 a 5):</label>
-				<input type="number" id="starsQuantity" name="starsQuantity" value="1" min="1" max="5">	
+				<input type="number" id="starsQuantity" name="starsQuantity" value="1" min="1" max="5">
+				<label for="commentBox" class="visually-hidden">Commento</label>
 				<textarea name="commentBox" id="commentBox" placeholder="Scrivi qui il tuo commento..."></textarea>
 
 				<button type="submit" name="submit" class="submitComment">Pubblica</button>

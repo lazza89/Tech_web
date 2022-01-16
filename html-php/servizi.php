@@ -23,7 +23,7 @@ if(!isset($_SESSION)) {
 
 <body>
     <header>
-		<a class="sr-only" href="#main">Vai al contenuto</a>
+		<a class="visually-hidden" href="#main">Vai al contenuto</a>
 		<h1 lang="en">Crystal Ski</h1>
 	</header>
 
@@ -40,7 +40,7 @@ if(!isset($_SESSION)) {
     </div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
-	<label for="menu-hamburger" class="hamburger"><span class="sr-only">menu</span></label>
+	<label for="menu-hamburger" class="hamburger"><span class="visually-hidden">menu</span></label>
 	<nav id="menu">
 		<ul>
 			<li lang="en"><a href="home.php">Home</a></li>
