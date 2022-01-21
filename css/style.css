@@ -537,6 +537,12 @@ header h1{
 	align-content: center;
 }
 
+#register{
+	flex-direction: column;
+	justify-items: center;
+	align-items: center;
+}
+
 #registerBox, #personalAreaBox{
 	padding: 2.5em;
 	width: 60%;
@@ -557,6 +563,10 @@ header h1{
 #registerBox ul, #personalAreaBox ul{
 	color: red;
 	padding-bottom: 1em;
+}
+
+#registerDoneHidden{
+	display: none;
 }
 
 #registerDone h2, #modificationDone h2{
