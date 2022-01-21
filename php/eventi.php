@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-$HTMLPage = file_get_contents("../html/home.html");
+$HTMLPage = file_get_contents("../html/eventi.html");
 
 if (isset($_SESSION['login']) && $_SESSION['login']) { 
     $username = $_SESSION['username'];
