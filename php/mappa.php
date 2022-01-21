@@ -3,7 +3,7 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
-$HTMLPage = file_get_contents("../html/eventi.html");
+$HTMLPage = file_get_contents("../html/mappa.html");
 
 if (isset($_SESSION['login']) && $_SESSION['login']) { 
     $username = $_SESSION['username'];
@@ -11,6 +11,7 @@ if (isset($_SESSION['login']) && $_SESSION['login']) {
     $HTMLPage = str_replace("{{loginPage}}", "logout.php" , $HTMLPage);
     $HTMLPage = str_replace("{{login}}", "Logout" , $HTMLPage);
     $HTMLPage = str_replace("{{areaPersonale}}", "<li><a href=\"areaPersonale.php\">Profilo</a></li>" , $HTMLPage);
+
 
 }else{
     $HTMLPage = str_replace("{{logged}}", "" , $HTMLPage);

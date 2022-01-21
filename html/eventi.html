@@ -28,7 +28,7 @@ if(!isset($_SESSION)) {
 
 	<div id="breadcrumb">
 		<p>{{logged}}Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Eventi</p>
-		<a class="areaRiservata" href="{{loginPage}}">Login</a>
+		<a class="areaRiservata" href="{{loginPage}}">{{login}}</a>
 	</div>
 	
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
@@ -81,8 +81,6 @@ if(!isset($_SESSION)) {
 			</dl>
 		</div>
 	</main>
-	
-	<?php include('../components/footer.php') ?>
-
+	{{footer}}
 </body>
 </html>

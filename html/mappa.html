@@ -27,15 +27,8 @@ if(!isset($_SESSION)) {
 	</header>
 
 	<div id="breadcrumb">
-
-    <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true){ ?>
-		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-        <a class="areaRiservata" href="logout.php">Logout</a>
-    <?php }else{ ?>
-        <p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
-        <a class="areaRiservata" href="login.php">Login</a>
-    <?php } ?>
-    
+        <p>{{logged}}Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Mappa</p>
+        <a class="areaRiservata" href="{{loginPage}}">{{login}}</a>
 	</div>
 
     <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
@@ -48,9 +41,7 @@ if(!isset($_SESSION)) {
             <li><a href="servizi.php">Servizi</a></li>
             <li><a href="eventi.php">Eventi e Gare</a></li>
             <li><a href="recensioni.php">Recensioni</a></li>
-            <?php if(isset($_SESSION['login']) && $_SESSION['login']){ ?>
-				<li><a href="areaPersonale.php">Profilo</a></li>
-			<?php } ?>
+            {{areaPersonale}}
 		</ul>
 	</nav>
 
@@ -252,8 +243,6 @@ if(!isset($_SESSION)) {
             </div>
         </article>
     </main>
-
-        <?php include('../components/footer.php') ?>		
-
+    {{footer}}		
 </body>
 </html>
