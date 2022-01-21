@@ -26,8 +26,6 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
     $city = $_SESSION['city'];
 
     $HTMLPage = str_replace("{{logged}}", "Ciao $username! " , $HTMLPage);
-    $HTMLPage = str_replace("{{loginPage}}", "logout.php" , $HTMLPage);
-    $HTMLPage = str_replace("{{login}}", "Logout" , $HTMLPage);
 
     $HTMLPage = str_replace("{{mail}}", $mail, $HTMLPage);
     $HTMLPage = str_replace("{{username}}", $username, $HTMLPage);

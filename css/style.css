@@ -383,6 +383,10 @@ header h1{
 	padding: 1em;
 }
 
+#writeACommentHidden{
+	display: none;
+}
+
 #starsQuantity{
 	width: 10%;
 }
@@ -391,6 +395,10 @@ header h1{
 	text-align: center;
 	padding: 1em;
 	color: #005ab5;
+}
+
+.warningHidden{
+	display: none;
 }
 
 .comment{
