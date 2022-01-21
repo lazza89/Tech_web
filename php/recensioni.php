@@ -84,7 +84,10 @@ if($connectionOK){
             $comment = str_replace("{{comment}}", $row["comment"], $comment);
             
             if((isset($_SESSION['login']) && $_SESSION['id'] == $row["userId"]) || (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'])){ 
+                $pre = "<div class = \"commentsHeader\"><form action=\"recensioni.php\" method=\"post\">";
+                $post = "</form></div>";
                 $tmp = "<button class=\"DComment\" name=\"DComment\" value=".$row["id"].">Cancella</button>";
+                $tmp = $pre .= $tmp .= $post;
                 $comment = str_replace("{{userId}}", $tmp, $comment);
             }else{
                 $comment = str_replace("{{userId}}", "", $comment);
