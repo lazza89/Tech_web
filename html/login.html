@@ -1,74 +1,3 @@
-<?php
-require_once("DBConnection.php");
-use DB\DBConnection;
-
-if(!isset($_SESSION)) {
-    session_start();
-}
-
-$errorMSG = "";
-
-if(!isset($_SESSION["login"])){
-	if(isset($_POST["submit"])){
-
-		$username = $_POST["LUsername"];
-		if(!preg_match("/^[A-Z\d]{1,20}+$/i",$username)){
-			$errorMSG = "<li>username non conforme</li>";
-		}
-		$password = $_POST["LPassword"];
-		if(!preg_match("/^[A-Z\d]{1,20}+$/i",$password)){   
-			$errorMSG .= "<li>password non conforme</li>";
-		}
-
-		if($errorMSG == ""){
-			$connection = new DBConnection();
-			$connectionOK = $connection->openDBConnection();
-
-			if($connectionOK){
-				$query = $connection->checkLoginCredentials($username, $password);
-				if($query != ""){
-					if(!isset($_SESSION['login'])) {
-						
-						session_start();
-						$_SESSION['login'] = true;
-						
-						$_SESSION['id'] = $query['id'];
-						$_SESSION['email'] = $query['email'];
-						$_SESSION['username'] = $query['username'];
-						$_SESSION['password'] = $query['password'];
-						$_SESSION['name'] = $query['name'];
-						$_SESSION['surname'] = $query['surname'];
-						$_SESSION['city'] = $query['city'];
-						$_SESSION['isAdmin'] = $query['isAdmin'];
-			
-						header("Location: home.php");
-					}else{
-						$errorMSG = "<li>Login error, Riprova</li>";
-						session_destroy();
-					} 
-				}else{
-					$errorMSG = "<li>Username e Password non corretti</li>";
-				}
-				$connection->closeDBConnection();    
-			}else{
-				$errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
-			}
-		}
-
-	}
-}else{
-	header("Location: home.php");
-}
-
-if($errorMSG){
-	$openList = "<ul>";
-	$closeList = "</ul>";
-	$openList .= $errorMSG .= $closeList;
-	$errorMSG = $openList;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="it">
 
@@ -114,7 +43,7 @@ if($errorMSG){
 		<div class="login">
 			<div id="loginBox">
 
-				<?=$errorMSG?>
+				{{errorMSG}}
 			
 				<form action="login.php" id="loginForm" method="post">
 					<p class="JSError" id="loginUsernameERR"></p>
@@ -133,7 +62,7 @@ if($errorMSG){
 			</div>
 		</div>
 	</main>
-		<?php include('../components/footer.php') ?>			
+    {{footer}}		
 </body>
 </html>
 
