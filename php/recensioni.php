@@ -30,30 +30,33 @@ if(isset($_POST["DComment"])){
 
 
 if(isset($_POST["submit"])){
-
-    $comment = $_POST["commentBox"];
-    if(!preg_match("/^[A-Z\d\r\n,.èéì'% àòù!?() ]{1,300}+$/i", $comment)){
-        $errorMSG .= "<li>Commento non valido</li>";
-		$errorMSG .= "<li>Il commento non può contenere caratteri inerenti a linguaggi di programmazione</li>";
-		$errorMSG .= "<li>Il commento può essere lungo massimo 300 caratteri</li>";
-	}
-
-    $stars = $_POST["starsQuantity"];
-    if($stars > 5 or $stars < 0){
-        $errorMSG .= "<li>Stelle non valide</li>";
-    }
-
-    if($errorMSG == ""){
-        if($connectionOK){
-            $query = $connection->insertComment($_SESSION["id"], $comment, $stars);
-            if($query){
-                header( "refresh:0; url=recensioni.php" ); 
-            }else{
-                $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
-            }
-        }else{
-            $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
+    if(isset($_SESSION['login'])){
+        $comment = $_POST["commentBox"];
+        if(!preg_match("/^[A-Z\d\r\n,.èéì'% àòù!?() ]{1,300}+$/i", $comment)){
+            $errorMSG .= "<li>Commento non valido</li>";
+            $errorMSG .= "<li>Il commento non può contenere caratteri inerenti a linguaggi di programmazione</li>";
+            $errorMSG .= "<li>Il commento può essere lungo massimo 300 caratteri</li>";
         }
+
+        $stars = $_POST["starsQuantity"];
+        if($stars > 5 or $stars < 0){
+            $errorMSG .= "<li>Stelle non valide</li>";
+        }
+
+        if($errorMSG == ""){
+            if($connectionOK){
+                $query = $connection->insertComment($_SESSION["id"], $comment, $stars);
+                if($query){
+                    header( "refresh:0; url=recensioni.php" ); 
+                }else{
+                    $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>"; 
+                }
+            }else{
+                $errorMSG = "<li>Problemi di connessione, ci scusiamo per il disagio</li>";
+            }
+        }
+    }else{
+        $errorMSG= "<p>Problemi di connessione, ci scusiamo per il disagio</p>";
     }
     if($errorMSG){
         $openList = "<ul>";
