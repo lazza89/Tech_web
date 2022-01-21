@@ -6,6 +6,8 @@ if(!isset($_SESSION)) {
     session_start();
 }
 
+$HTMLPage = file_get_contents("../html/areaPersonale.html");
+
 $queryUpdateResult = "";
 $errorMSG = "";
 $doneMSG = "";
@@ -23,6 +25,15 @@ if(isset($_SESSION['login']) && $_SESSION['login'] == true){
     $surname = $_SESSION['surname'];
     $city = $_SESSION['city'];
 
+    $HTMLPage = str_replace("{{logged}}", "Ciao $username! " , $HTMLPage);
+    $HTMLPage = str_replace("{{loginPage}}", "logout.php" , $HTMLPage);
+    $HTMLPage = str_replace("{{login}}", "Logout" , $HTMLPage);
+
+    $HTMLPage = str_replace("{{mail}}", $mail, $HTMLPage);
+    $HTMLPage = str_replace("{{username}}", $username, $HTMLPage);
+    $HTMLPage = str_replace("{{name}}", $name, $HTMLPage);
+    $HTMLPage = str_replace("{{surname}}", $surname, $HTMLPage);
+    $HTMLPage = str_replace("{{city}}", $city, $HTMLPage);
 
     if(isset($_POST["submit"])){
 
@@ -128,111 +139,22 @@ if($errorMSG){
 	$closeList = "</ul>";
 	$openList .= $errorMSG .= $closeList;
 	$errorMSG = $openList;
+    $HTMLPage = str_replace("{{errorMSG}}", $errorMSG, $HTMLPage);
+}else{
+    $HTMLPage = str_replace("{{errorMSG}}", "", $HTMLPage);
 }
 if($doneMSG){
 	$openList = "<h3 id=\"doneChanges\">";
 	$closeList = "</h3>";
 	$openList .= $doneMSG .= $closeList;
 	$doneMSG = $openList;
+    $HTMLPage = str_replace("{{doneMSG}}", $doneMSG, $HTMLPage);
+}else{
+    $HTMLPage = str_replace("{{doneMSG}}", "", $HTMLPage);
 }
 
+$HTMLPage = str_replace("{{footer}}", file_get_contents("../html/components/footer.html") , $HTMLPage);
+
+echo $HTMLPage;
+
 ?>
-
-<!DOCTYPE html>
-<html lang="it">
-
-<head>
-	<meta charset="utf-8" />
-	<title>Profilo - Crystal Ski</title>
-	<meta name="keywords" content="Profilo, Area Riservata, Crystal Ski, monte Cristallo" />
-	<meta name="description" content="Profilo" />
-	<meta name="author" content="Crystal Ski" />
-	<link rel="stylesheet" href="../css/style.css" />
-	<link rel="stylesheet" media="screen and (max-width:600px), only screen and (max-width:600px)" href="../css/mini.css"/>
-	<link rel="stylesheet" media="print" href="../css/print.css"/>
-	<link rel="shortcut icon" href="../images/icona.png" />
-
-	<script src="../javascript/script.js"></script>
-
-</head>
-
-<body>
-	<header>
-		<a class="visually-hidden" href="#main">Vai al contenuto</a>
-		<h1 lang="en">Crystal Ski</h1>
-	</header>
-
-	<div id="breadcrumb">
-	<?php if (isset($_SESSION['login']) && $_SESSION['login']) { ?>
-		<p>Ciao <?=$_SESSION['username']?>! Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Profilo</p>
-		<a class="areaRiservata" href="logout.php">Logout</a>
-	<?php } else { ?>
-		<p>Ti trovi in: <a href="home.php" lang="en">Home</a> &gt; &gt; Profilo</p>
-		<a class="areaRiservata" href="login.php">Login</a>
-	<?php } ?>
-	</div>
-
-    <input type="checkbox" id="menu-hamburger" class="menu-toggle" />
-	<label for="menu-hamburger" class="hamburger"><span class="visually-hidden">menu</span></label>
-	<nav id="menu">
-		<ul>
-			<li><a href="home.php">Home</a></li>
-			<li><a href="tariffe.php">Tariffe</a></li>
-			<li><a href="mappa.php">Mappa</a></li>			
-			<li><a href="servizi.php">Servizi</a></li>
-			<li><a href="eventi.php">Eventi e Gare</a></li>
-			<li><a href="recensioni.php">Recensioni</a></li>
-			<li>Profilo</li>
-		</ul>
-	</nav>
-	<main id="main">
-		<div id="personalArea">
-			<div id="personalAreaBox">
-				<form action="areaPersonale.php" id="personalAreaForm" method="post">
-					<h2 id="datiUtente">Dati utente</h2>
-					
-					<?=$errorMSG?>
-					<?=$doneMSG?>
-
-					<p class="JSError" id="PAreaEmailERR"></p>
-					<label for="PEmail"><b>Email</b></label>
-					<input type="text" placeholder="Inserisci E-mail" name="PEmail" id="PEmail" value="<?=$mail?>" required>
-				
-					<p class="JSError" id="PAreaUsernameERR"></p>
-					<label for="PUsername"><b>Username</b></label>
-					<input type="text" placeholder="Inserisci Username" name="PUsername" id="PUsername" value="<?=$username?>" required>
-
-					<p class="JSError" id="PAreaNameERR"></p>
-					<label for="PName"><b>Nome</b></label>
-					<input type="text" placeholder="Inserisci Nome" name="PName" id="PName" value="<?=$name?>" required>
-
-					<p class="JSError" id="PAreaSurnameERR"></p>
-					<label for="PSurname"><b>Cognome</b></label>
-					<input type="text" placeholder="Inserisci Cognome" name="PSurname" id="PSurname" value="<?=$surname?>" required>
-
-					<p class="JSError" id="PAreaCityERR"></p>
-					<label for="PCity"><b>Città</b></label>
-					<input type="text" placeholder="Inserisci città" name="PCity" id="PCity" value="<?=$city?>">
-
-					<p class="JSError" id="PAreaPasswordERR"></p>
-					<label for="POldPassword"><b>Password attuale</b></label>
-					<input type="password" placeholder="Inserisci Password Attuale" name="POldPassword" id="POldPassword" value="" required>
-
-					<p class="JSError" id="PAreaRPasswordERR"></p>
-					<label for="PPassword"><b>Nuova Password</b></label>
-					<input type="password" placeholder="Inserisci Nuova Password" name="PPassword" id="PPassword" value="">
-
-					<p class="JSError" id="PAreaRepeatPasswordERR"></p>
-					<label for="PRPassword"><b>Ripeti Nuova Password</b></label>
-					<input type="password" placeholder="Ripeti Nuova Password" name="PRPassword" id="PRPassword" value="">
-							
-					<button type="submit" name="submit" class="personalAreabtn">Modifica</button>
-				</form>
-			</div>
-		</div>
-	</main>
-
-	<?php include('../components/footer.php') ?>			
-
-</body>
-</html>
