@@ -135,7 +135,7 @@ function checkPersonalArea(){
   var RPassword = document.getElementById("PPassword").value;
   var RepeatPassword = document.getElementById("PRPassword").value;
 
-  i += checkInput(mail, "PAreaEmailERR", "Email non conforme, l'email deve essere in formato email", CHECK_EMAIL);
+  i += checkInput(mail, "PAreaEmailERR", "Email non conforme, la mail deve essere in formato: testo@dominio.nomedominio", CHECK_EMAIL);
   i += checkInput(username, "PAreaUsernameERR", "Username non conforme, per l'username si possono usare solo caratteri alfanumerici ", CHECK_USERNAME);
   i += checkInput(name, "PAreaNameERR", "Nome non conforme, per il nome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);
   i += checkInput(surname, "PAreaSurnameERR", "Cognome non conforme, per ll cognome si possono usare solo caratteri alfabetici ", CHECK_NAME_AND_SURNAME);
