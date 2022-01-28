@@ -45,6 +45,7 @@ header h1{
 
 #legenda{
 	page-break-inside: initial;
+	display: block;
 }
 
 #listino, .slope-table, .black-table{
